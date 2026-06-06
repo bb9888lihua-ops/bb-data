@@ -487,7 +487,7 @@
     "vsText": "VS",
     "locked": true,
     "lockId": "wnba303",
-    "lineupConfirmed": false,
+    "lineupConfirmed": true,
     "confirmAt": 1780781400000,
     "odds": [
       {
@@ -501,11 +501,11 @@
     ],
     "injuries": "",
     "lineups": {},
-    "analysis": "WNBA总裁杯。梦想6-3东部第1主场3-1，防守联盟第2。梦想方向。",
-    "recommendText": "",
+    "analysis": "【v2.1模型分析】\n①ORTG/DRTG: 梦想ORTG105/DRTG100(2nd)/NET+5.0; 神秘人ORTG103.5/DRTG108/NET-4.5\n②Expected_Spread=7.6, Pinnacle=10.5, 偏离2.9≥2 ✓\n③Expected_Total=165.3, Pinnacle=157.5, 偏离7.8<8 ✗→大小分skip\n④阵容: 梦想Brionna Jones缺阵; 神秘人Citron出战成疑(脚部), Betts生病\n⑤WNBA铁律: 主让深盘≥5.5→主输盘率71%→强选客受让\n⑥信心⭐⭐: 让分偏离2.9+深盘反选双重验证",
+    "recommendText": "神秘人 +10.5",
     "recommendText2": "",
     "skipReason": "等待首发确认",
-    "recommend": "skip",
+    "recommend": "pass",
     "order": 6,
     "ended": false,
     "homeScore": null,
@@ -525,7 +525,7 @@
     "vsText": "VS",
     "locked": true,
     "lockId": "wnba304",
-    "lineupConfirmed": false,
+    "lineupConfirmed": true,
     "confirmAt": 1780788600000,
     "odds": [
       {
@@ -541,11 +541,11 @@
       "自由人:Ionescu缺席(脚踝)"
     ],
     "lineups": {},
-    "analysis": "WNBA总裁杯焦点战。自由人7-2主场强势。狂热6-4防守第7。自由人方向。",
-    "recommendText": "",
+    "analysis": "【v2.1模型分析】\n①ORTG/DRTG: 自由人ORTG103/DRTG100.4/NET+2.6; 狂热ORTG108/DRTG105/NET+3.0\n②Expected_Spread=-0.3(基本均势), Pinnacle=-3.5, 偏离3.8≥2 ✓\n③Expected_Total=169.1, Pinnacle=175.5, 偏离6.4<8 ✗→大小分skip\n④阵容: 自由人Ionescu继续缺阵(脚踝); 狂热Clark出战成疑(背部)\n⑤WNBA铁律: 主让反选(主让覆盖仅43%)→选受让方\n⑥信心⭐⭐: 让分偏离3.8+主让反选双重验证; Ionescu缺阵削弱自由人",
+    "recommendText": "狂热 +3.5",
     "recommendText2": "",
     "skipReason": "等待首发确认",
-    "recommend": "skip",
+    "recommend": "pass",
     "order": 7,
     "ended": false,
     "homeScore": null,

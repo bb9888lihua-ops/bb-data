@@ -700,26 +700,21 @@ function updateHeaderDate(){
 // ===== 从GitHub拉取最新赛事数据 =====
 const GH_REPO='bb9888lihua-ops/bb-data';
 async function fetchGitHubData(){
- // Step1: 用GitHub API获取最新commit hash（公开repo无需token）
- let sha=null;
+ // CDN优先（最可靠），GitHub API获取commit hash作为增强
+ const urls=[
+  'https://cdn.jsdelivr.net/gh/'+GH_REPO+'@main/matches.json?_t='+Date.now(),
+  'https://cdn.jsdelivr.net/gh/'+GH_REPO+'@main/matches.json?cb='+Math.random(),
+ ];
  try{
-  const api='https://api.github.com/repos/'+GH_REPO+'/commits?path=matches.json&per_page=1';
-  const ar=await fetch(api,{signal:AbortSignal.timeout(5000)});
-  if(ar.ok){const ac=await ar.json();if(ac.length>0)sha=ac[0].sha}
- }catch(e){console.log('[GH] API failed:',e.message)}
- // Step2: 用commit hash拉数据（jsdelivr对commit hash URL不缓存旧数据）
- const urls=[];
- if(sha)urls.push('https://cdn.jsdelivr.net/gh/'+GH_REPO+'@'+sha+'/matches.json');
- urls.push('https://cdn.jsdelivr.net/gh/'+GH_REPO+'@main/matches.json?_t='+Date.now());
+  const ar=await fetch('https://api.github.com/repos/'+GH_REPO+'/commits?path=matches.json&per_page=1',{signal:AbortSignal.timeout(4000)});
+  if(ar.ok){const ac=await ar.json();if(ac.length>0)urls.unshift('https://cdn.jsdelivr.net/gh/'+GH_REPO+'@'+ac[0].sha+'/matches.json')}
+ }catch(e){}
  for(const url of urls){
   try{
    const r=await fetch(url,{cache:'no-store',signal:AbortSignal.timeout(8000)});
    if(!r.ok)continue;
    const data=await r.json();
-   if(Array.isArray(data)&&data.length>0){
-    console.log('[GH] Loaded from',url.substring(0,60)+'...');
-    return data;
-   }
+   if(Array.isArray(data)&&data.length>0){console.log('[GH] OK from',url.substring(0,50));return data}
   }catch(e){continue}
  }
  return null;
@@ -770,19 +765,21 @@ async function loadMatches(){
    try{const delDoc=await db.collection('settings').doc('deletedMatchIds').get();if(delDoc.exists)deletedIds=delDoc.data().ids||[]}catch(e){}
    const ghAll=ghData.filter(m=>m.id&&!deletedIds.includes(m.id));
    if(ghAll.length>0){
-    const batch=db.batch();
-    let syncCount=0;
-    ghAll.forEach(m=>{batch.set(db.collection('matches').doc(m.id),m,{merge:true});syncCount++});
-    if(syncCount>0){
-     await batch.commit();
-     console.log('[LM] 从GitHub同步了',syncCount,'场赛事（最新数据）');
-     ghAll.forEach(gm=>{
+    // 先更新页面数组（确保数据显示，不依赖Firestore写入）
+    ghAll.forEach(gm=>{
      const idx=matches.findIndex(m=>m.id===gm.id);
      if(idx>=0){matches[idx]={...matches[idx],...gm}}
-     else{matches.push(gm)} // 新赛事也要加入数组
+     else{matches.push(gm)}
     });
-     syncedFromData=true;
-    }
+    syncedFromData=true;
+    console.log('[LM] GitHub数据已加载',ghAll.length,'场赛事');
+    // 再异步写入Firestore（不阻塞渲染，失败也不影响显示）
+    try{
+     const batch=db.batch();
+     ghAll.forEach(m=>{batch.set(db.collection('matches').doc(m.id),m,{merge:true})});
+     await batch.commit();
+     console.log('[LM] 已同步到Firestore');
+    }catch(fe){console.log('[LM] Firestore写入跳过:',fe.message)}
    }
   }
  }catch(e){console.log('[LM] GitHub同步跳过:',e.message)}

@@ -812,6 +812,7 @@ async function loadMatches(){
 
 // ===== 构建单个卡片HTML =====
 function buildCardHtml(m,unlocked,coins){
+ if(m&&m.injuries&&!Array.isArray(m.injuries)){m.injuries=typeof m.injuries==='string'?[m.injuries]:[]}
  const tagClass='tag-'+(m.leagueTag||'nba');
  const isEnded=m.ended===true;
  // 时间基准：推断比赛是否已开赛/已结束（解决Firestore数据延迟问题）
@@ -834,9 +835,9 @@ function buildCardHtml(m,unlocked,coins){
  if(m.locked&&!effectiveEnded){matchup='<div class="matchup-bar"><span class="team">'+teamLogo(m.homeTeam||'')+(m.homeTeam||'')+homeScore+'</span><span class="vs">'+'VS'+'</span><span class="team away">'+awayScore+(m.awayTeam||'')+teamLogo(m.awayTeam||'')+'</span></div>'}
  else{matchup='<div class="matchup-bar"><span class="team">'+teamLogo(m.homeTeam||'')+(m.homeTeam||'')+homeScore+'</span><span class="vs">'+'VS'+'</span><span class="team away">'+awayScore+(m.awayTeam||'')+teamLogo(m.awayTeam||'')+'</span></div>'}
  let body='';
- if(m.odds&&m.odds.length>0){body+='<div class="odds-section"><div class="label">数据趋势</div>';m.odds.forEach(o=>{body+='<div class="odds-row"><span class="type">'+(o.type||'')+'</span><span class="value">'+(o.value||'')+'</span></div>'});body+='</div>'}
- if(m.lineups&&m.lineups.length>0){body+='<div class="odds-section"><div class="label">确认首发</div>';m.lineups.forEach(l=>{body+='<div class="odds-row"><span class="type">'+(l.type||'')+'</span><span class="value">'+(l.value||'')+'</span></div>'});body+='</div>'}
- if(m.injuries&&m.injuries.length>0){body+='<div class="injury-box"><div class="title">⚡ 关键伤停</div>';m.injuries.forEach(i=>{body+='<div class="item">'+i+'</div>'});body+='</div>'}
+ if(m.odds&&m.odds.length>0){body+='<div class="odds-section"><div class="label">数据趋势</div>';(Array.isArray(m.odds)?m.odds:[]).forEach(o=>{body+='<div class="odds-row"><span class="type">'+(o.type||'')+'</span><span class="value">'+(o.value||'')+'</span></div>'});body+='</div>'}
+ if(m.lineups&&m.lineups.length>0){body+='<div class="odds-section"><div class="label">确认首发</div>';(Array.isArray(m.lineups)?m.lineups:[]).forEach(l=>{body+='<div class="odds-row"><span class="type">'+(l.type||'')+'</span><span class="value">'+(l.value||'')+'</span></div>'});body+='</div>'}
+ if(m.injuries&&m.injuries.length>0){body+='<div class="injury-box"><div class="title">⚡ 关键伤停</div>';(Array.isArray(m.injuries)?m.injuries:[]).forEach(i=>{body+='<div class="item">'+i+'</div>'});body+='</div>'}
  if(m.analysis){body+='<div class="analysis-box"><div class="title">📊 核心分析</div><div class="text">'+m.analysis.replace(/\n/g,'<br>')+'</div></div>'}
  var _gameTime=new Date(m.date+'T'+m.time+':00+08:00').getTime();
  var _nearStart=Date.now()>=_gameTime-40*60*1000;
@@ -1363,7 +1364,7 @@ function validateMatchData(match, source){
   }
   // C1: odds type必须用合规词
   if(Array.isArray(match.odds)){
-    match.odds.forEach((o,i)=>{
+    (Array.isArray(match.odds)?match.odds:[]).forEach((o,i)=>{
       if(o.type === '让分方向' || o.type === 'spread'){
         fixes.push({field:'odds['+i+'].type', old:o.type, newVal:'分析方向', rule:'C1'});
         o.type = '分析方向';

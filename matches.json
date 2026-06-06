@@ -39,7 +39,7 @@
     "homeScore": 71,
     "awayScore": 88,
     "hit1": "hit",
-    "hit2": "hit",
+    "hit2": "miss",
     "endedAt": 1780733789673
   },
   {
@@ -81,7 +81,7 @@
     "ended": true,
     "homeScore": 82,
     "awayScore": 63,
-    "hit1": "miss",
+    "hit1": "hit",
     "hit2": "hit",
     "endedAt": 1780733789673
   },
@@ -124,7 +124,7 @@
     "ended": true,
     "homeScore": 85,
     "awayScore": 80,
-    "hit1": "miss",
+    "hit1": "hit",
     "hit2": "miss",
     "endedAt": 1780733789673
   },
@@ -210,7 +210,7 @@
     "ended": true,
     "homeScore": 96,
     "awayScore": 104,
-    "hit1": "hit",
+    "hit1": "miss",
     "hit2": "miss",
     "endedAt": 1780733789673
   },
@@ -255,7 +255,7 @@
     "homeScore": 72,
     "awayScore": 78,
     "hit1": "miss",
-    "hit2": "hit",
+    "hit2": "miss",
     "endedAt": 1780733789673
   },
   {

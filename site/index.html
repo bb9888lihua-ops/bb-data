@@ -700,21 +700,17 @@ function updateHeaderDate(){
 // ===== 从GitHub拉取最新赛事数据 =====
 const GH_REPO='bb9888lihua-ops/bb-data';
 async function fetchGitHubData(){
- // CDN优先（最可靠），GitHub API获取commit hash作为增强
+ // 直接用jsdelivr拉最新数据（不带@main，jsdelivr自动指向最新commit）
  const urls=[
-  'https://cdn.jsdelivr.net/gh/'+GH_REPO+'@main/matches.json?_t='+Date.now(),
-  'https://cdn.jsdelivr.net/gh/'+GH_REPO+'@main/matches.json?cb='+Math.random(),
+  'https://cdn.jsdelivr.net/gh/'+GH_REPO+'/matches.json?_t='+Date.now(),
+  'https://cdn.jsdelivr.net/gh/'+GH_REPO+'/matches.json?cb='+Math.random(),
  ];
- try{
-  const ar=await fetch('https://api.github.com/repos/'+GH_REPO+'/commits?path=matches.json&per_page=1',{signal:AbortSignal.timeout(4000)});
-  if(ar.ok){const ac=await ar.json();if(ac.length>0)urls.unshift('https://cdn.jsdelivr.net/gh/'+GH_REPO+'@'+ac[0].sha+'/matches.json')}
- }catch(e){}
  for(const url of urls){
   try{
    const r=await fetch(url,{cache:'no-store',signal:AbortSignal.timeout(8000)});
    if(!r.ok)continue;
    const data=await r.json();
-   if(Array.isArray(data)&&data.length>0){console.log('[GH] OK from',url.substring(0,50));return data}
+   if(Array.isArray(data)&&data.length>0){console.log('[GH] OK',data.length,'matches');return data}
   }catch(e){continue}
  }
  return null;

@@ -805,7 +805,7 @@ function buildCardHtml(m,unlocked,coins){
  const gameTime=getGameTime(m);
  const nowMs=Date.now();
  const gameStarted=gameTime>0&&nowMs>=gameTime;
- const gameEnded=gameTime>0&&nowMs>=gameTime+3*3600*1000; // 开赛3小时后视为已结束
+ const gameEnded=gameTime>0&&nowMs>=gameTime+100*60*1000; // 开赛100分钟后视为已结束
  const effectiveEnded=isEnded||gameEnded; // Firestore标记或时间推断
  let badgeClass,badgeText;
  if(effectiveEnded){badgeClass='badge-ended';badgeText='已结束'}
@@ -887,7 +887,7 @@ function renderMatches(matches,session){
  document.getElementById('summaryCard').innerHTML='';return;
  }
  // 排序：已结束排下面，未结束排上面
- const sorted=[...matches].sort((a,b)=>{if((a.ended===true)!==(b.ended===true))return (a.ended===true?1:0)-(b.ended===true?1:0);const da=a.date||'',db=b.date||'';if(da!==db)return da.localeCompare(db);return (a.order||0)-(b.order||0)});
+ const now4sort=Date.now();const effEnd=m=>{if(m.ended===true)return true;const gt=getGameTime(m);return gt>0&&now4sort>=gt+100*60*1000};const sorted=[...matches].sort((a,b)=>{const ea=effEnd(a),eb=effEnd(b);if(ea!==eb)return ea?1:-1;const da=a.date||'',db=b.date||'';if(da!==db)return da.localeCompare(db);return (a.order||0)-(b.order||0)});
  let pendingSummary='',endedSummary='';
  sorted.forEach(m=>{
  container.innerHTML+=buildCardHtml(m,unlocked,session.coins);

@@ -472,7 +472,7 @@
     "odds": [
       {
         "type": "分析方向",
-        "value": "神秘人 +10"
+        "value": "亚特兰大梦想 -10.5"
       },
       {
         "type": "得分预期",
@@ -484,8 +484,8 @@
       "梦想：Jones(膝-OUT)"
     ],
     "lineups": {},
-    "analysis": "【伤病情况】\n神秘人Citron(脚-OUT确认缺阵)、Betts(生病-出战成疑)\n梦想Jones(膝-OUT)缺席\n\n【效率数据】statmuse 2026赛季\n- Dream: ORTG=104.5, DRTG=99.4, Net=+5.2\n- Mystics: ORTG=103.7, DRTG=108.3, Net=-4.6\n\n【模型计算】v2\nExpected_Total = 166.4分\nExpected_Spread = Dream赢7.76分\nPinnacle数据: Dream -9.5~10 / Total 159.5~160.5\n\n【偏差分析】\n- 让分偏差: 2.24分 > 2分阈值 → 可推\n- 大小分偏差: 6.4分 < 8分阈值 → 不推\n\n【盘口偏差分析】\n主让≥5.5分时，模型偏差+统计方向均指向客受让。\nCitron确认缺阵，Mystics进攻端受损。\n\n【结论】\n盘口比模型深2.24分，盘口偏差与模型计算均支撑神秘人方向。\n信心评级: ⭐⭐⭐",
-    "recommendText": "神秘人 +10",
+    "analysis": "【伤病情况】\n神秘人Citron(脚-OUT确认缺阵)、Betts(生病-出战成疑)\n梦想Jones(膝-OUT)缺席\n\n【效率数据】statmuse 2026赛季\n- Dream: ORTG=104.5, DRTG=99.4, Net=+5.2\n- Mystics: ORTG=103.7, DRTG=108.3, Net=-4.6\n\n【模型计算】v2\nExpected_Total = 166.4分\nExpected_Spread = Dream赢7.76分\nPinnacle数据: Dream -10.5 / Total 159.5~160.5\n\n【偏差分析】\n- 让分偏差: 2.74分 > 2分阈值 → 可推\n- 大小分偏差: 6.4分 < 8分阈值 → 不推\n\n【盘口偏差分析】\n主让≥5.5分时，模型偏差+统计方向均指向客受让。\nCitron确认缺阵，Mystics进攻端受损。\n\n【结论】\n盘口比模型深2.74分，盘口偏差与模型计算均支撑神秘人方向。\n信心评级: ⭐⭐⭐",
+    "recommendText": "神秘人 +10.5",
     "recommendText2": "160小",
     "skipReason": "",
     "recommend": "pass",

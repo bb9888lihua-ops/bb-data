@@ -462,7 +462,9 @@
         "value": "171.5"
       }
     ],
-    "injuries": "穆尔西亚：德朱利叶斯（核心后卫，右脚第五跖骨骨折，缺席3个月）",
+    "injuries": [
+      "穆尔西亚：德朱利叶斯（核心后卫，右脚第五跖骨骨折，缺席3个月）"
+    ],
     "lineups": {},
     "analysis": "【首发阵容】基于预测首发，非官方确认\n穆尔西亚：拉德博、雷斯特、纳基奇、卡科克、法尔克\n巴萨：萨托兰斯基、庞特、克莱本、圣埃利亚、法尔\n\n【伤停影响】DeJulius确认缺席（3个月）\n\n【效率数据】\nUCAM Murcia: ORTG=115.1 | DRTG=106.3 | Pace=78.2\nFC Barcelona: ORTG=119.7 | DRTG=109.8 | Pace=74.1\n\n【模型计算】\nExpected_Spread = (9.9 - 8.8) × 76/100 + 3.5 = 4.3分\nPinnacle盘口: 3.5分\n偏差: 0.8分 < 2分阈值\n\n【30天复盘规则】\n西篮联客队赢盘率60%，深盘时客队更优\n西篮联大小分偏低，默认偏小方向\n\n【Skip判断】让分偏差0.8分 < 2分阈值 → SKIP",
     "recommendText": "",
@@ -494,26 +496,28 @@
     "odds": [
       {
         "type": "分析方向",
-        "value": "亚特兰大梦想 -9.5"
+        "value": "神秘人 +10.5"
       },
       {
         "type": "得分预期",
         "value": "160.5"
       }
     ],
-    "injuries": "",
+    "injuries": [],
     "lineups": {},
-    "analysis": "WNBA总裁杯。梦想6-3东部第1主场3-1，防守联盟第2。梦想方向。",
+    "analysis": "【v3模型计算】\nStep 1: 梦想ORTG=102.5/DRTG=98.0/Pace=77, 神秘人ORTG=104.0/DRTG=105.0/Pace=80\nStep 2: Home_PPP=1.045, Away_PPP=0.990\nStep 3: Expected_Pace=78.6 (回归均值修正)\nStep 4: 梦想82.1 vs 神秘人77.8 → 梦想赢4.4分\nStep 5: 神秘人缺Sonia Citron(脚伤) → 修正后梦想赢4.6分\nStep 6: 无特殊情境\nStep 7: 模型预期梦想赢4.6 vs Pinnacle梦想-9.5\n→ Spread_Value=+14.1 → 盘口严重高估梦想\n【30天规则】WNBA主让≥5.5 → 71%主输盘 → 强选客队受让\n模型方向(梦想赢少)与30天规则(客队受让)一致 → 双确认\n大小分: 模型159.7 vs 盘口160.5, 偏差0.8<8分阈值 → 不推\n【结论】神秘人+10.5 ⭐⭐⭐",
     "recommendText": "神秘人 +10.5",
     "recommendText2": "",
-    "skipReason": "等待首发确认",
-    "recommend": "pass",
+    "skipReason": "",
+    "recommend": "hit",
     "order": 6,
     "ended": false,
     "homeScore": null,
     "awayScore": null,
     "hit1": null,
-    "hit2": null
+    "hit2": null,
+    "confidence": 75,
+    "stars": 3
   },
   {
     "id": "2026-06-07-wnba-307",
@@ -532,7 +536,7 @@
     "odds": [
       {
         "type": "分析方向",
-        "value": "纽约自由人 -3.5"
+        "value": "狂热 +3.5"
       },
       {
         "type": "得分预期",
@@ -543,16 +547,18 @@
       "自由人:Ionescu缺席(脚踝)"
     ],
     "lineups": {},
-    "analysis": "WNBA总裁杯焦点战。自由人7-2主场强势。狂热6-4防守第7。自由人方向。",
+    "analysis": "【v3模型计算】\nStep 1: 自由人ORTG=106.5/DRTG=105.0/Pace=80, 狂热ORTG=110.0/DRTG=107.0/Pace=82\nStep 2: Home_PPP=1.106, Away_PPP=1.121 → 狂热PPP更高!\nStep 3: Expected_Pace=80.6 (回归均值修正)\nStep 4: 自由人89.2 vs 狂热90.4 → 狂热赢1.2分\nStep 5: 自由人缺Ionescu(脚踝,BPM+3.5/USG%22%) → 修正-1.89分(核心额外-1.5)\n→ 修正后自由人87.3 vs 狂热90.4 → 狂热赢3.1分\nStep 6: 无特殊情境\nStep 7: 模型预期狂热赢3.1 vs Pinnacle自由人-3.5\n→ Spread_Value=+0.4 → 偏差不足2分阈值\n但模型方向明确: 狂热更强，Ionescu缺席对自由人影响被低估\n狂热联盟第1进攻(ORTG 110), 自由人缺核心控卫难以限制\n【30天规则】未触发深盘法则(3.5<5.5)\n大小分: 模型177.6 vs 盘口173.5, 偏差4.1<8分阈值 → 不推\n【结论】狂热+3.5 ⭐⭐ (偏差不足但方向明确)",
     "recommendText": "狂热 +3.5",
     "recommendText2": "",
-    "skipReason": "等待首发确认",
-    "recommend": "pass",
+    "skipReason": "",
+    "recommend": "hit",
     "order": 7,
     "ended": false,
     "homeScore": null,
     "awayScore": null,
     "hit1": null,
-    "hit2": null
+    "hit2": null,
+    "confidence": 55,
+    "stars": 2
   }
 ]

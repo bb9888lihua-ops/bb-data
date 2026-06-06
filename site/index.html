@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ai篮势</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0e17;color:#e8eaf0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;min-height:100vh}
+.auth-page{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+.auth-box{width:100%;max-width:400px;background:linear-gradient(145deg,#141929,#0f1422);border:1px solid #1e2a4a;border-radius:16px;overflow:hidden}
+.auth-header{text-align:center;padding:30px 20px 20px;background:linear-gradient(135deg,#1a1f35,#0d1225);border-bottom:1px solid #1e2a4a}
+.auth-header .logo{font-size:28px;margin-bottom:6px}
+.auth-header h2{font-size:20px;font-weight:700;color:#fff}
+.auth-header p{font-size:12px;color:#4a5578;margin-top:4px}
+.auth-body{padding:24px 20px}
+.auth-tabs{display:flex;margin-bottom:20px;border-bottom:1px solid #1e2a4a}
+.auth-tab{flex:1;text-align:center;padding:10px;font-size:14px;font-weight:600;color:#4a5578;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s}
+.auth-tab.active{color:#4ade80;border-bottom-color:#4ade80}
+.auth-form{display:none}
+.auth-form.active{display:block}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:12px;color:#7a8bb5;margin-bottom:6px;font-weight:500}
+.form-input{width:100%;padding:12px 14px;background:rgba(15,20,34,0.8);border:1px solid #1e2a4a;border-radius:8px;color:#e8eaf0;font-size:14px;outline:none;transition:border .2s}
+.form-input:focus{border-color:#4ade80}
+.form-input::placeholder{color:#3a4568}
+.btn{padding:12px;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;width:100%}
+.btn-primary{background:linear-gradient(135deg,#4ade80,#22c55e);color:#0a0e17}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 15px rgba(74,222,128,0.3)}
+.btn-sm{padding:6px 16px;font-size:12px;width:auto;border-radius:6px}
+.btn-danger{background:rgba(248,113,113,0.15);color:#f87171;border:1px solid rgba(248,113,113,0.3);font-size:12px;padding:6px 16px;width:auto;border-radius:6px;cursor:pointer}
+.btn-danger:hover{background:rgba(248,113,113,0.25)}
+.btn-gold{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#0a0e17;border:none;font-size:12px;padding:6px 16px;width:auto;border-radius:6px;cursor:pointer;font-weight:700}
+.btn-gold:hover{box-shadow:0 2px 10px rgba(251,191,36,0.3)}
+.form-footer{text-align:center;margin-top:16px;font-size:12px;color:#4a5578}
+.form-footer a{color:#4ade80;text-decoration:none;cursor:pointer}
+.form-error{font-size:12px;color:#f87171;margin-top:4px;display:none}
+.form-error.show{display:block}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:linear-gradient(135deg,#1a1f35,#0d1225);border-bottom:1px solid #1e2a4a;position:sticky;top:0;z-index:100}
+.topbar-left{display:flex;align-items:center;gap:8px}
+.topbar-left .logo-small{font-size:18px}
+.topbar-left .title{font-size:14px;font-weight:700;color:#fff}
+.topbar-right{display:flex;align-items:center;gap:8px}
+.coin-display{display:flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.25);border-radius:8px;cursor:pointer}
+.coin-display:hover{background:rgba(251,191,36,0.15)}
+.coin-icon{font-size:14px}
+.coin-num{font-size:14px;font-weight:800;color:#fbbf24}
+.coin-label{font-size:10px;color:#7a8bb5}
+.user-info{display:flex;align-items:center;gap:6px;padding:4px 8px;border-radius:8px}
+.user-avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#4ade80,#22c55e);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#0a0e17}
+.user-name{font-size:12px;font-weight:600;color:#e8eaf0;max-width:60px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.btn-logout{font-size:11px;color:#f87171;cursor:pointer;padding:4px 8px;border-radius:4px;border:1px solid rgba(248,113,113,0.2);background:transparent}
+.btn-checkin{padding:4px 10px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;border:none}
+.btn-checkin.active{background:linear-gradient(135deg,#4ade80,#22c55e);color:#0a0e17}
+.btn-checkin.active:hover{transform:translateY(-1px);box-shadow:0 2px 10px rgba(74,222,128,0.3)}
+.btn-checkin.done{background:rgba(74,222,128,0.12);color:#4ade80;border:1px solid rgba(74,222,128,0.25);cursor:default}
+.btn-addcoin{padding:4px 10px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;border:none;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#0a0e17}
+.btn-addcoin:hover{transform:translateY(-1px);box-shadow:0 2px 10px rgba(251,191,36,0.3)}
+.btn-addcoin.hide{display:none}
+
+.header{background:linear-gradient(135deg,#1a1f35,#0d1225);padding:16px;border-bottom:1px solid #1e2a4a;text-align:center}
+.header h1{font-size:18px;font-weight:700;color:#fff}
+.header .date{font-size:12px;color:#7a8bb5;margin-top:4px}
+.header .update{font-size:11px;color:#4a5578;margin-top:2px}
+
+.container{max-width:600px;margin:0 auto;padding:8px 8px 12px}
+.card{background:linear-gradient(145deg,#141929,#0f1422);border:1px solid #1e2a4a;border-radius:12px;margin-bottom:12px;overflow:hidden;position:relative;min-height:360px}
+.card-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(30,42,74,0.4);border-bottom:1px solid #1e2a4a}
+.card-header .time{font-size:12px;color:#7a8bb5;font-weight:500}
+.card-body{padding:14px}
+.matchup{text-align:center;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 16px;background:transparent;border-bottom:1px solid #1e2a4a;flex-wrap:wrap}
+.matchup .vs{font-size:13px;color:#4a5578;font-weight:600;flex-shrink:0}
+.matchup .team{font-size:17px;font-weight:700;color:#fff;display:flex;align-items:center;gap:6px}
+.matchup .team.away{color:#8fa3cc}
+.matchup .team-logo{width:28px;height:28px;object-fit:contain;flex-shrink:0;border-radius:4px}
+.odds-section{background:rgba(15,20,34,0.6);border-radius:8px;padding:10px 12px;margin-bottom:10px}
+.odds-section .label{font-size:11px;color:#4a5578;letter-spacing:1px;margin-bottom:6px}
+.odds-row{display:flex;align-items:center;justify-content:space-between;padding:4px 0;font-size:13px}
+.odds-row .type{color:#7a8bb5;font-size:12px}
+.odds-row .value{color:#e8eaf0;font-weight:600}
+.injury-box{background:rgba(248,113,113,0.08);border-left:3px solid #f87171;border-radius:0 6px 6px 0;padding:8px 12px;margin-bottom:10px}
+.injury-box .title{font-size:11px;color:#f87171;font-weight:600;margin-bottom:4px}
+.injury-box .item{font-size:12px;color:#8fa3cc;padding:1px 0}
+.analysis-box{background:rgba(74,222,128,0.06);border-left:3px solid #4ade80;border-radius:0 6px 6px 0;padding:10px 12px;margin-bottom:10px}
+.analysis-box .title{font-size:11px;color:#4ade80;font-weight:600;margin-bottom:6px}
+.analysis-box .text{font-size:13px;color:#c0c8dc;line-height:1.7}
+.recommend{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;border-radius:8px;font-size:15px;font-weight:700;margin-top:8px}
+.recommend.pass{background:rgba(74,222,128,0.12);color:#4ade80;border:1px solid rgba(74,222,128,0.25)}
+.recommend.skip{background:rgba(122,139,181,0.12);color:#7a8bb5;border:1px solid rgba(122,139,181,0.25)}
+.league-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:600;margin:0 2px}
+.tag-nba{background:linear-gradient(135deg,#c8102e,#a00d24);color:#fff}
+.tag-wnba{background:linear-gradient(135deg,#6fccdd,#3a9aab);color:#0a0e17}
+.tag-acb{background:linear-gradient(135deg,#f4a261,#e76f51);color:#0a0e17}
+.tag-aba{background:linear-gradient(135deg,#8338ec,#5a189a);color:#fff}
+.tag-bbl{background:linear-gradient(135deg,#e63946,#1d3557);color:#fff}
+.badge{font-size:10px;padding:2px 6px;border-radius:4px;font-weight:600}
+.badge-live{background:#c8102e;color:#fff;animation:pulse 1.5s infinite}
+.badge-pre{background:#1e2a4a;color:#7a8bb5}
+.badge-cost{background:rgba(251,191,36,0.15);color:#fbbf24;font-size:9px;padding:1px 6px;border-radius:4px;margin-left:4px}
+.badge-ended{background:rgba(248,113,113,0.12);color:#f87171;font-size:9px;padding:1px 6px;border-radius:4px;margin-left:4px}
+.match-score{color:#fbbf24;font-weight:800;font-size:15px;letter-spacing:1px}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+.footer{text-align:center;padding:20px 16px;font-size:11px;color:#4a5578}
+
+.matchup-bar{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 16px;background:transparent;border-bottom:1px solid #1e2a4a;flex-wrap:wrap}
+.matchup-bar .team{font-size:17px;font-weight:700;color:#fff;display:flex;align-items:center;gap:6px}
+.matchup-bar .team.away{color:#8fa3cc}
+.matchup-bar .vs{font-size:13px;color:#4a5578;font-weight:600}
+.matchup-bar .team-logo{width:28px;height:28px;object-fit:contain;flex-shrink:0;border-radius:4px}
+.coin-lock .lockable-body{position:relative}
+.coin-lock .lock-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(10,14,23,0.95);backdrop-filter:blur(8px);border-radius:0 0 12px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;z-index:10;padding:24px;text-align:center}
+.coin-lock .lock-overlay .lock-icon{font-size:32px}
+.coin-lock .lock-overlay .lock-text{font-size:16px;font-weight:700;color:#fbbf24}
+.coin-lock .lock-overlay .lock-cost{font-size:12px;color:#7a8bb5;margin-top:2px}
+.coin-lock .lock-overlay .btn-unlock{padding:10px 28px;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#0a0e17;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;margin-top:4px;transition:all .2s}
+.coin-lock .lock-overlay .btn-unlock:hover{transform:translateY(-1px);box-shadow:0 4px 15px rgba(251,191,36,0.3)}
+.coin-lock .lock-overlay .no-coin{font-size:11px;color:#f87171;margin-top:2px}
+.lock-wait-wrap{display:flex;flex-direction:column;align-items:center;gap:16px;padding:10px 0}
+.lock-wait-icon{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,rgba(251,191,36,0.15),rgba(245,158,11,0.08));border:2px solid rgba(251,191,36,0.3);display:flex;align-items:center;justify-content:center;font-size:26px;animation:waitPulse 2s ease-in-out infinite}
+@keyframes waitPulse{0%,100%{box-shadow:0 0 0 0 rgba(251,191,36,0.2)}50%{box-shadow:0 0 20px 6px rgba(251,191,36,0.15)}}
+.lock-wait-title{font-size:17px;font-weight:700;color:#fbbf24;letter-spacing:1px}
+.lock-wait-divider{width:60px;height:2px;background:linear-gradient(90deg,transparent,rgba(251,191,36,0.4),transparent);border-radius:1px}
+.lock-wait-sub{font-size:12px;color:#7a8bb5;line-height:1.5}
+.lock-wait-countdown{font-size:13px;color:#fbbf24;font-weight:600;padding:6px 16px;background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.15);border-radius:6px;margin-top:2px}
+
+.modal-mask{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:200;align-items:center;justify-content:center;padding:20px}
+.modal-mask.show{display:flex}
+.modal{width:100%;max-width:420px;background:linear-gradient(145deg,#141929,#0f1422);border:1px solid #2a3a6a;border-radius:16px;overflow:hidden;max-height:90vh;overflow-y:auto}
+.modal-header{padding:20px;text-align:center;border-bottom:1px solid #2a3a6a}
+.modal-header .icon{font-size:32px}
+.modal-header h3{font-size:18px;color:#fbbf24;font-weight:700;margin-top:6px}
+.modal-header .sub{font-size:12px;color:#7a8bb5;margin-top:4px}
+.modal-body{padding:20px}
+.modal-footer{padding:0 20px 20px;text-align:center}
+.btn-close-modal{padding:10px 30px;background:rgba(122,139,181,0.15);color:#7a8bb5;border:1px solid #1e2a4a;border-radius:8px;font-size:13px;cursor:pointer}
+
+.history-item{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(30,42,74,0.3);font-size:12px}
+.history-item:last-child{border-bottom:none}
+.history-item .desc{color:#8fa3cc;flex:1}
+.history-item .amount.pos{color:#4ade80;width:50px;text-align:right}
+.history-item .amount.neg{color:#f87171;width:50px;text-align:right}
+.history-item .time{color:#4a5578;font-size:11px;width:70px;text-align:right}
+
+.admin-page{min-height:100vh}
+.admin-topbar{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:linear-gradient(135deg,#1a1f35,#0d1225);border-bottom:1px solid #1e2a4a;position:sticky;top:0;z-index:100}
+.admin-topbar h2{font-size:16px;color:#fbbf24;font-weight:700}
+.admin-container{max-width:900px;margin:0 auto;padding:16px}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.stat-card{background:linear-gradient(145deg,#141929,#0f1422);border:1px solid #1e2a4a;border-radius:10px;padding:16px;text-align:center}
+.stat-card .num{font-size:28px;font-weight:800;color:#fbbf24}
+.stat-card .label{font-size:11px;color:#7a8bb5;margin-top:4px}
+.member-table{width:100%;border-collapse:collapse;background:linear-gradient(145deg,#141929,#0f1422);border-radius:10px;overflow:hidden;border:1px solid #1e2a4a}
+.member-table th{background:rgba(30,42,74,0.5);padding:10px 12px;font-size:12px;color:#7a8bb5;text-align:left;font-weight:600;border-bottom:1px solid #1e2a4a}
+.member-table td{padding:10px 12px;font-size:13px;border-bottom:1px solid rgba(30,42,74,0.3);color:#c0c8dc;vertical-align:middle}
+.member-table tr:last-child td{border-bottom:none}
+.member-table tr:hover td{background:rgba(30,42,74,0.2)}
+.coin-cell{color:#fbbf24;font-weight:700}
+.phone-cell{color:#7a8bb5;font-size:12px}
+.action-cell{display:flex;gap:6px;flex-wrap:wrap}
+.admin-section-title{font-size:14px;font-weight:700;color:#e8eaf0;margin:20px 0 10px;display:flex;align-items:center;gap:6px}
+.detail-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(30,42,74,0.3);font-size:13px}
+.detail-row .k{color:#7a8bb5}
+.detail-row .v{color:#e8eaf0;font-weight:600}
+.detail-row .v.gold{color:#fbbf24}
+
+.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);padding:10px 24px;border-radius:8px;font-size:13px;font-weight:600;z-index:300;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast.show{opacity:1}
+.toast.success{background:rgba(74,222,128,0.15);color:#4ade80;border:1px solid rgba(74,222,128,0.3)}
+.toast.error{background:rgba(248,113,113,0.15);color:#f87171;border:1px solid rgba(248,113,113,0.3)}
+.toast.info{background:rgba(96,165,250,0.15);color:#60a5fa;border:1px solid rgba(96,165,250,0.3)}
+.pwd-tips{font-size:11px;color:#4a5578;margin-top:8px;text-align:center}
+.setup-page{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+.setup-box{width:100%;max-width:460px;background:linear-gradient(145deg,#141929,#0f1422);border:1px solid #1e2a4a;border-radius:16px;overflow:hidden}
+.setup-header{text-align:center;padding:30px 20px 20px;background:linear-gradient(135deg,#1a1f35,#0d1225);border-bottom:1px solid #1e2a4a}
+.setup-header .logo{font-size:28px;margin-bottom:6px}
+.setup-header h2{font-size:20px;font-weight:700;color:#fbbf24}
+.setup-header p{font-size:12px;color:#7a8bb5;margin-top:4px}
+.setup-body{padding:20px;text-align:left;font-size:13px;color:#7a8bb5;line-height:2.2}
+.setup-body a{color:#4ade80}
+.setup-body code{color:#fbbf24;background:rgba(251,191,36,0.08);padding:1px 6px;border-radius:4px;font-size:12px}
+.setup-body .warn{color:#f87171;margin-top:12px}
+.loading{display:inline-block;width:16px;height:16px;border:2px solid rgba(74,222,128,0.3);border-top-color:#4ade80;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.match-list{background:linear-gradient(145deg,#141929,#0f1422);border:1px solid #1e2a4a;border-radius:10px;overflow:hidden}
+.match-item{display:flex;align-items:center;justify-content:space-between;padding:12px;border-bottom:1px solid rgba(30,42,74,0.3);font-size:12px}
+.match-item:last-child{border-bottom:none}
+.match-item-info{flex:1}
+.match-item-info .league{color:#7a8bb5;font-size:11px;margin-bottom:2px}
+.match-item-info .teams{color:#e8eaf0;font-weight:600}
+.match-item-info .mstatus{font-size:11px;margin-top:2px}
+.match-item-actions{display:flex;gap:6px}
+.no-matches{text-align:center;padding:30px;color:#4a5578;font-size:13px}
+
+/* ===== 客服聊天 ===== */
+.chat-fab{position:fixed;bottom:20px;right:20px;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#4ade80,#22c55e);color:#0a0e17;font-size:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(74,222,128,0.4);z-index:200;transition:transform .2s}
+.chat-fab:hover{transform:scale(1.1)}
+.chat-fab .badge{position:absolute;top:-2px;right:-2px;background:#f87171;color:#fff;font-size:10px;min-width:18px;height:18px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:700}
+.chat-popup{position:fixed;bottom:80px;right:20px;width:360px;max-width:calc(100vw - 40px);height:480px;max-height:calc(100vh - 120px);background:#141929;border:1px solid #1e2a4a;border-radius:16px;display:flex;flex-direction:column;z-index:201;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.5)}
+.chat-popup.hide{display:none}
+.chat-head{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:linear-gradient(135deg,#1a1f35,#0d1225);border-bottom:1px solid #1e2a4a}
+.chat-head h3{font-size:14px;color:#fff;font-weight:700}
+.chat-head .close{font-size:18px;color:#7a8bb5;cursor:pointer;line-height:1}
+.chat-msgs{flex:1;overflow-y:auto;padding:12px 16px;display:flex;flex-direction:column;gap:8px}
+.chat-msg{max-width:80%;padding:8px 12px;border-radius:12px;font-size:13px;line-height:1.5;word-break:break-all}
+.chat-msg.user{align-self:flex-end;background:linear-gradient(135deg,#4ade80,#22c55e);color:#0a0e17;border-bottom-right-radius:4px}
+.chat-msg.admin{align-self:flex-start;background:#1e2a4a;color:#e8eaf0;border-bottom-left-radius:4px}
+.chat-msg.sys{align-self:center;background:transparent;color:#4a5578;font-size:11px;padding:4px}
+.chat-msg .time{font-size:10px;opacity:.6;margin-top:2px}
+.chat-input-row{display:flex;gap:8px;padding:10px 12px;border-top:1px solid #1e2a4a;background:#0d1225}
+.chat-input-row input{flex:1;padding:8px 12px;background:#0a0e17;border:1px solid #1e2a4a;border-radius:8px;color:#e8eaf0;font-size:13px;outline:none}
+.chat-input-row input:focus{border-color:#4ade80}
+.chat-input-row button{padding:8px 14px;background:linear-gradient(135deg,#4ade80,#22c55e);color:#0a0e17;border:none;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer}
+.chat-quick{display:flex;gap:6px;padding:6px 12px;border-top:1px solid #1e2a4a;background:#0d1225;flex-wrap:wrap}
+.chat-quick button{padding:4px 10px;font-size:11px;background:#1e2a4a;color:#7a8bb5;border:1px solid #2a3a6a;border-radius:6px;cursor:pointer;white-space:nowrap}
+.chat-quick button:hover{color:#4ade80;border-color:#4ade80}
+.chat-login-hint{text-align:center;padding:12px;font-size:12px;color:#4a5578}
+.chat-login-hint a{color:#4ade80;cursor:pointer}
+
+/* admin chat */
+.admin-chat-list{max-height:300px;overflow-y:auto}
+.admin-chat-item{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid #1e2a4a;cursor:pointer;transition:background .15s}
+.admin-chat-item:hover{background:rgba(74,222,128,0.05)}
+.admin-chat-item .name{font-size:13px;color:#e8eaf0;font-weight:600}
+.admin-chat-item .preview{font-size:11px;color:#4a5578;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.admin-chat-item .unread{background:#f87171;color:#fff;font-size:10px;min-width:18px;height:18px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:700}
+.admin-chat-detail{display:none;flex-direction:column;height:360px;border:1px solid #1e2a4a;border-radius:10px;overflow:hidden}
+.admin-chat-detail.show{display:flex}
+
+</style>
+
+<meta name="description" content="Ai篮势 - 专业篮球赛事分析平台">
+<meta name="theme-color" content="#0a0e17">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Ai篮势">
+<meta property="og:title" content="Ai篮势 - 专业篮球赛事分析平台">
+<meta property="og:description" content="每日NBA/WNBA/西篮联/德篮联赛事专业分析推荐">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bb-basketball.web.app">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+</head>
+<body>
+<div class="toast" id="toast"></div>
+
+<!-- Firebase 未配置提示 -->
+<div class="setup-page" id="setupOverlay" style="display:none">
+<div class="setup-box">
+<div class="setup-header">
+<div class="logo">⚙️</div>
+<h2>Firebase 配置</h2>
+<p>系统需要连接数据库才能使用</p>
+</div>
+<div class="setup-body">
+<p><b>第1步：</b>前往 <a href="https://console.firebase.google.com/" target="_blank">Firebase 控制台</a> 创建项目</p>
+<p><b>第2步：</b>点击「添加应用」→ 选择 Web → 注册应用</p>
+<p><b>第3步：</b>复制 <code>firebaseConfig</code> 配置对象</p>
+<p><b>第4步：</b>创建 Firestore 数据库（选测试模式）</p>
+<p><b>第5步：</b>将配置填入代码中的 <code>firebaseConfig</code> 变量</p>
+<p class="warn">⚠️ 配置完成后刷新页面即可使用</p>
+</div>
+</div>
+</div>
+
+<!-- 认证页 -->
+<div class="auth-page" id="authPage">
+<div class="auth-box">
+<div class="auth-header">
+<div class="logo">🏀</div>
+<h2>Ai篮势</h2>
+<p>AI预测引擎，为您提供专业的分析</p>
+</div>
+<div class="auth-body">
+<div class="auth-tabs">
+<div class="auth-tab active" onclick="switchTab('login')">登录</div>
+<div class="auth-tab" onclick="switchTab('register')">注册</div>
+</div>
+<div class="auth-form active" id="loginForm">
+<div class="form-group"><label>账号</label><input class="form-input" id="loginUser" type="text" placeholder="用户名 / 手机号"></div>
+<div class="form-group"><label>密码</label><input class="form-input" id="loginPwd" type="password" placeholder="输入密码"></div>
+<div class="form-error" id="loginErr"></div>
+<button class="btn btn-primary" onclick="doLogin()">登 录</button>
+<div class="form-footer">还没有账号？<a onclick="switchTab('register')">立即注册</a></div>
+</div>
+<div class="auth-form" id="registerForm">
+<div class="form-group"><label>用户名</label><input class="form-input" id="regUser" type="text" placeholder="4-16位字母/数字"></div>
+<div class="form-group"><label>手机号</label><input class="form-input" id="regPhone" type="tel" placeholder="11位手机号"></div>
+<div class="form-group"><label>密码</label><input class="form-input" id="regPwd" type="password" placeholder="6-20位密码"></div>
+<div class="form-group"><label>确认密码</label><input class="form-input" id="regPwd2" type="password" placeholder="再次输入密码"></div>
+<div class="form-error" id="regErr"></div>
+<button class="btn btn-primary" onclick="doRegister()">注 册</button>
+<div class="form-footer">已有账号？<a onclick="switchTab('login')">去登录</a></div>
+<div class="pwd-tips">注册即送8积分 · 每日签到+1 · 查看分析消耗1积分</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 主看板 -->
+<div id="dashPage" style="display:none">
+<div class="topbar">
+<div class="topbar-left"><span class="logo-small">🏀</span><span class="title">Ai篮势</span></div>
+<div class="topbar-right">
+<button class="btn-checkin active" id="checkinBtn" onclick="doCheckIn()">📅 签到+1</button>
+<button class="btn-addcoin hide" id="addcoinBtn" onclick="goAddCoin()">💰 获取积分</button>
+<div class="coin-display"><span class="coin-icon">🪙</span><span class="coin-num" id="coinNum">0</span><span class="coin-label">积分</span></div>
+<div class="user-info"><div class="user-avatar" id="avatarLetter">U</div><span class="user-name" id="displayUser">用户</span></div>
+<button class="btn-logout" onclick="doLogout()">退出</button>
+</div>
+</div>
+<div class="header">
+<h1>Ai篮势</h1>
+<div class="date" id="headerDate">加载中...</div>
+<div class="update">AI预测引擎 · 数据驱动分析</div>
+</div>
+<div class="container">
+<div id="matchCards"></div>
+<div id="summaryCard"></div>
+<div class="footer">Ai篮势 · AI预测引擎<br><a href="javascript:location.reload()">刷新页面</a></div>
+</div>
+</div>
+
+
+<!-- 客服聊天浮窗 -->
+<div class="chat-fab" id="chatFab" onclick="toggleChat()">💬<span class="badge hide" id="chatBadge"></span></div>
+<div class="chat-popup hide" id="chatPopup">
+<div class="chat-head"><h3>💬 在线客服</h3><span class="close" onclick="toggleChat()">✕</span></div>
+<div class="chat-msgs" id="chatMsgs"></div>
+<div class="chat-quick">
+<button onclick="sendQuick('积分获取')">💰 积分获取</button>
+<button onclick="sendQuick('每日签到')">✅ 每日签到</button>
+<button onclick="sendQuick('解锁赛事')">🔓 解锁赛事</button>
+</div>
+<div class="chat-input-row"><input id="chatInput" placeholder="输入消息..." onkeydown="if(event.key==='Enter')sendChat()"><button onclick="sendChat()">发送</button></div>
+</div>
+
+
+<!-- 后台管理 -->
+<div id="adminPage" class="admin-page" style="display:none">
+<div class="admin-topbar">
+<h2>⚙️ 后台管理</h2>
+<div style="display:flex;gap:8px"><button class="btn-gold" onclick="enterAdminDash()">返回看板</button><button class="btn-logout" onclick="doLogout()">退出</button></div>
+</div>
+<div class="admin-container">
+<div class="stat-grid">
+<div class="stat-card"><div class="num" id="adminTotalUsers">0</div><div class="label">注册会员</div></div>
+<div class="stat-card"><div class="num" id="adminTotalCoins">0</div><div class="label">累计发放积分</div></div>
+<div class="stat-card"><div class="num" id="adminTotalUnlocks">0</div><div class="label">累计解锁次数</div></div>
+</div>
+<div class="admin-section-title">⚙️ 前端设置</div>
+<div style="background:linear-gradient(145deg,#141929,#0f1422);border:1px solid #1e2a4a;border-radius:10px;padding:16px">
+<div class="form-group"><label style="display:block;font-size:12px;color:#7a8bb5;margin-bottom:6px">「获取积分」跳转链接</label>
+<input class="form-input" id="adminCoinLink" type="text" placeholder="例如：https://t.me/your_channel" style="margin-bottom:8px">
+<div style="font-size:11px;color:#4a5578;margin-bottom:10px">设置后，前端顶部会显示「💰 获取积分」按钮，点击跳转到此链接。留空则不显示按钮。</div>
+<button class="btn-gold" onclick="saveCoinLink()">保存链接</button>
+</div>
+</div>
+<div class="admin-section-title">📝 赛事数据 <button class="btn-sm btn-primary" style="font-size:11px" onclick="showImportMatches()">📋 导入赛程</button><button class="btn-sm btn-primary" style="font-size:11px" onclick="autoSetConfirmAt()">⏰设置自动确认</button> <button class="btn-gold" onclick="adminSyncGitHub()">🔄同步数据</button> <button class="btn-danger" onclick="cleanupOldMatches()">🗑️清理过期赛事</button></div>
+<div id="matchAdminList" class="match-list"><div class="no-matches">加载中...</div></div>
+<div id="importMatchModal" class="modal-overlay" style="display:none"><div class="modal-box" style="max-width:600px"><div class="modal-header"><span>📋 导入赛程JSON</span><span class="modal-close" onclick="hideImportMatches()">✕</span></div><div class="modal-body"><textarea id="importMatchJson" style="width:100%;height:300px;background:#0a0e17;color:#e8eaf0;border:1px solid #1e2a4a;border-radius:8px;padding:10px;font-size:12px;font-family:monospace" placeholder="粘贴赛程JSON数组..."></textarea><div style="margin-top:8px;font-size:11px;color:#4a5578">格式：[{id, league, leagueTag, status, time, homeTeam, awayTeam, vsText, locked, lockId, lineupConfirmed, odds, injuries, lineups, analysis, recommendText, skipReason, recommend, date, order}, ...]</div></div><div class="modal-footer"><button class="btn btn-primary" onclick="importMatches()">确认导入</button><button class="btn-sm" style="background:#1e2a4a;color:#7a8bb5;border:none;padding:8px 16px;border-radius:8px;cursor:pointer" onclick="hideImportMatches()">取消</button></div></div></div>
+
+<div class="admin-section-title">💬 客服消息 <span id="adminChatBadge" style="background:#f87171;color:#fff;font-size:10px;padding:1px 6px;border-radius:8px;display:none"></span></div>
+<div style="background:linear-gradient(145deg,#141929,#0f1422);border:1px solid #1e2a4a;border-radius:10px;overflow:hidden">
+<div id="adminChatList" class="admin-chat-list"><div style="padding:16px;text-align:center;color:#4a5578;font-size:12px">加载中...</div></div>
+<div id="adminChatDetail" class="admin-chat-detail">
+<div class="chat-head" onclick="closeAdminChat()"><h3>💬 回复 <span id="adminChatUser"></span></h3><span class="close">← 返回</span></div>
+<div class="chat-msgs" id="adminChatMsgs"></div>
+<div class="chat-input-row"><input id="adminChatInput" placeholder="输入回复..." onkeydown="if(event.key==='Enter')adminSendChat()"><button onclick="adminSendChat()">回复</button></div>
+</div>
+</div>
+
+<div class="admin-section-title">👥 会员列表</div>
+<div style="overflow-x:auto">
+<table class="member-table">
+<thead><tr><th>用户名</th><th>手机号</th><th>剩余积分</th><th>累计获得</th><th>累计消耗</th><th>注册时间</th><th>操作</th></tr></thead>
+<tbody id="memberTbody"></tbody>
+</table>
+</div>
+<div class="admin-section-title" style="margin-top:24px">📋 会员详情 <span id="detailUser" style="color:#fbbf24"></span></div>
+<div id="detailPanel" style="display:none;background:linear-gradient(145deg,#141929,#0f1422);border:1px solid #1e2a4a;border-radius:10px;padding:16px">
+<div id="detailInfo"></div>
+<div class="admin-section-title" style="margin-top:12px">积分记录</div>
+<div id="detailHistory"></div>
+</div>
+</div>
+</div>
+
+<!-- 加积分弹窗 -->
+<div class="modal-mask" id="addCoinModal">
+<div class="modal" style="max-width:340px">
+<div class="modal-header"><div class="icon">🪙</div><h3>手动加积分</h3><div class="sub" id="addCoinUser"></div></div>
+<div class="modal-body">
+<div class="form-group"><label>增加积分数量</label><input class="form-input" id="addCoinAmount" type="number" value="10" min="1" placeholder="输入数量"></div>
+<div class="form-group"><label>备注</label><input class="form-input" id="addCoinNote" type="text" placeholder="例如：活动奖励"></div>
+</div>
+<div class="modal-footer">
+<button class="btn btn-primary" style="max-width:160px" onclick="confirmAddCoin()">确认添加</button><br><br>
+<button class="btn-close-modal" onclick="hideAddCoinModal()">取消</button>
+</div>
+</div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+// ===== Firebase 配置（必填）=====
+// 在 Firebase 控制台创建项目后，将配置填入下方
+const firebaseConfig = {
+ apiKey: "AIzaSyBtrVl6W78M-rWFlkxqdXY9RBoaUp-GGrI",
+ authDomain: "bb-basketball.firebaseapp.com",
+ projectId: "bb-basketball",
+ storageBucket: "bb-basketball.firebasestorage.app",
+ messagingSenderId: "241292414989",
+ appId: "1:241292414989:web:d0a745c1d3564c25d74cd4"
+};
+
+let db = null, fbReady = false;
+function initFirebase(){
+ try{
+ if(!firebaseConfig.apiKey||firebaseConfig.apiKey===""){return false}
+ firebase.initializeApp(firebaseConfig);
+ db=firebase.firestore();
+ fbReady=true;
+ return true;
+ }catch(e){console.error('Firebase初始化失败:',e);return false}
+}
+
+const SESSION_KEY='bb_session',ADMIN_USER='admin',ADMIN_PWD='admin888';
+const INIT_COINS=8,UNLOCK_COST=1,CHECKIN_REWARD=1;
+
+// ===== 临时积分凌晨清零 =====
+async function clearTempCoinsIfNeeded(u,session){
+ const today=todayStr();
+ if(u.lastClearDate!==today){
+  u.tempCoins=0;
+  u.coins=u.permanentCoins;
+  u.lastClearDate=today;
+  try{await fbUpdateUser(session.user,{tempCoins:0,coins:u.permanentCoins,lastClearDate:today})}catch(e){console.error('清零临时积分失败:',e)}
+ }
+}
+
+// ===== 工具函数 =====
+function getSession(){try{return JSON.parse(localStorage.getItem(SESSION_KEY))}catch{return null}}
+function saveSession(s){localStorage.setItem(SESSION_KEY,JSON.stringify(s))}
+function clearSession(){localStorage.removeItem(SESSION_KEY)}
+function fmtDate(ts){if(!ts)return'-';const d=new Date(ts);return(d.getMonth()+1)+'/'+d.getDate()+' '+d.getHours()+':'+String(d.getMinutes()).padStart(2,'0')}
+function fmtFull(ts){if(!ts)return'-';const d=new Date(ts);return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()+' '+d.getHours()+':'+String(d.getMinutes()).padStart(2,'0')}
+function todayStr(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+
+// ===== 自动同步jsonblob数据到Firestore（支持CORS代理，中国可用）=====
+const _TEAM_LOGOS={
+ '波恩':'https://s.coze.cn/image/qkwud18lvLg/',
+ '拜仁慕尼黑':'https://s.coze.cn/image/qDjpi97j7Uw/',
+ '巴塞罗那':'https://s.coze.cn/image/b_f8tUDPPqE/',
+ '穆尔西亚天主大学':'https://s.coze.cn/image/NJvw6gNNEgE/',
+ '班堡':'https://s.coze.cn/image/MO0BDV7S7S4/',
+ '柏林阿尔巴':'https://s.coze.cn/image/mLdARCklFrs/',
+ '特内里费':'https://s.coze.cn/image/gw3Fv2_YEME/',
+ '皇家马德里':'https://s.coze.cn/image/K99gYufvdd8/',
+ '印第安纳狂热':'https://s.coze.cn/image/s9msJaBl39U/',
+ '亚特兰大梦想':'https://s.coze.cn/image/ThP3HU7nkEw/',
+ '明尼苏达天猫':'https://s.coze.cn/image/U4XAYfLt-vk/',
+ '金州女武神':'https://s.coze.cn/image/_IK0EwA4mUw/',
+ '圣安东尼奥马刺':'https://s.coze.cn/image/a0HaYRpcEYg/',
+ '纽约尼克斯':'https://s.coze.cn/image/YEtshfMvyhU/',
+ '拉斯维加斯王牌':'https://s.coze.cn/image/Lait9UtR4Dk/',
+ '纽约自由人':'https://s.coze.cn/image/w6Q9hYNh-IY/',
+ '芝加哥天空':'https://s.coze.cn/image/WN_GKSnSHLk/',
+ '西雅图风暴':'https://s.coze.cn/image/ZhkYP9nXp7w/',
+ '康涅狄格太阳':'https://s.coze.cn/image/NmJ1oep2PFU/',
+ '达拉斯飞马':'https://s.coze.cn/image/HnPr-4Bce10/',
+ '菲尼克斯水星':'https://s.coze.cn/image/yrV2QrKVwU8/',
+ '波特兰火焰':'https://s.coze.cn/image/WOpDGVqHWkk/',
+ '洛杉矶火花':'https://s.coze.cn/image/hrteRXk5LgM/',
+ '华盛顿神秘人':'https://s.coze.cn/image/fqnaztWlLvk/',
+ '毕尔巴鄂':'https://s.coze.cn/image/v5-axZjoFg4/',
+ '巴伦西亚':'https://s.coze.cn/image/ZGOR3n-DQwo/',
+ '约文图特':'https://s.coze.cn/image/yprx55Cumus/',
+ '巴斯克尼亚':'https://s.coze.cn/image/kNn3TDvGldk/',
+ '阿尔巴柏林':'https://s.coze.cn/image/7WOwe3QzuEA/'
+};
+function teamLogo(name){
+ const url=_DYNAMIC_LOGOS[name]||_TEAM_LOGOS[name];
+ return url?'<img class="team-logo" src="'+url+'" alt="'+name+'" onerror="this.style.display=\'none\'">':'';
+}
+
+// Dynamic logos: load from Firestore, merge with hardcoded _TEAM_LOGOS
+let _DYNAMIC_LOGOS={};
+async function loadDynamicLogos(){
+ if(!fbReady||!db)return;
+ try{
+ const doc=await db.collection('settings').doc('teamLogos').get();
+ if(doc.exists){
+ _DYNAMIC_LOGOS=doc.data().logos||{};
+ console.log('[LOGOS] Loaded',Object.keys(_DYNAMIC_LOGOS).length,'dynamic logos from Firestore');
+ }
+ }catch(e){console.log('[LOGOS] Failed to load dynamic logos:',e)}
+}
+
+// 清理已结束超过24小时的赛事（前后端都销毁）
+async function cleanupOldMatches(){
+ if(!fbReady)return;
+ try{
+ const now=Date.now();
+ const snapshot=await db.collection('matches').get();
+ const toDelete=[];
+ snapshot.docs.forEach(d=>{
+ const m=d.data();
+ if(m.ended){
+ const endedAt=m.endedAt||0;
+ if(endedAt>0&&now-endedAt>24*3600*1000){
+ toDelete.push(d.ref);
+ }else if(!endedAt&&m.date){
+ // 没有endedAt的已结束赛事，如果日期是前天或更早就删除
+ const dayBeforeYesterday=new Date(Date.now()-2*86400000);
+ const dbStr2=dayBeforeYesterday.getFullYear()+'-'+String(dayBeforeYesterday.getMonth()+1).padStart(2,'0')+'-'+String(dayBeforeYesterday.getDate()).padStart(2,'0');
+ if(m.date<=dbStr2)toDelete.push(d.ref);
+ }
+ }
+ });
+ if(toDelete.length===0){showToast('没有需要清理的赛事','info');return}
+ if(!confirm('将删除 '+toDelete.length+' 场已过期赛事，确认？'))return;
+ const batch=db.batch();
+ toDelete.forEach(ref=>batch.delete(ref));
+ await batch.commit();
+ showToast('已清理 '+toDelete.length+' 场过期赛事','success');
+ if(typeof refreshMatchList==='function')refreshMatchList();
+ }catch(e){console.error('清理失败:',e);showToast('清理失败','error')}
+}
+
+// 管理员手动同步jsonblob数据到Firestore
+async function adminSyncGitHub(){
+ if(!fbReady)return;
+ try{
+ showToast('正在同步GitHub数据...','info');
+ const ghData=await fetchGitHubData();
+ if(!ghData||ghData.length===0){showToast('无法获取GitHub数据','error');return}
+ let deletedIds=[];
+ try{const delDoc=await db.collection('settings').doc('deletedMatchIds').get();if(delDoc.exists)deletedIds=delDoc.data().ids||[]}catch(e){}
+ const now=Date.now();const batch=db.batch();let count=0;
+ ghData.forEach(m=>{
+ if(!m.id||deletedIds.includes(m.id))return;
+ if(m.ended&&(m.endedAt||0)>0&&now-(m.endedAt||0)>24*3600*1000)return;
+ batch.set(db.collection('matches').doc(m.id),m,{merge:true});count++;
+ });
+ await batch.commit();
+ showToast('已同步 '+count+' 场赛事','success');
+ refreshMatchList();if(typeof loadAndRender==='function')loadAndRender();
+ }catch(e){console.error('同步失败:',e);showToast('同步失败','error')}
+}
+
+function showToast(msg,type='info'){const t=document.getElementById('toast');t.textContent=msg;t.className='toast '+type+' show';setTimeout(()=>t.className='toast',2500)}
+function switchTab(tab){document.querySelectorAll('.auth-tab').forEach((el,i)=>{el.classList.toggle('active',(tab==='login'&&i===0)||(tab==='register'&&i===1))});document.getElementById('loginForm').classList.toggle('active',tab==='login');document.getElementById('registerForm').classList.toggle('active',tab==='register');document.getElementById('loginErr').classList.remove('show');document.getElementById('regErr').classList.remove('show')}
+function showPage(p){document.getElementById('setupOverlay').style.display='none';document.getElementById('authPage').style.display=p==='auth'?'flex':'none';document.getElementById('dashPage').style.display=p==='dash'?'block':'none';document.getElementById('adminPage').style.display=p==='admin'?'block':'none'}
+function showSetup(){document.getElementById('setupOverlay').style.display='flex';document.getElementById('authPage').style.display='none';document.getElementById('dashPage').style.display='none';document.getElementById('adminPage').style.display='none'}
+
+// ===== 密码哈希 =====
+async function hashPwd(pwd){
+ const encoded=new TextEncoder().encode(pwd+'__bb_salt_2026__');
+ const hashBuffer=await crypto.subtle.digest('SHA-256',encoded);
+ return Array.from(new Uint8Array(hashBuffer)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+// ===== Firestore 操作 =====
+async function fbGetUser(username){if(!fbReady)return null;const doc=await db.collection('users').doc(username).get();return doc.exists?{name:doc.id,...doc.data()}:null}
+async function fbSaveUser(username,data){if(!fbReady)return;await db.collection('users').doc(username).set(data)}
+async function fbUpdateUser(username,updates){if(!fbReady)return;await db.collection('users').doc(username).update(updates)}
+async function fbDeleteUser(username){if(!fbReady)return;await db.collection('users').doc(username).delete()}
+async function fbGetAllUsers(){if(!fbReady)return[];const s=await db.collection('users').get();return s.docs.map(d=>({name:d.id,...d.data()}))}
+async function fbGetCoinLink(){if(!fbReady)return'';const doc=await db.collection('settings').doc('coinLink').get();return doc.exists?(doc.data().url||''):''}
+async function fbSaveCoinLink(url){if(!fbReady)return;if(url){await db.collection('settings').doc('coinLink').set({url})}else{await db.collection('settings').doc('coinLink').delete()}}
+
+async function fbCheckUserExists(username,phone){
+ if(!fbReady)return{userExists:false,phoneExists:false};
+ const userDoc=await db.collection('users').doc(username).get();
+ if(userDoc.exists)return{userExists:true,phoneExists:false};
+ const phoneQuery=await db.collection('users').where('phone','==',phone).get();
+ if(!phoneQuery.empty)return{userExists:false,phoneExists:true};
+ return{userExists:false,phoneExists:false}
+}
+
+// ===== 注册 =====
+async function doRegister(){
+ const user=document.getElementById('regUser').value.trim(),phone=document.getElementById('regPhone').value.trim(),pwd=document.getElementById('regPwd').value,pwd2=document.getElementById('regPwd2').value,errEl=document.getElementById('regErr');
+ if(!user||user.length<4||user.length>16){errEl.textContent='用户名需4-16位';errEl.classList.add('show');return}
+ if(!/^1\d{10}$/.test(phone)){errEl.textContent='手机号格式不正确';errEl.classList.add('show');return}
+ if(pwd.length<6||pwd.length>20){errEl.textContent='密码需6-20位';errEl.classList.add('show');return}
+ if(pwd!==pwd2){errEl.textContent='两次密码不一致';errEl.classList.add('show');return}
+ try{
+ const check=await fbCheckUserExists(user,phone);
+ if(check.userExists){errEl.textContent='用户名已存在';errEl.classList.add('show');return}
+ if(check.phoneExists){errEl.textContent='手机号已注册';errEl.classList.add('show');return}
+ const hashedPwd=await hashPwd(pwd);
+ const userData={pwd:hashedPwd,phone,coins:INIT_COINS,tempCoins:INIT_COINS,permanentCoins:0,totalEarned:INIT_COINS,totalSpent:0,unlocked:[],history:[{type:'earn',desc:'注册赠送',amount:INIT_COINS,time:Date.now()}],lastCheckIn:'',lastClearDate:todayStr(),createdAt:Date.now()};
+ await fbSaveUser(user,userData);
+ showToast('注册成功！赠送'+INIT_COINS+'积分 🎉','success');
+ const session={user,coins:INIT_COINS,unlocked:[]};saveSession(session);
+ setTimeout(()=>enterDashboard(session),500);
+ }catch(e){console.error('注册失败:',e);errEl.textContent='注册失败，请重试';errEl.classList.add('show')}
+}
+
+// ===== 登录 =====
+async function doLogin(){
+ const user=document.getElementById('loginUser').value.trim(),pwd=document.getElementById('loginPwd').value,errEl=document.getElementById('loginErr');
+ if(!user||!pwd){errEl.textContent='请输入账号和密码';errEl.classList.add('show');return}
+ if(user===ADMIN_USER&&pwd===ADMIN_PWD){saveSession({user:ADMIN_USER,admin:true});showToast('管理员登录成功','success');setTimeout(()=>enterAdmin(),400);return}
+ try{
+ const u=await fbGetUser(user);
+ if(!u){errEl.textContent='账号或密码错误';errEl.classList.add('show');return}
+ const hashedPwd=await hashPwd(pwd);
+ if(u.pwd!==hashedPwd){errEl.textContent='账号或密码错误';errEl.classList.add('show');return}
+ const session={user,coins:u.coins,unlocked:u.unlocked||[]};saveSession(session);
+ showToast('登录成功！','success');setTimeout(()=>enterDashboard(session),400);
+ }catch(e){console.error('登录失败:',e);errEl.textContent='登录失败，请重试';errEl.classList.add('show')}
+}
+
+function doLogout(){clearSession();showPage('auth');if(_chatListener){_chatListener();_chatListener=null};_localMsgs=[];document.getElementById('loginUser').value='';document.getElementById('loginPwd').value='';showToast('已退出','info')}
+
+// ===== 看板 =====
+async function enterDashboard(session){
+ initChat();
+ showPage('dash');
+ try{const u=await fbGetUser(session.user);if(u){u.tempCoins=u.tempCoins??0;u.permanentCoins=u.permanentCoins??u.coins;u.lastClearDate=u.lastClearDate??todayStr();await clearTempCoinsIfNeeded(u,session);session.coins=u.coins;session.unlocked=u.unlocked||[];saveSession(session)}}catch(e){console.error(e)}
+ refreshDash(session);
+}
+
+async function refreshDash(session){
+ document.getElementById('coinNum').textContent=session.coins;
+ try{const cu=await fbGetUser(session.user);session.coins=cu.coins||0;saveSession(session);document.getElementById('coinNum').textContent=session.coins}catch(e){}
+ document.getElementById('avatarLetter').textContent=session.user.charAt(0).toUpperCase();
+ document.getElementById('displayUser').textContent=session.user;
+ updateHeaderDate();
+ const checkinBtn=document.getElementById('checkinBtn');
+ try{const u=await fbGetUser(session.user);if(u&&u.lastCheckIn===todayStr()){checkinBtn.className='btn-checkin done';checkinBtn.textContent='✅ 已签到'}else{checkinBtn.className='btn-checkin active';checkinBtn.textContent='📅 签到+1'}}catch(e){checkinBtn.className='btn-checkin active';checkinBtn.textContent='📅 签到+1'}
+ try{const coinLink=await fbGetCoinLink();const addcoinBtn=document.getElementById('addcoinBtn');addcoinBtn.className=coinLink?'btn-addcoin':'btn-addcoin hide';addcoinBtn.dataset.link=coinLink}catch(e){}
+ try{const matches=await loadMatches();renderMatches(matches,session)}catch(e){console.error('加载赛事失败:',e);document.getElementById('matchCards').innerHTML='<div class="card"><div class="card-body" style="text-align:center;padding:40px;color:#4a5578">暂无赛事数据</div></div>';document.getElementById('summaryCard').innerHTML=''}
+}
+
+// ===== 签到 =====
+async function doCheckIn(){
+ const session=getSession();if(!session||session.admin)return;
+ const today=todayStr();
+ try{
+ const u=await fbGetUser(session.user);if(!u)return;
+ if(u.lastCheckIn===today){showToast('今天已签到过了','info');return}
+ const newTempCoins=(u.tempCoins||0)+CHECKIN_REWARD;
+ const newCoins=u.coins+CHECKIN_REWARD,newEarned=(u.totalEarned||0)+CHECKIN_REWARD;
+ const newHistory=(u.history||[]).slice(0,49);
+ newHistory.unshift({type:'earn',desc:'每日签到(临时)',amount:CHECKIN_REWARD,time:Date.now()});
+ await fbUpdateUser(session.user,{lastCheckIn:today,coins:newCoins,tempCoins:newTempCoins,totalEarned:newEarned,history:newHistory});
+ session.coins=newCoins;saveSession(session);
+ showToast('签到成功！+1积分 🎉','success');refreshDash(session);
+ }catch(e){console.error('签到失败:',e);showToast('签到失败','error')}
+}
+
+function goAddCoin(){const link=document.getElementById('addcoinBtn').dataset.link;if(link)window.open(link,'_blank')}
+
+async function saveCoinLink(){
+ const link=document.getElementById('adminCoinLink').value.trim();
+ try{await fbSaveCoinLink(link);showToast(link?'链接已保存':'链接已清除',link?'success':'info')}catch(e){showToast('保存失败','error')}
+}
+
+// ===== 解锁 =====
+async function unlockCard(cardId){
+ const session=getSession();if(!session||session.admin)return;
+ const matches=await loadMatches();const match=matches.find(m=>m.lockId===cardId);
+ if(match&&match.lineupConfirmed===false){const gt=getGameTime(match);if(Date.now()<gt){showToast('首发未确认，暂不可解锁','error');return}}
+ if(match&&match.recommend!=='pass'){showToast('推荐尚未更新，请等待','error');return}
+ if(session.coins<UNLOCK_COST){showToast('积分不足','error');return}
+ try{
+ const u=await fbGetUser(session.user);if(!u)return;
+ if(u.unlocked&&u.unlocked.includes(cardId))return;
+ if(u.coins<UNLOCK_COST){showToast('积分不足','error');return}
+ const newCoins=u.coins-UNLOCK_COST,newSpent=(u.totalSpent||0)+UNLOCK_COST;
+ // 先扣临时积分，再扣永久积分
+ let newTempCoins=u.tempCoins||0,newPermCoins=u.permanentCoins||0;
+ if(newTempCoins>=UNLOCK_COST){newTempCoins-=UNLOCK_COST}else{newPermCoins-=(UNLOCK_COST-newTempCoins);newTempCoins=0}
+ const newUnlocked=[...(u.unlocked||[]),cardId];
+ const newHistory=(u.history||[]).slice(0,49);
+ newHistory.unshift({type:'spend',desc:'解锁赛事分析',amount:UNLOCK_COST,time:Date.now()});
+ await fbUpdateUser(session.user,{coins:newCoins,tempCoins:newTempCoins,permanentCoins:newPermCoins,totalSpent:newSpent,unlocked:newUnlocked,history:newHistory});
+ session.coins=newCoins;session.unlocked=newUnlocked;saveSession(session);
+ showToast('解锁成功！消耗1积分','success');
+ const freshMatches=await loadMatches();renderMatches(freshMatches,session);
+ }catch(e){console.error('解锁失败:',e);showToast('解锁失败','error')}
+}
+
+function enterAdminDash(){const session=getSession();if(session&&session.admin){enterAdmin();return}enterDashboard(session)}
+
+// ===== 日期动态显示 =====
+function updateHeaderDate(){
+ const now=new Date();const days=['日','一','二','三','四','五','六'];
+ const dateStr=now.getFullYear()+'年'+(now.getMonth()+1)+'月'+now.getDate()+'日 · 星期'+days[now.getDay()];
+ document.getElementById('headerDate').textContent=dateStr;
+}
+
+// ===== 从Firestore加载当日赛事 =====
+// ===== 从GitHub拉取最新赛事数据 =====
+const GH_REPO='bb9888lihua-ops/bb-data';
+async function fetchGitHubData(){
+ // Step1: 用GitHub API获取最新commit hash（公开repo无需token）
+ let sha=null;
+ try{
+  const api='https://api.github.com/repos/'+GH_REPO+'/commits?path=matches.json&per_page=1';
+  const ar=await fetch(api,{signal:AbortSignal.timeout(5000)});
+  if(ar.ok){const ac=await ar.json();if(ac.length>0)sha=ac[0].sha}
+ }catch(e){console.log('[GH] API failed:',e.message)}
+ // Step2: 用commit hash拉数据（jsdelivr对commit hash URL不缓存旧数据）
+ const urls=[];
+ if(sha)urls.push('https://cdn.jsdelivr.net/gh/'+GH_REPO+'@'+sha+'/matches.json');
+ urls.push('https://cdn.jsdelivr.net/gh/'+GH_REPO+'@main/matches.json?_t='+Date.now());
+ for(const url of urls){
+  try{
+   const r=await fetch(url,{cache:'no-store',signal:AbortSignal.timeout(8000)});
+   if(!r.ok)continue;
+   const data=await r.json();
+   if(Array.isArray(data)&&data.length>0){
+    console.log('[GH] Loaded from',url.substring(0,60)+'...');
+    return data;
+   }
+  }catch(e){continue}
+ }
+ return null;
+}
+
+// ===== 获取比赛时间戳（北京时间）=====
+function getGameTime(m){
+ if(!m.date||!m.time)return 0;
+ const tMatch=String(m.time).match(/(\d{1,2}):(\d{2})/);
+ if(!tMatch)return 0;
+ const h=parseInt(tMatch[1]),mi=parseInt(tMatch[2]);
+ const d=new Date(m.date+'T'+String(h).padStart(2,'0')+':'+String(mi).padStart(2,'0')+':00+08:00');
+ return isNaN(d.getTime())?0:d.getTime();
+}
+// loadEmbedData已移除 - 数据从Firestore直接读取
+async function loadMatches(){
+ if(!fbReady){console.log('[LM] fbReady=false');return[]};
+ const today=todayStr();
+ try{
+ // 改用 .get() 全部读取 + JS端过滤，避免 .where() 查询依赖索引
+ const snapshot=await db.collection('matches').get();
+ console.log('[LM] Firestore raw docs:',snapshot.docs.length);
+ let matches=snapshot.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.order||0)-(b.order||0));
+ const now=Date.now();
+ // 只保留有效日期范围（前天~明天）的赛事
+ const dayAfter=new Date(Date.now()+86400000);const daStr=dayAfter.getFullYear()+'-'+String(dayAfter.getMonth()+1).padStart(2,'0')+'-'+String(dayAfter.getDate()).padStart(2,'0');
+ const dayBefore=new Date(Date.now()-86400000);const dbStr=dayBefore.getFullYear()+'-'+String(dayBefore.getMonth()+1).padStart(2,'0')+'-'+String(dayBefore.getDate()).padStart(2,'0');
+ const twoDaysBefore=new Date(Date.now()-2*86400000);const tdbStr=twoDaysBefore.getFullYear()+'-'+String(twoDaysBefore.getMonth()+1).padStart(2,'0')+'-'+String(twoDaysBefore.getDate()).padStart(2,'0');
+ console.log('[LM] date filter:',today,daStr,dbStr,tdbStr);
+ console.log('[LM] matches before date filter:',matches.map(m=>m.id+' d='+m.date));
+ matches=matches.filter(m=>m.date===today||m.date===daStr||m.date===dbStr||m.date===tdbStr);
+ console.log('[LM] after date filter:',matches.length);
+ // 24小时自动销毁：过滤掉已结束超过24小时的赛事
+ matches=matches.filter(m=>{
+ if(!m.ended)return true;
+ const endedAt=m.endedAt||0;
+ if(endedAt>0&&now-endedAt>24*3600*1000)return false;
+ if(m.date&&m.date<today)return false;
+ return true;
+ });
+ // ===== 同步GitHub最新数据到Firestore =====
+ let syncedFromData=false;
+ // 0. 从GitHub拉最新数据（Agent全自动推送到GitHub，jsdelivr CDN中国可达）
+ try{
+  const ghData=await fetchGitHubData();
+  if(ghData&&ghData.length>0){
+   let deletedIds=[];
+   try{const delDoc=await db.collection('settings').doc('deletedMatchIds').get();if(delDoc.exists)deletedIds=delDoc.data().ids||[]}catch(e){}
+   const ghAll=ghData.filter(m=>m.id&&!deletedIds.includes(m.id));
+   if(ghAll.length>0){
+    const batch=db.batch();
+    let syncCount=0;
+    ghAll.forEach(m=>{batch.set(db.collection('matches').doc(m.id),m,{merge:true});syncCount++});
+    if(syncCount>0){
+     await batch.commit();
+     console.log('[LM] 从GitHub同步了',syncCount,'场赛事（最新数据）');
+     ghAll.forEach(gm=>{const idx=matches.findIndex(m=>m.id===gm.id);if(idx>=0)matches[idx]={...matches[idx],...gm}});
+     syncedFromData=true;
+    }
+   }
+  }
+ }catch(e){console.log('[LM] GitHub同步跳过:',e.message)}
+ // ===== 自动确认首发（基于confirmAt时间）=====
+ const toConfirm=matches.filter(m=>m.lineupConfirmed===false&&m.confirmAt&&now>=m.confirmAt);
+ if(toConfirm.length>0){
+ const batch=db.batch();
+ toConfirm.forEach(m=>{m.lineupConfirmed=true;batch.update(db.collection('matches').doc(m.id),{lineupConfirmed:true})});
+ try{await batch.commit()}catch(e){console.error('自动确认失败:',e)}
+ }
+ // ===== 纠正过早确认（confirmAt还没到就lineupConfirmed=true且无推荐）=====
+ const prematureConfirm=matches.filter(m=>m.lineupConfirmed===true&&m.confirmAt&&now<m.confirmAt&&m.recommend!=='pass');
+ if(prematureConfirm.length>0){
+ const batch=db.batch();
+ prematureConfirm.forEach(m=>{m.lineupConfirmed=false;batch.update(db.collection('matches').doc(m.id),{lineupConfirmed:false})});
+ try{await batch.commit();console.log('[LM] 纠正了',prematureConfirm.length,'场过早确认的赛事')}catch(e){console.error('纠正失败:',e)}
+ }
+ if(matches.length===0){
+ console.log('[LM] Firestore和GitHub均无数据，显示空状态');
+ }
+ // ===== 数据铁律自动校验 =====
+ validateAllMatches(matches, 'loadMatches');
+ return matches;
+ }catch(e){
+ console.error('加载赛事失败:',e);
+ console.error('Fallback: 无法加载赛事数据');
+ return [];
+ }
+}
+
+// ===== 构建单个卡片HTML =====
+function buildCardHtml(m,unlocked,coins){
+ const tagClass='tag-'+(m.leagueTag||'nba');
+ const isEnded=m.ended===true;
+ // 时间基准：推断比赛是否已开赛/已结束（解决Firestore数据延迟问题）
+ const gameTime=getGameTime(m);
+ const nowMs=Date.now();
+ const gameStarted=gameTime>0&&nowMs>=gameTime;
+ const gameEnded=gameTime>0&&nowMs>=gameTime+3*3600*1000; // 开赛3小时后视为已结束
+ const effectiveEnded=isEnded||gameEnded; // Firestore标记或时间推断
+ let badgeClass,badgeText;
+ if(effectiveEnded){badgeClass='badge-ended';badgeText='已结束'}
+ else if(m.status==='live'||(gameStarted&&!effectiveEnded)){badgeClass='badge-live';badgeText='进行中'}
+ else{badgeClass='badge-pre';badgeText='赛前'}
+ let header='<div class="card-header"><span class="league-tag '+tagClass+'">'+(m.league||'')+'</span><span class="badge '+badgeClass+'">'+badgeText+'</span>';
+ if(m.locked&&!effectiveEnded)header+='<span class="badge-cost">1🪙</span>';
+ header+='<span class="time">'+(m.time||'')+'</span></div>';
+ // 对阵区域：已结束时显示比分
+ const homeScore=effectiveEnded&&m.homeScore!=null?' <span class="match-score">'+m.homeScore+'</span>':'';
+ const awayScore=effectiveEnded&&m.awayScore!=null?'<span class="match-score">'+m.awayScore+'</span> ':'';
+ let matchup='';
+ if(m.locked&&!effectiveEnded){matchup='<div class="matchup-bar"><span class="team">'+teamLogo(m.homeTeam||'')+(m.homeTeam||'')+homeScore+'</span><span class="vs">'+'VS'+'</span><span class="team away">'+awayScore+(m.awayTeam||'')+teamLogo(m.awayTeam||'')+'</span></div>'}
+ else{matchup='<div class="matchup-bar"><span class="team">'+teamLogo(m.homeTeam||'')+(m.homeTeam||'')+homeScore+'</span><span class="vs">'+'VS'+'</span><span class="team away">'+awayScore+(m.awayTeam||'')+teamLogo(m.awayTeam||'')+'</span></div>'}
+ let body='';
+ if(m.odds&&m.odds.length>0){body+='<div class="odds-section"><div class="label">数据趋势</div>';m.odds.forEach(o=>{body+='<div class="odds-row"><span class="type">'+(o.type||'')+'</span><span class="value">'+(o.value||'')+'</span></div>'});body+='</div>'}
+ if(m.lineups&&m.lineups.length>0){body+='<div class="odds-section"><div class="label">确认首发</div>';m.lineups.forEach(l=>{body+='<div class="odds-row"><span class="type">'+(l.type||'')+'</span><span class="value">'+(l.value||'')+'</span></div>'});body+='</div>'}
+ if(m.injuries&&m.injuries.length>0){body+='<div class="injury-box"><div class="title">⚡ 关键伤停</div>';m.injuries.forEach(i=>{body+='<div class="item">'+i+'</div>'});body+='</div>'}
+ if(m.analysis){body+='<div class="analysis-box"><div class="title">📊 核心分析</div><div class="text">'+m.analysis.replace(/\n/g,'<br>')+'</div></div>'}
+ var _gameTime=new Date(m.date+'T'+m.time+':00+08:00').getTime();
+ var _nearStart=Date.now()>=_gameTime-40*60*1000;
+ if(m.recommend==='pass'&&_nearStart){
+ const h1=m.hit1==='hit'?'✅':m.hit1==='miss'?'❎':m.hit1==='pending'?'⏳':'';
+ const h2=m.hit2==='hit'?'✅':m.hit2==='miss'?'❎':m.hit2==='pending'?'⏳':'';
+ body+='<div class="recommend pass">✅ '+(m.recommendText||'')+(h1?' '+h1:'')+'</div>';if(m.recommendText2){body+='<div class="recommend pass" style="margin-top:6px">✅ '+(m.recommendText2||'')+(h2?' '+h2:'')+'</div>'}}
+ else if(m.recommend==='pass'&&!_nearStart){body+='<div class="recommend skip">⏸ 赛前30分钟更新</div>'}
+ else{body+='<div class="recommend skip">⏸ '+(m.skipReason==='数据不足'||m.skipReason==='放弃'?'赛前30分钟更新':m.skipReason||'赛前30分钟更新')+'</div>'}
+ // 已结束但未解锁：仍然锁住推荐内容，只公开比分
+ if(m.locked){
+ const isUnlocked=unlocked.includes(m.lockId);
+ const lockStyle=isUnlocked?'display:none':'display:flex';
+ const noCoinStyle=coins<UNLOCK_COST?'display:block':'display:none';
+ var _gt2=new Date(m.date+'T'+m.time+':00+08:00').getTime();const lineReady=m.recommend==='pass'&&Date.now()>=_gt2-40*60*1000&&( (m.confirmAt&&Date.now()>=m.confirmAt) || (!m.confirmAt&&m.lineupConfirmed===true) );
+ // 时间基准修复：已开赛但recommend仍为skip → 推荐更新中（不显示"等待首发确认"）
+ const timeBasedReady=gameStarted&&m.recommend==='pass'; // 已开赛+有推荐=可解锁
+ const isGiveup=m.recommend==='giveup'; // 明确放弃的赛事
+ const isSkipAndExpired=m.recommend==='skip'&&m.confirmAt&&Date.now()>=m.confirmAt; // 已过确认时间仍skip
+ const canUnlock=lineReady||timeBasedReady; // 两种方式都算可解锁
+ // 等待首发：仅对未开赛且无推荐的赛事显示
+ if(!canUnlock&&!effectiveEnded){
+ // 三种状态：1) giveup或已过确认时间仍skip → 本场暂无推荐 2) 已开赛无推荐 → 推荐更新中 3) 未开赛 → 等待首发确认
+ let waitTitle,waitSub,waitIcon;
+ if(isGiveup||isSkipAndExpired){
+ waitTitle='本场暂无推荐';waitSub='数据条件不满足，本场不提供推荐';waitIcon='📋';
+ } else if(gameStarted){
+ waitTitle='推荐更新中';waitSub='推荐数据正在同步，请稍后刷新';waitIcon='🔄';
+ } else {
+ waitTitle='等待首发确认';waitSub='首发阵容确认后开放解锁';waitIcon='⏳';
+ }
+ const cAt=m.confirmAt||0;const now2=Date.now();const diffMs2=cAt-now2;let cdTxt2='';
+ if(!isGiveup&&!isSkipAndExpired&&!gameStarted&&diffMs2>0){const diffMin2=Math.floor(diffMs2/60000);const diffH2=Math.floor(diffMin2/60);const rm2=diffMin2%60;cdTxt2=diffH2>0?diffH2+'小时'+rm2+'分钟后开放':diffMin2+'分钟后开放'}else if(!isGiveup&&!isSkipAndExpired&&!gameStarted){cdTxt2='即将开放'}
+ const waitBody='<div class="lock-wait-wrap"><div class="lock-wait-icon">'+waitIcon+'</div><div class="lock-wait-title">'+waitTitle+'</div><div class="lock-wait-divider"></div><div class="lock-wait-sub">'+waitSub+'</div>'+(cdTxt2?'<div class="lock-wait-countdown">🕐 '+cdTxt2+'</div>':'')+'</div>';
+ return '<div class="card coin-lock" id="card-'+m.lockId+'">'+header+matchup+'<div class="card-body">'+waitBody+'</div></div>';
+ }
+ // 已结束但无推荐数据 → 直接显示比分+已结束标记，推荐区域显示"赛后更新"
+ if(effectiveEnded&&m.recommend!=='pass'&&gameEnded){
+ const scoreBody='<div class="lock-wait-wrap"><div class="lock-wait-icon">🏀</div><div class="lock-wait-title">比赛已结束</div>'+(m.homeScore!=null?'<div class="lock-wait-sub" style="margin-top:8px">'+m.homeScore+' : '+m.awayScore+'</div>':'')+'</div>';
+ return '<div class="card coin-lock" id="card-'+m.lockId+'">'+header+matchup+'<div class="card-body">'+scoreBody+'</div></div>';
+ }
+ let lockInner='';
+ if(effectiveEnded&&!isUnlocked){
+ lockInner='<div class="lock-icon">🔒</div><div class="lock-text">比赛已结束</div><div class="lock-cost">消耗 1 积分查看本场推荐</div><button class="btn-unlock" onclick="unlockCard(\''+m.lockId+'\')">🪙 1积分解锁</button><div class="no-coin" id="nocoin-'+m.lockId+'" style="'+noCoinStyle+'">积分不足</div>';
+ }else{
+ lockInner='<div class="lock-icon">🔒</div><div class="lock-text">核心推荐</div><div class="lock-cost">消耗 1 积分解锁本场分析</div><button class="btn-unlock" onclick="unlockCard(\''+m.lockId+'\')">🪙 1积分解锁</button><div class="no-coin" id="nocoin-'+m.lockId+'" style="'+noCoinStyle+'">积分不足</div>';
+ }
+ return '<div class="card coin-lock" id="card-'+m.lockId+'">'+header+matchup+'<div class="lockable-body"><div class="lock-overlay" id="lock-'+m.lockId+'" style="'+lockStyle+'">'+lockInner+'</div><div class="card-body">'+body+'</div></div></div>';
+ }else{
+ return '<div class="card">'+header+matchup+'<div class="card-body">'+body+'</div></div>';
+ }
+}
+
+// ===== 渲染赛事卡片 =====
+function renderMatches(matches,session){
+ const container=document.getElementById('matchCards');container.innerHTML='';
+ const unlocked=session.unlocked||[];
+ let summaryHtml='';
+ if(matches.length===0){
+ container.innerHTML='<div class="card"><div class="card-body" style="text-align:center;padding:40px;color:#4a5578"><div style="font-size:48px;margin-bottom:12px">🏀</div><div style="font-size:14px">今日暂无赛事</div></div></div>';
+ document.getElementById('summaryCard').innerHTML='';return;
+ }
+ // 排序：已结束排下面，未结束排上面
+ const sorted=[...matches].sort((a,b)=>{if((a.ended===true)!==(b.ended===true))return (a.ended===true?1:0)-(b.ended===true?1:0);const da=a.date||'',db=b.date||'';if(da!==db)return da.localeCompare(db);return (a.order||0)-(b.order||0)});
+ let pendingSummary='',endedSummary='';
+ sorted.forEach(m=>{
+ container.innerHTML+=buildCardHtml(m,unlocked,session.coins);
+ const sh1=m.hit1==='hit'?' ✅':m.hit1==='miss'?' ❎':m.hit1==='pending'?' ⏳':'';
+ const sh2=m.hit2==='hit'?' ✅':m.hit2==='miss'?' ❎':m.hit2==='pending'?' ⏳':'';
+ let line='';
+ if(m.locked&&!unlocked.includes(m.lockId)){line='<div>🔒 <b>'+(m.league||'')+'</b> '+(m.homeTeam||'')+' — 1积分解锁</div>'}
+ else if(m.recommend==='pass'){var _gT=new Date(m.date+'T'+m.time+':00+08:00').getTime();if(Date.now()>=_gT-40*60*1000){line='<div>✅ <b>'+(m.league||'')+'</b> '+(m.recommendText||'')+sh1+(m.recommendText2?' / '+(m.recommendText2)+sh2:'')+'</div>'}else{line='<div>⏸ <b>'+(m.league||'')+'</b> 赛前30分钟更新</div>'}}
+ else{line='<div>⏸ '+(m.league||'')+' · '+(m.skipReason==='数据不足'||m.skipReason==='放弃'?'赛前30分钟更新':m.skipReason||'赛前30分钟更新')+'</div>'}
+ if(m.ended===true){endedSummary+=line}else{pendingSummary+=line}
+ });
+ summaryHtml=pendingSummary+(endedSummary?'<div style="border-top:1px dashed #1e2a4a;margin:6px 0;padding-top:6px;font-size:10px;color:#4a5578;text-align:center;letter-spacing:2px">— 已结束 —</div>'+endedSummary:'');
+ document.getElementById('summaryCard').innerHTML='<div class="card" style="border:1px solid #2a3a6a"><div class="card-body" style="text-align:center"><div style="font-size:11px;color:#4a5578;margin-bottom:8px">今日推荐汇总</div><div style="font-size:14px;line-height:2">'+summaryHtml+'</div><div style="margin-top:12px;font-size:11px;color:#4a5578">⚠️ 本看板仅供赛事分析参考，不构成任何建议</div></div></div>';
+}
+
+// ===== 赛事管理 =====
+async function loadAllMatches(){
+ if(!fbReady)return[];
+ try{const snapshot=await db.collection('matches').get();return snapshot.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(a.order||0)-(b.order||0))}catch(e){console.error(e);return[]}
+}
+async function refreshMatchList(){
+ const container=document.getElementById('matchAdminList');container.innerHTML='<div class="no-matches"><span class="loading"></span>加载中...</div>';
+ try{
+ const matches=await loadAllMatches();
+ if(matches.length===0){container.innerHTML='<div class="no-matches">暂无赛事数据，请在 Firestore 的 matches 集合中添加</div>';return}
+ let html='';matches.forEach(m=>{
+ const sb=m.status==='live'?'<span style="background:#c8102e;color:#fff;padding:1px 6px;border-radius:4px;font-size:10px">LIVE</span>':'<span style="background:#1e2a4a;color:#7a8bb5;padding:1px 6px;border-radius:4px;font-size:10px">赛前</span>';
+ const lb=m.locked?'<span style="background:rgba(251,191,36,0.15);color:#fbbf24;padding:1px 6px;border-radius:4px;font-size:10px">🔒需解锁</span>':'<span style="background:rgba(74,222,128,0.12);color:#4ade80;padding:1px 6px;border-radius:4px;font-size:10px">免费</span>';
+ const cfBtn=m.lineupConfirmed===false?(m.confirmAt?'<span style="color:#fbbf24;font-size:10px">⏰'+new Date(m.confirmAt).toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'})+'自动确认</span> <button class="btn-gold" style="font-size:10px;padding:3px 8px" onclick="confirmLineup(\''+m.id+'\')">立即确认</button>':'<button class="btn-gold" style="font-size:10px;padding:3px 8px" onclick="confirmLineup(\''+m.id+'\')">确认首发</button>'):'<span style="color:#4ade80;font-size:10px">✅已确认</span>';
+ html+='<div class="match-item"><div class="match-item-info"><div class="league">'+(m.date||'')+' · '+(m.league||'')+'</div><div class="teams">'+(m.homeTeam||'')+' '+'VS'+' '+(m.awayTeam||'')+'</div><div class="mstatus">'+(m.time||'')+' '+sb+' '+lb+' '+(m.lineupConfirmed===false?'⏳待确认':'')+'</div></div><div class="match-item-actions">'+cfBtn+'<button class="btn-danger" onclick="deleteMatch(\''+m.id+'\')">删除</button></div></div>';
+ });container.innerHTML=html;
+ }catch(e){container.innerHTML='<div class="no-matches">加载失败</div>'}
+}
+async function deleteMatch(matchId){
+ if(!confirm('确定删除这场赛事吗？'))return;if(!fbReady)return;
+ try{
+ await db.collection('matches').doc(matchId).delete();
+ // 记录已删除的赛事ID，防止同步时复活
+ await db.collection('settings').doc('deletedMatchIds').set({ids:firebase.firestore.FieldValue.arrayUnion(matchId)},{merge:true});
+ showToast('已删除赛事','success');refreshMatchList()}catch(e){showToast('删除失败','error')}
+}
+
+async function autoSetConfirmAt(){
+ if(!fbReady)return;
+ try{
+ const today=todayStr();
+ const dayAfter=new Date(Date.now()+86400000);const daStr=dayAfter.getFullYear()+'-'+String(dayAfter.getMonth()+1).padStart(2,'0')+'-'+String(dayAfter.getDate()).padStart(2,'0');
+ const snapshot=await db.collection('matches').get();
+ const allDocs=snapshot.docs.filter(d=>{const dd=d.data().date;return dd===today||dd===daStr});
+ if(allDocs.length===0){showToast('今天和明天没有赛事','info');return}
+ const batch=db.batch();let count=0;
+ allDocs.forEach(d=>{
+ const m=d.data();
+ if(m.confirmAt)return;
+ if(m.lineupConfirmed)return;
+ if(!m.time)return;
+ const tMatch=m.time.match(/(\d{1,2}):(\d{2})/);
+ if(!tMatch)return;
+ const h=parseInt(tMatch[1]),mi=parseInt(tMatch[2]);
+ const matchTime=new Date(today+'T'+String(h).padStart(2,'0')+':'+String(mi).padStart(2,'0')+':00+08:00');
+ const confirmTime=new Date(matchTime.getTime()-30*60*1000);
+ if(isNaN(confirmTime.getTime()))return;
+ batch.update(d.ref,{confirmAt:confirmTime.getTime()});
+ count++;
+ });
+ if(count===0){showToast('所有赛事已有确认时间','info');return}
+ if(!confirm('将为 '+count+' 场赛事设置自动确认时间（开赛前30分钟），确认？'))return;
+ await batch.commit();
+ showToast('已设置 '+count+' 场自动确认','success');refreshMatchList();
+ }catch(e){console.error(e);showToast('设置失败','error')}
+}
+
+
+
+async function confirmLineup(matchId){
+ if(!fbReady)return;
+ try{
+ await db.collection('matches').doc(matchId).update({lineupConfirmed:true,confirmAt:Date.now()});
+ showToast('已确认首发，用户可解锁','success');refreshMatchList();
+ }catch(e){showToast('确认失败','error')}
+}
+
+function showImportMatches(){document.getElementById('importMatchModal').style.display='flex'}
+function hideImportMatches(){document.getElementById('importMatchModal').style.display='none'}
+
+async function importMatches(){
+ if(!fbReady)return;
+ const jsonStr=document.getElementById('importMatchJson').value.trim();
+ if(!jsonStr){showToast('请粘贴赛程JSON','error');return}
+ let matches;
+ try{matches=JSON.parse(jsonStr)}catch(e){showToast('JSON格式错误','error');return}
+ if(!Array.isArray(matches)||matches.length===0){showToast('需要非空JSON数组','error');return}
+ if(!confirm('将导入'+matches.length+'场赛事，确认？'))return;
+ try{
+ const batch=db.batch();
+ matches.forEach(m=>{
+ if(!m.id){m.id=Date.now()+'-'+Math.random().toString(36).slice(2,7)}
+ if(m.lineupConfirmed===undefined){m.lineupConfirmed=false}
+ if(m.locked===undefined){m.locked=true}
+ if(!m.confirmAt&&m.time&&m.date){
+ const tMatch=m.time.match(/(\d{1,2}):(\d{2})/);
+ if(tMatch){
+ const h=parseInt(tMatch[1]),mi=parseInt(tMatch[2]);
+ const matchTime=new Date(m.date+'T'+String(h).padStart(2,'0')+':'+String(mi).padStart(2,'0')+':00+08:00');
+ const confirmTime=new Date(matchTime.getTime()-30*60*1000);
+ if(!isNaN(confirmTime.getTime())){m.confirmAt=confirmTime.getTime()}
+ }
+ }
+ batch.set(db.collection('matches').doc(m.id),m);
+ });
+ await batch.commit();
+ showToast('已导入'+matches.length+'场赛事','success');
+ hideImportMatches();refreshMatchList();
+ }catch(e){console.error(e);showToast('导入失败','error')}
+}
+
+// ===== 后台 =====
+async function enterAdmin(){showPage('admin');await adminSyncGitHub();await refreshAdmin();refreshMatchList();loadAdminChats()}
+
+async function refreshAdmin(){
+ try{
+ const list=await fbGetAllUsers();
+ document.getElementById('adminTotalUsers').textContent=list.length;
+ let totalE=0,totalS=0;list.forEach(u=>{totalE+=u.totalEarned||0;totalS+=u.totalSpent||0});
+ document.getElementById('adminTotalCoins').textContent=totalE;
+ document.getElementById('adminTotalUnlocks').textContent=totalS;
+ const coinLink=await fbGetCoinLink();
+ document.getElementById('adminCoinLink').value=coinLink;
+ const tbody=document.getElementById('memberTbody');tbody.innerHTML='';
+ list.forEach(u=>{
+ const tr=document.createElement('tr');
+ tr.innerHTML=`<td style="font-weight:600;color:#e8eaf0">${u.name}</td><td class="phone-cell">${u.phone||'-'}</td><td class="coin-cell">${u.coins}</td><td style="color:#4ade80">${u.totalEarned||0}</td><td style="color:#f87171">${u.totalSpent||0}</td><td class="phone-cell">${fmtFull(u.createdAt)}</td><td class="action-cell"><button class="btn-gold" onclick="showAddCoin('${u.name}')">加积分</button><button class="btn-sm btn-primary" onclick="showDetail('${u.name}')">详情</button><button class="btn-danger" onclick="deleteUser('${u.name}')">删除</button></td>`;
+ tbody.appendChild(tr);
+ });
+ }catch(e){console.error('刷新后台失败:',e);showToast('加载失败','error')}
+}
+
+function showAddCoin(userName){
+ document.getElementById('addCoinUser').textContent='用户：'+userName;
+ document.getElementById('addCoinAmount').value=10;
+ document.getElementById('addCoinNote').value='';
+ document.getElementById('addCoinModal').classList.add('show');
+ document.getElementById('addCoinModal').dataset.user=userName;
+}
+function hideAddCoinModal(){document.getElementById('addCoinModal').classList.remove('show')}
+
+async function confirmAddCoin(){
+ const userName=document.getElementById('addCoinModal').dataset.user;
+ const amount=parseInt(document.getElementById('addCoinAmount').value)||0;
+ const note=document.getElementById('addCoinNote').value.trim()||'管理员手动添加';
+ if(amount<=0){showToast('数量需大于0','error');return}
+ try{
+ const u=await fbGetUser(userName);if(!u)return;
+ const newPermCoins=(u.permanentCoins||0)+amount;
+ const newCoins=u.coins+amount,newEarned=(u.totalEarned||0)+amount;
+ const newHistory=(u.history||[]).slice(0,49);
+ newHistory.unshift({type:'earn',desc:note+'(永久)',amount:amount,time:Date.now()});
+ await fbUpdateUser(userName,{coins:newCoins,permanentCoins:newPermCoins,totalEarned:newEarned,history:newHistory});
+ hideAddCoinModal();showToast('已给 '+userName+' 添加 '+amount+' 积分','success');await refreshAdmin();
+ }catch(e){showToast('添加失败','error')}
+}
+
+async function deleteUser(userName){
+ if(!confirm('确定删除用户 '+userName+' 吗？此操作不可恢复。'))return;
+ try{await fbDeleteUser(userName);showToast('已删除用户 '+userName,'info');await refreshAdmin();document.getElementById('detailPanel').style.display='none'}catch(e){showToast('删除失败','error')}
+}
+
+async function showDetail(userName){
+ try{
+ const u=await fbGetUser(userName);if(!u)return;
+ document.getElementById('detailUser').textContent=userName;
+ document.getElementById('detailPanel').style.display='block';
+ let info=`<div class="detail-row"><span class="k">用户名</span><span class="v">${userName}</span></div>
+<div class="detail-row"><span class="k">手机号</span><span class="v">${u.phone||'-'}</span></div>
+<div class="detail-row"><span class="k">剩余积分</span><span class="v gold">${u.coins}</span></div>
+<div class="detail-row"><span class="k">累计获得</span><span class="v" style="color:#4ade80">${u.totalEarned||0}</span></div>
+<div class="detail-row"><span class="k">累计消耗</span><span class="v" style="color:#f87171">${u.totalSpent||0}</span></div>
+<div class="detail-row"><span class="k">已解锁场次</span><span class="v">${(u.unlocked||[]).length}</span></div>
+<div class="detail-row"><span class="k">注册时间</span><span class="v">${fmtFull(u.createdAt)}</span></div>`;
+ document.getElementById('detailInfo').innerHTML=info;
+ let hhtml='';(u.history||[]).forEach(h=>{hhtml+=`<div class="history-item"><span class="desc">${h.desc}</span><span class="amount ${h.type==='earn'?'pos':'neg'}">${h.type==='earn'?'+':'-'}${h.amount}</span><span class="time">${fmtDate(h.time)}</span></div>`});
+ document.getElementById('detailHistory').innerHTML=hhtml||'<div style="font-size:12px;color:#4a5578;text-align:center;padding:12px">暂无记录</div>';
+ }catch(e){showToast('加载详情失败','error')}
+}
+
+
+// ===== 客服聊天系统 =====
+const _CHAT_AUTO={
+  '积分|获取|积分获取':'💰 获取积分方式：\n1. 新注册送8积分\n2. 每日签到+1积分\n3. 联系管理员手动添加',
+  '签到|打卡|每日签到':'✅ 每日签到方法：点击顶部「📅 签到+1」按钮即可，每天可签到1次获得1积分',
+  '解锁|查看|解锁赛事':'🔓 解锁方法：比赛开放解锁后，点击卡片上的「🪙 1积分解锁」按钮，消耗1积分即可查看推荐',
+  '注册|账号|登录':'📝 注册登录：点击登录页的「注册」标签，填写用户名、手机号和密码即可',
+  '盘口|赔率|亚盘|外围':'抱歉，本平台仅提供赛事分析参考，不涉及相关内容',
+  '你好|在吗|hello|hi':'👋 你好！欢迎来到Ai篮势，有什么可以帮你的？',
+  '谢谢|感谢|thanks':'😊 不客气！还有其他问题随时问我~'
+};
+let _chatListener=null,_adminChatListener=null;
+let _localMsgs=[]; // 未登录时的本地消息
+
+function toggleChat(){
+  const s=getSession();
+  if(s&&s.admin)return;
+  const p=document.getElementById('chatPopup');
+  if(p.classList.contains('hide')){
+    p.classList.remove('hide');
+    if(s&&!s.admin){initChat();markChatRead()}
+    else if(!s){renderLocalMsgs()}
+  }else{p.classList.add('hide')}
+}
+
+function sendQuick(text){document.getElementById('chatInput').value=text;sendChat()}
+
+// 未登录：本地自动回复
+function renderLocalMsgs(){
+  const c=document.getElementById('chatMsgs');c.innerHTML='';
+  _localMsgs.forEach(m=>{
+    const div=document.createElement('div');
+    div.className='chat-msg '+(m.from==='user'?'user':m.from==='admin'?'admin':'sys');
+    div.innerHTML=m.text.replace(/\n/g,'<br>')+(m.time?'<div class="time">'+new Date(m.time).toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'})+'</div>':'');
+    c.appendChild(div)
+  });
+  c.scrollTop=c.scrollHeight;
+}
+
+function doAutoReply(text){
+  for(const[k,v]of Object.entries(_CHAT_AUTO)){
+    const keys=k.split('|');
+    if(keys.some(kk=>text.includes(kk)))return v;
+  }
+  return '🤖 请先登录后联系客服，会有专人为您解答~';
+}
+
+// 已登录：Firestore实时聊天
+async function initChat(){
+  const s=getSession();if(!s||s.admin)return;
+  if(_chatListener){_chatListener()}
+  _chatListener=db.collection('chats').doc(s.user).onSnapshot(snap=>{
+    if(!snap.exists){renderChatMsgs([]);return}
+    const d=snap.data();renderChatMsgs(d.messages||[]);
+    const p=document.getElementById('chatPopup');
+    if(p.classList.contains('hide')&&d.messages){
+      const last=d.messages[d.messages.length-1];
+      if(last&&last.from==='admin'&&!last.read){showChatBadge(1)}
+    }
+  })
+}
+
+function renderChatMsgs(msgs){
+  const c=document.getElementById('chatMsgs');c.innerHTML='';
+  msgs.forEach(m=>{
+    const div=document.createElement('div');
+    div.className='chat-msg '+(m.from==='user'?'user':m.from==='admin'?'admin':'sys');
+    div.innerHTML=m.text.replace(/\n/g,'<br>')+(m.time?'<div class="time">'+new Date(m.time).toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'})+'</div>':'');
+    c.appendChild(div)
+  });
+  c.scrollTop=c.scrollHeight;
+  markChatRead()
+}
+
+async function markChatRead(){
+  const s=getSession();if(!s||s.admin)return;
+  try{
+    const snap=await db.collection('chats').doc(s.user).get();
+    if(!snap.exists)return;
+    const d=snap.data();let changed=false;
+    (d.messages||[]).forEach(m=>{if(m.from==='admin'&&!m.read){m.read=true;changed=true}});
+    if(changed){await db.collection('chats').doc(s.user).set(d);showChatBadge(0)}
+  }catch(e){console.error(e)}
+}
+
+function showChatBadge(n){
+  const b=document.getElementById('chatBadge');
+  if(n>0){b.textContent=n;b.classList.remove('hide')}else{b.classList.add('hide')}
+}
+
+async function sendChat(){
+  const input=document.getElementById('chatInput');
+  const text=input.value.trim();if(!text)return;
+  input.value='';
+  const s=getSession();
+
+  // 未登录：纯本地自动回复
+  if(!s){
+    _localMsgs.push({from:'user',text:text,time:Date.now()});
+    const reply=doAutoReply(text);
+    setTimeout(()=>{_localMsgs.push({from:'admin',text:reply,time:Date.now()});renderLocalMsgs()},500);
+    renderLocalMsgs();
+    return;
+  }
+  if(s.admin){showToast('请使用后台管理面板回复消息','error');return;}
+
+  // 已登录：写Firestore
+  if(!db||!fbReady){showToast('系统未就绪，请刷新','error');return}
+  try{
+    const snap=await db.collection('chats').doc(s.user).get();
+    let d=snap.exists?snap.data():{username:s.user,messages:[],lastTime:0};
+    if(!d.messages)d.messages=[];
+    d.messages.push({from:'user',text:text,time:Date.now(),read:false});
+    d.lastMessage=text;d.lastTime=Date.now();d.unread=(d.unread||0)+1;
+    await db.collection('chats').doc(s.user).set(d);
+    // Auto-reply check
+    let autoReply=null;
+    for(const[k,v]of Object.entries(_CHAT_AUTO)){
+      const keys=k.split('|');
+      if(keys.some(kk=>text.includes(kk))){autoReply=v;break}
+    }
+    if(autoReply){
+      setTimeout(async()=>{
+        const snap2=await db.collection('chats').doc(s.user).get();
+        if(!snap2.exists)return;const d2=snap2.data();
+        d2.messages.push({from:'admin',text:autoReply,time:Date.now(),read:false});
+        d2.lastMessage=autoReply;d2.lastTime=Date.now();
+        await db.collection('chats').doc(s.user).set(d2)
+      },800)
+    }else{
+      setTimeout(async()=>{
+        const snap2=await db.collection('chats').doc(s.user).get();
+        if(!snap2.exists)return;const d2=snap2.data();
+        const recentAdmin=d2.messages.filter(m=>m.from==='admin');
+        const lastA=recentAdmin[recentAdmin.length-1];
+        if(lastA&&lastA.text&&lastA.text.includes('转人工')&&Date.now()-lastA.time<60000)return;
+        d2.messages.push({from:'admin',text:'🤖 已转人工客服，请稍候...',time:Date.now(),read:false});
+        d2.lastMessage='已转人工客服';d2.lastTime=Date.now();
+        await db.collection('chats').doc(s.user).set(d2)
+      },800)
+    }
+  }catch(e){console.error('聊天发送失败:',e);showToast('发送失败: '+e.message,'error')}
+}
+
+// ===== Admin chat =====
+async function loadAdminChats(){
+  if(!fbReady||!db){console.log('Firestore未就绪，跳过聊天加载');return}
+  try{
+    const snap=await db.collection('chats').get();
+    const chats=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.lastTime||0)-(a.lastTime||0));
+    const c=document.getElementById('adminChatList');c.innerHTML='';
+    let totalUnread=0;
+    if(chats.length===0){c.innerHTML='<div style="padding:16px;text-align:center;color:#4a5578;font-size:12px">暂无用户消息</div>';return}
+    chats.forEach(ch=>{
+      const unread=ch.unread||0;totalUnread+=unread;
+      const div=document.createElement('div');div.className='admin-chat-item';
+      div.innerHTML='<div><div class="name">'+ch.id+'</div><div class="preview">'+(ch.lastMessage||'')+'</div></div>'+((unread>0)?'<div class="unread">'+unread+'</div>':'');
+      div.onclick=()=>openAdminChat(ch.id);
+      c.appendChild(div)
+    });
+    const badge=document.getElementById('adminChatBadge');
+    if(totalUnread>0){badge.textContent=totalUnread;badge.style.display='inline'}else{badge.style.display='none'}
+  }catch(e){console.error(e)}
+}
+
+function openAdminChat(userId){
+  document.getElementById('adminChatUser').textContent=userId;
+  document.getElementById('adminChatDetail').classList.add('show');
+  if(_adminChatListener)_adminChatListener();
+  if(!db||!fbReady){showToast('Firestore未就绪','error');return}
+  _adminChatListener=db.collection('chats').doc(userId).onSnapshot(snap=>{
+    if(!snap.exists){document.getElementById('adminChatMsgs').innerHTML='<div style="text-align:center;color:#4a5578;font-size:12px;padding:20px">暂无消息记录</div>';return}
+    const d=snap.data();renderAdminChatMsgs(d.messages||[]);
+    // Reset unread counter
+    db.collection('chats').doc(userId).update({unread:0}).catch(()=>{});
+  })
+}
+
+function renderAdminChatMsgs(msgs){
+  const c=document.getElementById('adminChatMsgs');c.innerHTML='';
+  msgs.forEach(m=>{
+    const div=document.createElement('div');
+    div.className='chat-msg '+(m.from==='user'?'user':m.from==='admin'?'admin':'sys');
+    div.innerHTML=m.text.replace(/\n/g,'<br>')+(m.time?'<div class="time">'+new Date(m.time).toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'})+'</div>':'');
+    c.appendChild(div)
+  });
+  c.scrollTop=c.scrollHeight
+}
+
+function closeAdminChat(){
+  document.getElementById('adminChatDetail').classList.remove('show');
+  if(_adminChatListener){_adminChatListener();_adminChatListener=null}
+}
+
+async function adminSendChat(){
+  const userId=document.getElementById('adminChatUser').textContent;
+  if(!userId){showToast('请先选择一个用户','error');return}
+  const input=document.getElementById('adminChatInput');
+  const text=input.value.trim();if(!text)return;input.value='';
+  if(!db||!fbReady){showToast('Firestore未就绪，请刷新','error');return}
+  try{
+    const snap=await db.collection('chats').doc(userId).get();
+    let d=snap.exists?snap.data():{username:userId,messages:[],lastTime:0};
+    if(!d.messages)d.messages=[];
+    d.messages.push({from:'admin',text:text,time:Date.now(),read:false});
+    d.lastMessage=text;d.lastTime=Date.now();d.unread=0;
+    await db.collection('chats').doc(userId).set(d);
+    showToast('回复成功','success');
+  }catch(e){
+    console.error('Admin回复失败:',e);
+    showToast('回复失败: '+e.message,'error');
+  }
+}
+
+
+// ===== 初始化 =====
+(async function init(){
+ if(!initFirebase()){showSetup();return}
+ loadDynamicLogos();
+ const session=getSession();
+ if(session){
+ if(session.admin){await enterAdmin();return}
+ const u=await fbGetUser(session.user);
+ if(u){u.tempCoins=u.tempCoins??0;u.permanentCoins=u.permanentCoins??u.coins;u.lastClearDate=u.lastClearDate??todayStr();await clearTempCoinsIfNeeded(u,session);session.coins=u.coins;session.unlocked=u.unlocked||[];saveSession(session);await enterDashboard(session)}
+ else{clearSession();showPage('auth')}
+ // Show chat fab only for non-admin users
+if(!session.admin)document.getElementById('chatFab').style.display='flex';
+}else{showPage('auth');
+// Show chat fab on auth page for guest auto-reply
+document.getElementById('chatFab').style.display='flex';
+}
+})();
+</script>
+
+<script>
+// ===== PWA Service Worker注册 =====
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').then(reg=>{
+    console.log('[SW] 注册成功, scope:', reg.scope);
+  }).catch(err=>{
+    console.log('[SW] 注册失败:', err);
+  });
+}
+
+// ===== 数据写入自动校验函数（铁律守卫） =====
+function validateMatchData(match, source){
+  const fixes = [];
+  // W1: vsText必须为"VS"
+  if(match.vsText !== 'VS'){
+    fixes.push({field:'vsText', old:match.vsText, newVal:'VS', rule:'W1'});
+    match.vsText = 'VS';
+  }
+  // W8: ended=true必须有endedAt
+  if(match.ended === true && !match.endedAt){
+    fixes.push({field:'endedAt', old:0, newVal:Date.now(), rule:'W8'});
+    match.endedAt = Date.now();
+  }
+  // odds格式必须是array
+  if(match.odds && !Array.isArray(match.odds)){
+    const oldOdds = match.odds;
+    const newOdds = [];
+    if(oldOdds.spread !== undefined){
+      const spread = oldOdds.spread;
+      const home = match.homeTeam || '';
+      const away = match.awayTeam || '';
+      const spreadHome = oldOdds.spreadHome !== false;
+      let text = spreadHome ? (spread < 0 ? home+' '+spread : home+' +'+spread) : (spread > 0 ? away+' +'+spread : away+' '+spread);
+      newOdds.push({type:'分析方向', value:text});
+    }
+    if(oldOdds.total !== undefined){
+      newOdds.push({type:'得分预期', value:String(oldOdds.total)});
+    }
+    fixes.push({field:'odds', old:'dict', newVal:'array('+newOdds.length+')', rule:'format'});
+    match.odds = newOdds;
+  }
+  // C1: odds type必须用合规词
+  if(Array.isArray(match.odds)){
+    match.odds.forEach((o,i)=>{
+      if(o.type === '让分方向' || o.type === 'spread'){
+        fixes.push({field:'odds['+i+'].type', old:o.type, newVal:'分析方向', rule:'C1'});
+        o.type = '分析方向';
+      }
+      if(o.type === '大小分方向' || o.type === 'total'){
+        fixes.push({field:'odds['+i+'].type', old:o.type, newVal:'得分预期', rule:'C1'});
+        o.type = '得分预期';
+      }
+    });
+  }
+  // S5: skipReason如果含"30分钟"改为"等待首发确认"
+  if(match.skipReason && match.skipReason.includes('30分钟')){
+    fixes.push({field:'skipReason', old:match.skipReason, newVal:'等待首发确认', rule:'S5'});
+    match.skipReason = '等待首发确认';
+  }
+  // W2: homeTeam/awayTeam不能为空
+  if(!match.homeTeam && match.awayTeam){
+    fixes.push({field:'homeTeam', old:'empty', newVal:'未知主队', rule:'W2'});
+    match.homeTeam = '未知主队';
+  }
+  if(!match.awayTeam && match.homeTeam){
+    fixes.push({field:'awayTeam', old:'empty', newVal:'未知客队', rule:'W2'});
+    match.awayTeam = '未知客队';
+  }
+  // W3: ID格式检查
+  if(match.id && !/^\d{4}-\d{2}-\d{2}-/.test(match.id)){
+    fixes.push({field:'id', old:match.id, newVal:'format-warning', rule:'W3'});
+  }
+  // ended赛事必须有比分
+  if(match.ended === true && (match.homeScore === undefined || match.awayScore === undefined)){
+    fixes.push({field:'scores', old:'missing', newVal:'0-0', rule:'data'});
+    match.homeScore = match.homeScore || 0;
+    match.awayScore = match.awayScore || 0;
+  }
+  if(fixes.length > 0){
+    console.warn('[VALIDATE] ' + (source||'') + ' ' + match.id + ' 自动修复了 ' + fixes.length + ' 个问题:', fixes);
+  }
+  return fixes;
+}
+
+// 全局校验：对从Firestore/jsonblob加载的所有赛事进行校验
+function validateAllMatches(matches, source){
+  let totalFixes = 0;
+  const needSync = [];
+  matches.forEach(m => {
+    const fixes = validateMatchData(m, source);
+    if(fixes.length > 0){
+      totalFixes += fixes.length;
+      needSync.push(m);
+    }
+  });
+  if(totalFixes > 0){
+    console.warn('[VALIDATE] ' + source + ' 共自动修复 ' + totalFixes + ' 个问题，涉及 ' + needSync.length + ' 场赛事');
+    // 将修复后的数据同步回Firestore
+    if(fbReady && db && needSync.length > 0){
+      const batch = db.batch();
+      needSync.forEach(m => {
+        const {id, ...data} = m;
+        batch.set(db.collection('matches').doc(id), data, {merge:true});
+      });
+      batch.commit().then(()=>{
+        console.log('[VALIDATE] 已将 ' + needSync.length + ' 场赛事的修复同步到Firestore');
+      }).catch(e => {
+        console.error('[VALIDATE] 同步修复到Firestore失败:', e);
+      });
+    }
+  }
+  return totalFixes;
+}
+</script>
+
+</body>
+</html>

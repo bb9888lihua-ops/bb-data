@@ -635,7 +635,7 @@ async function refreshDash(session){
  const checkinBtn=document.getElementById('checkinBtn');
  try{const u=await fbGetUser(session.user);if(u&&u.lastCheckIn===todayStr()){checkinBtn.className='btn-checkin done';checkinBtn.textContent='✅ 已签到'}else{checkinBtn.className='btn-checkin active';checkinBtn.textContent='📅 签到+1'}}catch(e){checkinBtn.className='btn-checkin active';checkinBtn.textContent='📅 签到+1'}
  try{const coinLink=await fbGetCoinLink();const addcoinBtn=document.getElementById('addcoinBtn');addcoinBtn.className=coinLink?'btn-addcoin':'btn-addcoin hide';addcoinBtn.dataset.link=coinLink}catch(e){}
- try{const matches=await loadMatches();renderMatches(matches,session)}catch(e){console.error('加载赛事失败:',e);document.getElementById('matchCards').innerHTML='<div class="card"><div class="card-body" style="text-align:center;padding:40px;color:#4a5578">暂无赛事数据</div></div>';document.getElementById('summaryCard').innerHTML=''}
+ try{const matches=await loadMatches();renderMatches(matches,session)}catch(e){console.error('加载赛事失败:',e);document.getElementById('matchCards').innerHTML='<div class="card"><div class="card-body" style="text-align:center;padding:40px;color:#ff6b6b"><div style="font-size:18px;margin-bottom:8px">⚠️ 加载失败</div><div style="font-size:12px;word-break:break-all">'+e.name+': '+e.message+'</div><div style="font-size:11px;margin-top:8px;color:#8899aa">F12→Console查看详细</div></div></div>';document.getElementById('summaryCard').innerHTML=''}
 }
 
 // ===== 签到 =====
@@ -729,6 +729,7 @@ function getGameTime(m){
 }
 // loadEmbedData已移除 - 数据从Firestore直接读取
 async function loadMatches(){
+ console.log('[LM-DEBUG] loadMatches called, fbReady='+fbReady);
  if(!fbReady){console.log('[LM] fbReady=false');return[]};
  const today=todayStr();
  try{
@@ -795,6 +796,7 @@ async function loadMatches(){
  prematureConfirm.forEach(m=>{m.lineupConfirmed=false;batch.update(db.collection('matches').doc(m.id),{lineupConfirmed:false})});
  try{await batch.commit();console.log('[LM] 纠正了',prematureConfirm.length,'场过早确认的赛事')}catch(e){console.error('纠正失败:',e)}
  }
+ console.log('[LM-DEBUG] final matches count: '+matches.length+', syncedFromData: '+syncedFromData);
  if(matches.length===0){
  console.log('[LM] Firestore和GitHub均无数据，显示空状态');
  }

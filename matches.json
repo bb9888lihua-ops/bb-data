@@ -461,15 +461,13 @@
         "value": "171.5"
       }
     ],
-    "injuries": [
-      "穆尔西亚：德朱利叶斯（核心后卫，右脚第五跖骨骨折，缺席3个月）"
-    ],
+    "injuries": "穆尔西亚：德朱利叶斯（核心后卫，右脚第五跖骨骨折，缺席3个月）",
     "lineups": {},
     "analysis": "【首发阵容】基于预测首发，非官方确认\n穆尔西亚：拉德博、雷斯特、纳基奇、卡科克、法尔克\n巴萨：萨托兰斯基、庞特、克莱本、圣埃利亚、法尔\n\n【伤停影响】DeJulius确认缺席（3个月）\n\n【效率数据】\nUCAM Murcia: ORTG=115.1 | DRTG=106.3 | Pace=78.2\nFC Barcelona: ORTG=119.7 | DRTG=109.8 | Pace=74.1\n\n【模型计算】\nExpected_Spread = (9.9 - 8.8) × 76/100 + 3.5 = 4.3分\nPinnacle盘口: 3.5分\n偏差: 0.8分 < 2分阈值\n\n【30天复盘规则】\n西篮联客队赢盘率60%，深盘时客队更优\n西篮联大小分偏低，默认偏小方向\n\n【Skip判断】让分偏差0.8分 < 2分阈值 → SKIP",
-    "recommendText": "巴塞罗那 -3.5",
-    "recommendText2": "171.5大",
+    "recommendText": "",
+    "recommendText2": "",
     "skipReason": "让分偏差不足2分，不符合B级联赛推荐标准",
-    "recommend": "pass",
+    "recommend": "skip",
     "order": 5,
     "ended": false,
     "homeScore": null,
@@ -502,7 +500,7 @@
         "value": "160.5"
       }
     ],
-    "injuries": [],
+    "injuries": "",
     "lineups": {},
     "analysis": "WNBA总裁杯。梦想6-3东部第1主场3-1，防守联盟第2。梦想方向。",
     "recommendText": "神秘人 +10.5",

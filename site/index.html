@@ -776,7 +776,11 @@ async function loadMatches(){
     if(syncCount>0){
      await batch.commit();
      console.log('[LM] 从GitHub同步了',syncCount,'场赛事（最新数据）');
-     ghAll.forEach(gm=>{const idx=matches.findIndex(m=>m.id===gm.id);if(idx>=0)matches[idx]={...matches[idx],...gm}});
+     ghAll.forEach(gm=>{
+     const idx=matches.findIndex(m=>m.id===gm.id);
+     if(idx>=0){matches[idx]={...matches[idx],...gm}}
+     else{matches.push(gm)} // 新赛事也要加入数组
+    });
      syncedFromData=true;
     }
    }

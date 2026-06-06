@@ -1,0 +1,10 @@
+{
+  "name": "Ai篮势",
+  "short_name": "Ai篮势",
+  "description": "AI预测引擎·数据驱动分析",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0e17",
+  "theme_color": "#0a0e17",
+  "icons": []
+}

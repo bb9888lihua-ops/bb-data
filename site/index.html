@@ -853,10 +853,10 @@ function buildCardHtml(m,unlocked,coins){
  } else if(gameStarted){
  waitTitle='推荐更新中';waitSub='推荐数据正在同步，请稍后刷新';waitIcon='🔄';
  } else {
- waitTitle='赛前分析中';waitSub='赛前30分钟开放解锁';waitIcon='⏳';
+ waitTitle='赛前分析中';waitSub='核心推荐，1积分解锁';waitIcon='⏳';
  }
  const gameT2=new Date(m.date+'T'+m.time+':00+08:00').getTime();const now2=Date.now();const diffMs2=gameT2-30*60*1000-now2;let cdTxt2='';
- if(!isGiveup&&!isSkipAndExpired&&!gameStarted&&diffMs2>0){const diffMin2=Math.floor(diffMs2/60000);const diffH2=Math.floor(diffMin2/60);const rm2=diffMin2%60;cdTxt2=diffH2>0?diffH2+'小时'+rm2+'分钟后开放':diffMin2+'分钟后开放'}else if(!isGiveup&&!isSkipAndExpired&&!gameStarted){cdTxt2='即将开放'}
+ if(!isGiveup&&!isSkipAndExpired&&!gameStarted&&diffMs2>0){const diffMin2=Math.floor(diffMs2/60000);const diffH2=Math.floor(diffMin2/60);const rm2=diffMin2%60;cdTxt2=diffH2>0?diffH2+'小时'+rm2+'分钟后可解锁':diffMin2+'分钟后可解锁'}else if(!isGiveup&&!isSkipAndExpired&&!gameStarted){cdTxt2='即将可解锁'}
  const waitBody='<div class="lock-wait-wrap"><div class="lock-wait-icon">'+waitIcon+'</div><div class="lock-wait-title">'+waitTitle+'</div><div class="lock-wait-divider"></div><div class="lock-wait-sub">'+waitSub+'</div>'+(cdTxt2?'<div class="lock-wait-countdown">🕐 '+cdTxt2+'</div>':'')+'</div>';
  return '<div class="card coin-lock" id="card-'+m.lockId+'">'+header+matchup+'<div class="card-body">'+waitBody+'</div></div>';
  }
@@ -897,7 +897,7 @@ function renderMatches(matches,session){
  if(m.locked&&!unlocked.includes(m.lockId)){line='<div>🔒 <b>'+(m.league||'')+'</b> '+(m.homeTeam||'')+' — 1积分解锁</div>'}
  else if(m.recommend==='pass'){var _gT=new Date(m.date+'T'+m.time+':00+08:00').getTime();if(Date.now()>=_gT-40*60*1000){line='<div>✅ <b>'+(m.league||'')+'</b> '+(m.recommendText||'')+sh1+(m.recommendText2?' / '+(m.recommendText2)+sh2:'')+'</div>'}else{line='<div>⏸ <b>'+(m.league||'')+'</b> 赛前30分钟更新</div>'}}
  else{line='<div>⏸ '+(m.league||'')+' · '+(m.skipReason==='数据不足'||m.skipReason==='放弃'?'赛前30分钟更新':m.skipReason||'赛前30分钟更新')+'</div>'}
- if(m.ended===true){endedSummary+=line}else{pendingSummary+=line}
+ if(effEnd(m)){endedSummary+=line}else{pendingSummary+=line}
  });
  summaryHtml=pendingSummary+(endedSummary?'<div style="border-top:1px dashed #1e2a4a;margin:6px 0;padding-top:6px;font-size:10px;color:#4a5578;text-align:center;letter-spacing:2px">— 已结束 —</div>'+endedSummary:'');
  document.getElementById('summaryCard').innerHTML='<div class="card" style="border:1px solid #2a3a6a"><div class="card-body" style="text-align:center"><div style="font-size:11px;color:#4a5578;margin-bottom:8px">今日推荐汇总</div><div style="font-size:14px;line-height:2">'+summaryHtml+'</div><div style="margin-top:12px;font-size:11px;color:#4a5578">⚠️ 本看板仅供赛事分析参考，不构成任何建议</div></div></div>';
@@ -948,13 +948,7 @@ async function importMatches(){
  if(!m.id){m.id=Date.now()+'-'+Math.random().toString(36).slice(2,7)}
  if(m.locked===undefined){m.locked=true}
 
- const tMatch=m.time.match(/(\d{1,2}):(\d{2})/);
- if(tMatch){
- const h=parseInt(tMatch[1]),mi=parseInt(tMatch[2]);
- const matchTime=new Date(m.date+'T'+String(h).padStart(2,'0')+':'+String(mi).padStart(2,'0')+':00+08:00');
 
-
- }
  batch.set(db.collection('matches').doc(m.id),m);
  });
  await batch.commit();

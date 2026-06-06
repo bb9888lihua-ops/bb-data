@@ -383,13 +383,14 @@
     "skipReason": "",
     "recommend": "pass",
     "order": 3,
-    "ended": false,
-    "homeScore": null,
-    "awayScore": null,
-    "hit1": null,
-    "hit2": null,
+    "ended": true,
+    "homeScore": 88,
+    "awayScore": 68,
+    "hit1": "miss",
+    "hit2": "hit",
     "confidence": 60,
-    "stars": 3
+    "stars": 3,
+    "endedAt": 1780776562144
   },
   {
     "id": "2026-06-07-wnba-305",

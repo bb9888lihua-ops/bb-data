@@ -357,9 +357,9 @@ body{background:#0a0e17;color:#e8eaf0;font-family:-apple-system,BlinkMacSystemFo
 <button class="btn-gold" onclick="saveCoinLink()">保存链接</button>
 </div>
 </div>
-<div class="admin-section-title">📝 赛事数据 <button class="btn-sm btn-primary" style="font-size:11px" onclick="showImportMatches()">📋 导入赛程</button><button class="btn-sm btn-primary" style="font-size:11px" onclick="autoSetConfirmAt()">⏰设置自动确认</button> <button class="btn-gold" onclick="adminSyncGitHub()">🔄同步数据</button> <button class="btn-danger" onclick="cleanupOldMatches()">🗑️清理过期赛事</button></div>
+<div class="admin-section-title">📝 赛事数据 <button class="btn-sm btn-primary" style="font-size:11px" onclick="showImportMatches()">📋 导入赛程</button> <button class="btn-gold" onclick="adminSyncGitHub()">🔄同步数据</button> <button class="btn-danger" onclick="cleanupOldMatches()">🗑️清理过期赛事</button></div>
 <div id="matchAdminList" class="match-list"><div class="no-matches">加载中...</div></div>
-<div id="importMatchModal" class="modal-overlay" style="display:none"><div class="modal-box" style="max-width:600px"><div class="modal-header"><span>📋 导入赛程JSON</span><span class="modal-close" onclick="hideImportMatches()">✕</span></div><div class="modal-body"><textarea id="importMatchJson" style="width:100%;height:300px;background:#0a0e17;color:#e8eaf0;border:1px solid #1e2a4a;border-radius:8px;padding:10px;font-size:12px;font-family:monospace" placeholder="粘贴赛程JSON数组..."></textarea><div style="margin-top:8px;font-size:11px;color:#4a5578">格式：[{id, league, leagueTag, status, time, homeTeam, awayTeam, vsText, locked, lockId, lineupConfirmed, odds, injuries, lineups, analysis, recommendText, skipReason, recommend, date, order}, ...]</div></div><div class="modal-footer"><button class="btn btn-primary" onclick="importMatches()">确认导入</button><button class="btn-sm" style="background:#1e2a4a;color:#7a8bb5;border:none;padding:8px 16px;border-radius:8px;cursor:pointer" onclick="hideImportMatches()">取消</button></div></div></div>
+<div id="importMatchModal" class="modal-overlay" style="display:none"><div class="modal-box" style="max-width:600px"><div class="modal-header"><span>📋 导入赛程JSON</span><span class="modal-close" onclick="hideImportMatches()">✕</span></div><div class="modal-body"><textarea id="importMatchJson" style="width:100%;height:300px;background:#0a0e17;color:#e8eaf0;border:1px solid #1e2a4a;border-radius:8px;padding:10px;font-size:12px;font-family:monospace" placeholder="粘贴赛程JSON数组..."></textarea><div style="margin-top:8px;font-size:11px;color:#4a5578">格式：[{id, league, leagueTag, status, time, homeTeam, awayTeam, vsText, locked, lockId, odds, injuries, analysis, recommendText, skipReason, recommend, date, order}, ...]</div></div><div class="modal-footer"><button class="btn btn-primary" onclick="importMatches()">确认导入</button><button class="btn-sm" style="background:#1e2a4a;color:#7a8bb5;border:none;padding:8px 16px;border-radius:8px;cursor:pointer" onclick="hideImportMatches()">取消</button></div></div></div>
 
 <div class="admin-section-title">💬 客服消息 <span id="adminChatBadge" style="background:#f87171;color:#fff;font-size:10px;padding:1px 6px;border-radius:8px;display:none"></span></div>
 <div style="background:linear-gradient(145deg,#141929,#0f1422);border:1px solid #1e2a4a;border-radius:10px;overflow:hidden">
@@ -666,7 +666,7 @@ async function saveCoinLink(){
 async function unlockCard(cardId){
  const session=getSession();if(!session||session.admin)return;
  const matches=await loadMatches();const match=matches.find(m=>m.lockId===cardId);
- if(match&&match.lineupConfirmed===false){const gt=getGameTime(match);if(Date.now()<gt){showToast('首发未确认，暂不可解锁','error');return}}
+
  if(match&&match.recommend!=='pass'){showToast('推荐尚未更新，请等待','error');return}
  if(session.coins<UNLOCK_COST){showToast('积分不足','error');return}
  try{
@@ -782,20 +782,6 @@ async function loadMatches(){
    }
   }
  }catch(e){console.log('[LM] GitHub同步跳过:',e.message)}
- // ===== 自动确认首发（基于confirmAt时间）=====
- const toConfirm=matches.filter(m=>m.lineupConfirmed===false&&m.confirmAt&&now>=m.confirmAt);
- if(toConfirm.length>0){
- const batch=db.batch();
- toConfirm.forEach(m=>{m.lineupConfirmed=true;batch.update(db.collection('matches').doc(m.id),{lineupConfirmed:true})});
- try{await batch.commit()}catch(e){console.error('自动确认失败:',e)}
- }
- // ===== 纠正过早确认（confirmAt还没到就lineupConfirmed=true且无推荐）=====
- const prematureConfirm=matches.filter(m=>m.lineupConfirmed===true&&m.confirmAt&&now<m.confirmAt&&m.recommend!=='pass');
- if(prematureConfirm.length>0){
- const batch=db.batch();
- prematureConfirm.forEach(m=>{m.lineupConfirmed=false;batch.update(db.collection('matches').doc(m.id),{lineupConfirmed:false})});
- try{await batch.commit();console.log('[LM] 纠正了',prematureConfirm.length,'场过早确认的赛事')}catch(e){console.error('纠正失败:',e)}
- }
  console.log('[LM-DEBUG] final matches count: '+matches.length+', syncedFromData: '+syncedFromData);
  if(matches.length===0){
  console.log('[LM] Firestore和GitHub均无数据，显示空状态');
@@ -836,40 +822,40 @@ function buildCardHtml(m,unlocked,coins){
  else{matchup='<div class="matchup-bar"><span class="team">'+teamLogo(m.homeTeam||'')+(m.homeTeam||'')+homeScore+'</span><span class="vs">'+'VS'+'</span><span class="team away">'+awayScore+(m.awayTeam||'')+teamLogo(m.awayTeam||'')+'</span></div>'}
  let body='';
  if(m.odds&&m.odds.length>0){body+='<div class="odds-section"><div class="label">数据趋势</div>';(Array.isArray(m.odds)?m.odds:[]).forEach(o=>{body+='<div class="odds-row"><span class="type">'+(o.type||'')+'</span><span class="value">'+(o.value||'')+'</span></div>'});body+='</div>'}
- if(m.lineups&&m.lineups.length>0){body+='<div class="odds-section"><div class="label">确认首发</div>';(Array.isArray(m.lineups)?m.lineups:[]).forEach(l=>{body+='<div class="odds-row"><span class="type">'+(l.type||'')+'</span><span class="value">'+(l.value||'')+'</span></div>'});body+='</div>'}
+ if(m.lineups&&m.lineups.length>0){body+='<div class="odds-section"><div class="label">阵容信息</div>';(Array.isArray(m.lineups)?m.lineups:[]).forEach(l=>{body+='<div class="odds-row"><span class="type">'+(l.type||'')+'</span><span class="value">'+(l.value||'')+'</span></div>'});body+='</div>'}
  if(m.injuries&&m.injuries.length>0){body+='<div class="injury-box"><div class="title">⚡ 关键伤停</div>';(Array.isArray(m.injuries)?m.injuries:[]).forEach(i=>{body+='<div class="item">'+i+'</div>'});body+='</div>'}
  if(m.analysis){body+='<div class="analysis-box"><div class="title">📊 核心分析</div><div class="text">'+m.analysis.replace(/\n/g,'<br>')+'</div></div>'}
  var _gameTime=new Date(m.date+'T'+m.time+':00+08:00').getTime();
- var _nearStart=Date.now()>=_gameTime-40*60*1000;
+ var _nearStart=Date.now()>=_gameTime-30*60*1000;
  if(m.recommend==='pass'&&_nearStart){
  const h1=m.hit1==='hit'?'✅':m.hit1==='miss'?'❎':m.hit1==='pending'?'⏳':'';
  const h2=m.hit2==='hit'?'✅':m.hit2==='miss'?'❎':m.hit2==='pending'?'⏳':'';
  body+='<div class="recommend pass">✅ '+(m.recommendText||'')+(h1?' '+h1:'')+'</div>';if(m.recommendText2){body+='<div class="recommend pass" style="margin-top:6px">✅ '+(m.recommendText2||'')+(h2?' '+h2:'')+'</div>'}}
- else if(m.recommend==='pass'&&!_nearStart){body+='<div class="recommend skip">⏸ 赛前30分钟更新</div>'}
+ else if(m.recommend==='pass'&&!_nearStart){body+='<div class="recommend skip">⏸ 赛前30分钟开放</div>'}
  else{body+='<div class="recommend skip">⏸ '+(m.skipReason==='数据不足'||m.skipReason==='放弃'?'赛前30分钟更新':m.skipReason||'赛前30分钟更新')+'</div>'}
  // 已结束但未解锁：仍然锁住推荐内容，只公开比分
  if(m.locked){
  const isUnlocked=unlocked.includes(m.lockId);
  const lockStyle=isUnlocked?'display:none':'display:flex';
  const noCoinStyle=coins<UNLOCK_COST?'display:block':'display:none';
- var _gt2=new Date(m.date+'T'+m.time+':00+08:00').getTime();const lineReady=m.recommend==='pass'&&Date.now()>=_gt2-40*60*1000&&( (m.confirmAt&&Date.now()>=m.confirmAt) || (!m.confirmAt&&m.lineupConfirmed===true) );
- // 时间基准修复：已开赛但recommend仍为skip → 推荐更新中（不显示"等待首发确认"）
+ var _gt2=new Date(m.date+'T'+m.time+':00+08:00').getTime();const lineReady=m.recommend==='pass'&&Date.now()>=_gt2-30*60*1000;
+ // 时间基准：已开赛但recommend仍非pass → 推荐更新中
  const timeBasedReady=gameStarted&&m.recommend==='pass'; // 已开赛+有推荐=可解锁
  const isGiveup=m.recommend==='giveup'; // 明确放弃的赛事
- const isSkipAndExpired=m.recommend==='skip'&&m.confirmAt&&Date.now()>=m.confirmAt; // 已过确认时间仍skip
- const canUnlock=lineReady||timeBasedReady; // 两种方式都算可解锁
- // 等待首发：仅对未开赛且无推荐的赛事显示
+ const isSkipAndExpired=m.recommend==='skip'&&Date.now()>=_gt2+10*60*1000; // 开赛10分钟仍skip→暂无推荐
+ const canUnlock=lineReady||timeBasedReady;
+ // 等待状态：未开赛且不可解锁
  if(!canUnlock&&!effectiveEnded){
- // 三种状态：1) giveup或已过确认时间仍skip → 本场暂无推荐 2) 已开赛无推荐 → 推荐更新中 3) 未开赛 → 等待首发确认
+ // 两种状态：1) skip/giveup → 本场暂无推荐 2) 已开赛无推荐 → 推荐更新中 3) 未开赛等待 → 赛前30分钟开放
  let waitTitle,waitSub,waitIcon;
  if(isGiveup||isSkipAndExpired){
  waitTitle='本场暂无推荐';waitSub='数据条件不满足，本场不提供推荐';waitIcon='📋';
  } else if(gameStarted){
  waitTitle='推荐更新中';waitSub='推荐数据正在同步，请稍后刷新';waitIcon='🔄';
  } else {
- waitTitle='等待首发确认';waitSub='首发阵容确认后开放解锁';waitIcon='⏳';
+ waitTitle='赛前分析中';waitSub='赛前30分钟开放解锁';waitIcon='⏳';
  }
- const cAt=m.confirmAt||0;const now2=Date.now();const diffMs2=cAt-now2;let cdTxt2='';
+ const gameT2=new Date(m.date+'T'+m.time+':00+08:00').getTime();const now2=Date.now();const diffMs2=gameT2-30*60*1000-now2;let cdTxt2='';
  if(!isGiveup&&!isSkipAndExpired&&!gameStarted&&diffMs2>0){const diffMin2=Math.floor(diffMs2/60000);const diffH2=Math.floor(diffMin2/60);const rm2=diffMin2%60;cdTxt2=diffH2>0?diffH2+'小时'+rm2+'分钟后开放':diffMin2+'分钟后开放'}else if(!isGiveup&&!isSkipAndExpired&&!gameStarted){cdTxt2='即将开放'}
  const waitBody='<div class="lock-wait-wrap"><div class="lock-wait-icon">'+waitIcon+'</div><div class="lock-wait-title">'+waitTitle+'</div><div class="lock-wait-divider"></div><div class="lock-wait-sub">'+waitSub+'</div>'+(cdTxt2?'<div class="lock-wait-countdown">🕐 '+cdTxt2+'</div>':'')+'</div>';
  return '<div class="card coin-lock" id="card-'+m.lockId+'">'+header+matchup+'<div class="card-body">'+waitBody+'</div></div>';
@@ -930,8 +916,8 @@ async function refreshMatchList(){
  let html='';matches.forEach(m=>{
  const sb=m.status==='live'?'<span style="background:#c8102e;color:#fff;padding:1px 6px;border-radius:4px;font-size:10px">LIVE</span>':'<span style="background:#1e2a4a;color:#7a8bb5;padding:1px 6px;border-radius:4px;font-size:10px">赛前</span>';
  const lb=m.locked?'<span style="background:rgba(251,191,36,0.15);color:#fbbf24;padding:1px 6px;border-radius:4px;font-size:10px">🔒需解锁</span>':'<span style="background:rgba(74,222,128,0.12);color:#4ade80;padding:1px 6px;border-radius:4px;font-size:10px">免费</span>';
- const cfBtn=m.lineupConfirmed===false?(m.confirmAt?'<span style="color:#fbbf24;font-size:10px">⏰'+new Date(m.confirmAt).toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'})+'自动确认</span> <button class="btn-gold" style="font-size:10px;padding:3px 8px" onclick="confirmLineup(\''+m.id+'\')">立即确认</button>':'<button class="btn-gold" style="font-size:10px;padding:3px 8px" onclick="confirmLineup(\''+m.id+'\')">确认首发</button>'):'<span style="color:#4ade80;font-size:10px">✅已确认</span>';
- html+='<div class="match-item"><div class="match-item-info"><div class="league">'+(m.date||'')+' · '+(m.league||'')+'</div><div class="teams">'+(m.homeTeam||'')+' '+'VS'+' '+(m.awayTeam||'')+'</div><div class="mstatus">'+(m.time||'')+' '+sb+' '+lb+' '+(m.lineupConfirmed===false?'⏳待确认':'')+'</div></div><div class="match-item-actions">'+cfBtn+'<button class="btn-danger" onclick="deleteMatch(\''+m.id+'\')">删除</button></div></div>';
+ const cfBtn=m.recommend==='pass'?'<span style="color:#4ade80;font-size:10px">✅已推荐</span>':'<span style="color:#fbbf24;font-size:10px">⏳待推荐</span>';
+ html+='<div class="match-item"><div class="match-item-info"><div class="league">'+(m.date||'')+' · '+(m.league||'')+'</div><div class="teams">'+(m.homeTeam||'')+' '+'VS'+' '+(m.awayTeam||'')+'</div><div class="mstatus">'+(m.time||'')+' '+sb+' '+lb+' '+'</div></div><div class="match-item-actions">'+cfBtn+'<button class="btn-danger" onclick="deleteMatch(\''+m.id+'\')">删除</button></div></div>';
  });container.innerHTML=html;
  }catch(e){container.innerHTML='<div class="no-matches">加载失败</div>'}
 }
@@ -944,45 +930,6 @@ async function deleteMatch(matchId){
  showToast('已删除赛事','success');refreshMatchList()}catch(e){showToast('删除失败','error')}
 }
 
-async function autoSetConfirmAt(){
- if(!fbReady)return;
- try{
- const today=todayStr();
- const dayAfter=new Date(Date.now()+86400000);const daStr=dayAfter.getFullYear()+'-'+String(dayAfter.getMonth()+1).padStart(2,'0')+'-'+String(dayAfter.getDate()).padStart(2,'0');
- const snapshot=await db.collection('matches').get();
- const allDocs=snapshot.docs.filter(d=>{const dd=d.data().date;return dd===today||dd===daStr});
- if(allDocs.length===0){showToast('今天和明天没有赛事','info');return}
- const batch=db.batch();let count=0;
- allDocs.forEach(d=>{
- const m=d.data();
- if(m.confirmAt)return;
- if(m.lineupConfirmed)return;
- if(!m.time)return;
- const tMatch=m.time.match(/(\d{1,2}):(\d{2})/);
- if(!tMatch)return;
- const h=parseInt(tMatch[1]),mi=parseInt(tMatch[2]);
- const matchTime=new Date(today+'T'+String(h).padStart(2,'0')+':'+String(mi).padStart(2,'0')+':00+08:00');
- const confirmTime=new Date(matchTime.getTime()-30*60*1000);
- if(isNaN(confirmTime.getTime()))return;
- batch.update(d.ref,{confirmAt:confirmTime.getTime()});
- count++;
- });
- if(count===0){showToast('所有赛事已有确认时间','info');return}
- if(!confirm('将为 '+count+' 场赛事设置自动确认时间（开赛前30分钟），确认？'))return;
- await batch.commit();
- showToast('已设置 '+count+' 场自动确认','success');refreshMatchList();
- }catch(e){console.error(e);showToast('设置失败','error')}
-}
-
-
-
-async function confirmLineup(matchId){
- if(!fbReady)return;
- try{
- await db.collection('matches').doc(matchId).update({lineupConfirmed:true,confirmAt:Date.now()});
- showToast('已确认首发，用户可解锁','success');refreshMatchList();
- }catch(e){showToast('确认失败','error')}
-}
 
 function showImportMatches(){document.getElementById('importMatchModal').style.display='flex'}
 function hideImportMatches(){document.getElementById('importMatchModal').style.display='none'}
@@ -999,15 +946,15 @@ async function importMatches(){
  const batch=db.batch();
  matches.forEach(m=>{
  if(!m.id){m.id=Date.now()+'-'+Math.random().toString(36).slice(2,7)}
- if(m.lineupConfirmed===undefined){m.lineupConfirmed=false}
  if(m.locked===undefined){m.locked=true}
- if(!m.confirmAt&&m.time&&m.date){
+ if(m.locked===undefined){m.locked=true}
+
  const tMatch=m.time.match(/(\d{1,2}):(\d{2})/);
  if(tMatch){
  const h=parseInt(tMatch[1]),mi=parseInt(tMatch[2]);
  const matchTime=new Date(m.date+'T'+String(h).padStart(2,'0')+':'+String(mi).padStart(2,'0')+':00+08:00');
- const confirmTime=new Date(matchTime.getTime()-30*60*1000);
- if(!isNaN(confirmTime.getTime())){m.confirmAt=confirmTime.getTime()}
+
+
  }
  }
  batch.set(db.collection('matches').doc(m.id),m);
@@ -1375,10 +1322,10 @@ function validateMatchData(match, source){
       }
     });
   }
-  // S5: skipReason如果含"30分钟"改为"等待首发确认"
+  // S5: skipReason如果含"30分钟"改为"盘口偏差不足"
   if(match.skipReason && match.skipReason.includes('30分钟')){
-    fixes.push({field:'skipReason', old:match.skipReason, newVal:'等待首发确认', rule:'S5'});
-    match.skipReason = '等待首发确认';
+    fixes.push({field:'skipReason', old:match.skipReason, newVal:'盘口偏差不足', rule:'S5'});
+    match.skipReason = '盘口偏差不足';
   }
   // W2: homeTeam/awayTeam不能为空
   if(!match.homeTeam && match.awayTeam){

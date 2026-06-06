@@ -11,6 +11,8 @@
     "vsText": "VS",
     "locked": true,
     "lockId": "",
+    "lineupConfirmed": true,
+    "confirmAt": 0,
     "odds": [
       {
         "type": "分析方向",
@@ -52,6 +54,8 @@
     "vsText": "VS",
     "locked": true,
     "lockId": "",
+    "lineupConfirmed": true,
+    "confirmAt": 0,
     "odds": [
       {
         "type": "分析方向",
@@ -93,6 +97,8 @@
     "vsText": "VS",
     "locked": true,
     "lockId": "",
+    "lineupConfirmed": true,
+    "confirmAt": 0,
     "odds": [
       {
         "type": "分析方向",
@@ -134,6 +140,8 @@
     "vsText": "VS",
     "locked": true,
     "lockId": "",
+    "lineupConfirmed": true,
+    "confirmAt": 0,
     "odds": [
       {
         "type": "分析方向",
@@ -175,6 +183,8 @@
     "vsText": "VS",
     "locked": true,
     "lockId": "",
+    "lineupConfirmed": true,
+    "confirmAt": 0,
     "odds": [
       {
         "type": "分析方向",
@@ -216,6 +226,8 @@
     "vsText": "VS",
     "locked": true,
     "lockId": "",
+    "lineupConfirmed": true,
+    "confirmAt": 0,
     "odds": [
       {
         "type": "分析方向",
@@ -251,13 +263,15 @@
     "date": "2026-06-07",
     "league": "西篮联",
     "leagueTag": "acb",
-    "status": "live",
+    "status": "upcoming",
     "time": "00:00",
     "homeTeam": "皇家马德里",
     "awayTeam": "特内里费",
     "vsText": "VS",
     "locked": true,
     "lockId": "acb301",
+    "lineupConfirmed": true,
+    "confirmAt": 1780759800000,
     "odds": [
       {
         "type": "分析方向",
@@ -299,6 +313,8 @@
     "vsText": "VS",
     "locked": true,
     "lockId": "bbl302",
+    "lineupConfirmed": true,
+    "confirmAt": 1780761600000,
     "odds": [
       {
         "type": "分析方向",
@@ -334,13 +350,15 @@
     "date": "2026-06-07",
     "league": "美职女篮",
     "leagueTag": "wnba",
-    "status": "ended",
+    "status": "upcoming",
     "time": "01:00",
     "homeTeam": "明尼苏达天猫",
     "awayTeam": "西雅图风暴",
     "vsText": "VS",
     "locked": true,
     "lockId": "wnba301",
+    "lineupConfirmed": true,
+    "confirmAt": 1780763400000,
     "odds": [
       {
         "type": "分析方向",
@@ -368,11 +386,11 @@
     "ended": true,
     "homeScore": 88,
     "awayScore": 68,
-    "hit1": "pending",
+    "hit1": "miss",
     "hit2": "hit",
     "confidence": 60,
     "stars": 3,
-    "endedAt": 1780748400000
+    "endedAt": 1780776562144
   },
   {
     "id": "2026-06-07-wnba-305",
@@ -386,6 +404,8 @@
     "vsText": "VS",
     "locked": true,
     "lockId": "wnba302",
+    "lineupConfirmed": true,
+    "confirmAt": 1780770600000,
     "odds": [
       {
         "type": "分析方向",
@@ -423,13 +443,15 @@
     "date": "2026-06-07",
     "league": "西篮联",
     "leagueTag": "acb",
-    "status": "live",
+    "status": "upcoming",
     "time": "03:00",
     "homeTeam": "穆尔西亚天主大学",
     "awayTeam": "巴塞罗那",
     "vsText": "VS",
     "locked": true,
     "lockId": "acb304",
+    "lineupConfirmed": true,
+    "confirmAt": 1780770600000,
     "odds": [
       {
         "type": "分析方向",
@@ -469,6 +491,8 @@
     "vsText": "VS",
     "locked": true,
     "lockId": "wnba303",
+    "lineupConfirmed": true,
+    "confirmAt": 1780781400000,
     "odds": [
       {
         "type": "分析方向",
@@ -510,6 +534,8 @@
     "vsText": "VS",
     "locked": true,
     "lockId": "wnba304",
+    "lineupConfirmed": true,
+    "confirmAt": 1780788600000,
     "odds": [
       {
         "type": "分析方向",
@@ -538,41 +564,5 @@
     "hit2": null,
     "confidence": 55,
     "stars": 2
-  },
-  {
-    "id": "2026-06-07-wnba-308",
-    "date": "2026-06-07",
-    "league": "美职女篮",
-    "leagueTag": "WNBA",
-    "status": "upcoming",
-    "time": "21:00",
-    "homeTeam": "康涅狄格节奏",
-    "awayTeam": "芝加哥天空",
-    "vsText": "VS",
-    "locked": false,
-    "lockId": "",
-    "odds": [
-      {
-        "type": "分析方向",
-        "value": "节奏 -1.5"
-      },
-      {
-        "type": "得分预期",
-        "value": "—"
-      }
-    ],
-    "injuries": [
-      "节奏：无重大伤停",
-      "天空：待确认"
-    ],
-    "lineups": [
-      "赛前30分钟确认"
-    ],
-    "analysis": "【伤病情况】节奏阵容齐整，天空待确认【模型分析】v3.1模型预测分差Tempo+4.9，Pinnacle开盘Tempo-1.5，偏差6.4分。节奏3天休息+ORTG碾压优势，看好节奏让分。信心⭐⭐",
-    "recommendText": "节奏 -1.5",
-    "recommendText2": "",
-    "skipReason": "",
-    "recommend": "pass",
-    "order": 8
   }
 ]

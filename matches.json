@@ -13,12 +13,12 @@
     "lockId": "8-wnba-301",
     "odds": [
       {
-        "type": "分析方向",
+        "type": "让分方向",
         "value": "波特兰火焰 +7.5"
       },
       {
         "type": "得分预期",
-        "value": "184.8"
+        "value": "170.1"
       },
       {
         "type": "Pinnacle让分",
@@ -26,24 +26,26 @@
       },
       {
         "type": "Pinnacle大小分",
-        "value": "176.0"
+        "value": "175.5"
       }
     ],
     "injuries": [
-      "火焰：巴克(右四头肌，probable)、萨缪尔森(右跟腱，probable)——均预计出战"
+      "火焰：巴克(右四头肌，probable)、萨缪尔森(右跟腱，probable)——均预计出战",
+      "火花：无伤病报告"
     ],
     "lineups": [
       "火焰：Bridget Carleton, Carla Leite, Sarah Ashlee Barker, Emily Engstler, Megan Gustafson",
       "火花：Erica Wheeler, Kelsey Plum, Ariel Atkins, Nneka Ogwumike, Dearica Hamby"
     ],
-    "analysis": "【伤病情况】火焰巴克(probable右四头肌)和萨缪尔森(probable右跟腱)均预计出战，阵容完整；火花无伤病报告，Plum踝伤复出后状态火热(上战27分)。\n\nv3.1模型赛前最终预测：火花91.5-火焰93.3，总分184.8，分差1.8（火花微弱领先）。\n\n【数据趋势】\n让分方向：模型预测分差1.8 vs Pinnacle盘口7.5，偏差8.7分。火花主场1胜4负联盟最差，3连负状态低迷；火花DRTG 115.1联盟最差，防守漏洞明显。WNBA深盘≥5.5主队输盘率统计支持。推荐：火焰+7.5。\n\n大小分方向：模型预测总分184.8 vs Pinnacle盘口176，偏差8.8分。火花进攻提升(Plum复出)，火焰客场三分35.4%联盟前列，两队节奏偏快。推荐：176大。",
+    "analysis": "【伤病情况】火焰巴克(probable右四头肌)和萨缪尔森(probable右跟腱)均预计出战，阵容完整；火花无伤病报告，Plum踝伤复出后状态火热(上战27分)。\n\n【v3.3融合模型预测】火花84.7-火焰85.4，融合总分170.1(ORTG×0.8+PPG×0.2)。ORTG总分169.0，PPG总分174.6，双模型一致指向小分。\n\n【让分分析】模型预测分差1.7 vs Pinnacle盘口火花-7.5，edge达8.2分远超3分阈值。火花主场1胜5负联盟最差，3连败状态低迷；DRTG 115.6联盟最差，防守漏洞明显。火焰客场2胜2负表现稳定。推荐火焰+7.5，3星信心。\n\n【大小分分析】融合总分170.1 vs Pinnacle盘口175.5，偏差-5.4分达4分阈值。ORTG与PPG双模型一致指向小分。火花虽然Plum复出进攻提升，但火焰客场节奏偏慢(Pace 77.1)，双方预计非高节奏对攻。推荐小175.5，2星信心。",
     "recommendText": "波特兰火焰 +7.5",
-    "recommendText2": "176大",
+    "recommendText2": "小 175.5",
     "skipReason": "",
-    "recommend": "give",
+    "recommend": "pass",
     "order": 1,
     "ended": false,
-    "confidence": 3
+    "confidence": 75,
+    "stars": 3
   },
   {
     "id": "2026-06-09-wnba-301",

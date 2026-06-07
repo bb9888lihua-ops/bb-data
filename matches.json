@@ -542,5 +542,190 @@
     "confidence": 65,
     "stars": 3,
     "endedAt": 1780799202550
+  },
+  {
+    "id": "2026-06-08-wnba-301",
+    "date": "2026-06-08",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "03:00",
+    "homeTeam": "多伦多节奏",
+    "awayTeam": "芝加哥天空",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "8-w301",
+    "odds": [
+      {
+        "type": "分析方向",
+        "value": "节奏 -1.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "173.5"
+      }
+    ],
+    "injuries": [
+      "天空: Rickea Jackson(ACL报销), Vandersloot(未复出), Carrington(脚)",
+      "节奏: Kiki Rice(左脚踝扭伤,归期未定)"
+    ],
+    "lineups": [
+      "赛前确认"
+    ],
+    "analysis": "【首发阵容】赛前确认【伤病情况】天空Jackson赛季报销,Vandersloot/Carrington缺阵;节奏Rice脚踝伤缺阵【数据趋势】节奏ORTG111.6联盟第4,但DRTG112.8联盟最差;天空ORTG100联盟倒数,进攻乏力。模型预期:节奏88.4-天空87.5,总分176.0,分差仅0.9。Pinnacle节奏-1.5,偏差不足2分→skip。大小分偏差2.5<8→skip。近5场调整:节奏防守恶化,天空终结5连败",
+    "recommendText": "skip",
+    "recommendText2": "skip",
+    "skipReason": "让分偏差0.6<2,大小分偏差2.5<8",
+    "recommend": "skip",
+    "order": 1,
+    "ended": false
+  },
+  {
+    "id": "2026-06-08-wnba-302",
+    "date": "2026-06-08",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "07:00",
+    "homeTeam": "洛杉矶火花",
+    "awayTeam": "波特兰火焰",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "8-w302",
+    "odds": [
+      {
+        "type": "分析方向",
+        "value": "火花 -7.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "177.5"
+      }
+    ],
+    "injuries": [
+      "火花: Kelsey Plum(脚踝伤复出中), Rae Burrell(脚踝)",
+      "火焰: 无重大伤病"
+    ],
+    "lineups": [
+      "赛前确认"
+    ],
+    "analysis": "【首发阵容】赛前确认【伤病情况】火花Plum脚踝伤刚复出,Burrell脚踝;火焰无重大伤病【数据趋势】火花ORTG109.8不错但DRTG115.1联盟最差,3连负;火焰ORTG105.2/DRTG109.3中游,2连负。模型预期:火花90.0-火焰91.3,总分181.4,火焰略优。Pinnacle火花-7.5,模型认为接近均势→偏差约8.8分,火焰+7.5有极大价值。火花防守漏洞巨大,火焰三分命中率35.4%联盟前列。深盘≥5.5主队输盘率高→支持火焰受让",
+    "recommendText": "火焰 +7.5",
+    "recommendText2": "skip",
+    "skipReason": "大小分偏差4.4<8",
+    "recommend": "pass",
+    "order": 2,
+    "ended": false
+  },
+  {
+    "id": "2026-06-09-wnba-301",
+    "date": "2026-06-09",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "07:00",
+    "homeTeam": "康涅狄格阳光",
+    "awayTeam": "纽约自由人",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "9-w301",
+    "odds": [
+      {
+        "type": "分析方向",
+        "value": "自由人 -13.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "160.5"
+      }
+    ],
+    "injuries": [
+      "阳光: 无更新",
+      "自由人: Ionescu(背伤,day-to-day)"
+    ],
+    "lineups": [
+      "赛前确认"
+    ],
+    "analysis": "【首发阵容】赛前确认【伤病情况】阳光无更新;自由人Ionescu背伤出战成疑【数据趋势】阳光2-10联盟最差,ORTG94/DRTG109.1;自由人7-4,ORTG109.1/DRTG103.0,3连胜。模型预期:阳光72.2-自由人91.8,总分164.0,自由人-19.6。Pinnacle约自由人-13.5,偏差约6分→自由人方向有偏差。但WNBA深盘主队输盘率高+阳光虽烂但已有2胜。大小分164 vs 160.5偏差3.5<8→skip",
+    "recommendText": "自由人 -13.5",
+    "recommendText2": "skip",
+    "skipReason": "大小分偏差不足,深盘谨慎",
+    "recommend": "pass",
+    "order": 3,
+    "ended": false
+  },
+  {
+    "id": "2026-06-09-wnba-302",
+    "date": "2026-06-09",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "07:00",
+    "homeTeam": "华盛顿神秘人",
+    "awayTeam": "印第安纳狂热",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "9-w302",
+    "odds": [
+      {
+        "type": "分析方向",
+        "value": "狂热 -3.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "172.5"
+      }
+    ],
+    "injuries": [
+      "神秘人: 监测Citron状态",
+      "狂热: Clark(背伤,day-to-day)"
+    ],
+    "lineups": [
+      "赛前确认"
+    ],
+    "analysis": "【首发阵容】赛前确认【伤病情况】神秘人监测Citron状态;狂热Clark背伤出战成疑【数据趋势】神秘人4-5,ORTG103.7/DRTG109.3;狂热5-5,ORTG107.2/DRTG104.0。模型预期:神秘人85.2-狂热90.4,总分175.6,狂热-5.2。Pinnacle约狂热-3.5,偏差1.7<2→让分偏差不足。大小分175.6 vs 172.5偏差3.1<8→skip。Clark伤病是关键变量",
+    "recommendText": "skip",
+    "recommendText2": "skip",
+    "skipReason": "让分偏差1.7<2,大小分偏差3.1<8,Clark伤病不确定",
+    "recommend": "skip",
+    "order": 4,
+    "ended": false
+  },
+  {
+    "id": "2026-06-09-wnba-303",
+    "date": "2026-06-09",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "10:00",
+    "homeTeam": "拉斯维加斯王牌",
+    "awayTeam": "西雅图风暴",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "9-w303",
+    "odds": [
+      {
+        "type": "分析方向",
+        "value": "王牌 -13.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "162.5"
+      }
+    ],
+    "injuries": [
+      "王牌: 无更新",
+      "风暴: Malonga(脑震荡),Magbegor(脚)"
+    ],
+    "lineups": [
+      "赛前确认"
+    ],
+    "analysis": "【首发阵容】赛前确认【伤病情况】王牌无更新;风暴Malonga脑震荡,Magbegor脚伤缺阵【数据趋势】王牌7-3,ORTG108.5/DRTG103.4;风暴3-9,ORTG95/DRTG103.6,4连负。模型预期:王牌87.5-风暴74.0,总分161.5,王牌-13.5。Pinnacle约王牌-13.5,偏差≈0→模型与市场一致。深盘≥5.5主队输盘率高→王牌-13.5风险大。大小分161.5 vs 162.5偏差1<8→skip",
+    "recommendText": "skip",
+    "recommendText2": "skip",
+    "skipReason": "让分偏差≈0,深盘主队输盘率高,大小分偏差不足",
+    "recommend": "skip",
+    "order": 5,
+    "ended": false
   }
 ]

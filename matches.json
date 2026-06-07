@@ -544,21 +544,61 @@
     "endedAt": 1780799202550
   },
   {
-    "id": "2026-06-08-wnba-301",
+    "id": "2026-06-08-acb-301",
     "date": "2026-06-08",
-    "league": "WNBA",
-    "leagueTag": "WNBA",
+    "league": "西篮联",
+    "leagueTag": "acb",
     "status": "upcoming",
-    "time": "03:00",
-    "homeTeam": "多伦多节奏",
-    "awayTeam": "芝加哥天空",
+    "time": "01:00",
+    "homeTeam": "约文图特",
+    "awayTeam": "巴斯克尼亚",
     "vsText": "VS",
     "locked": true,
-    "lockId": "8-w301",
+    "lockId": "8-acb301",
     "odds": [
       {
-        "type": "分析方向",
-        "value": "节奏 -1.5"
+        "type": "让分方向",
+        "value": "巴斯克尼亚 -6.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "171.5"
+      }
+    ],
+    "injuries": [
+      "约文图特: 托米奇(内线支柱)缺阵"
+    ],
+    "lineups": {},
+    "analysis": "【首发阵容】等待确认\n【伤病情况】约文图特主力中锋托米奇缺阵，内线深度受损\n【数据趋势】季后赛抢三决胜，双方战意极高\n【分析】西篮联1/4决赛G3，约文图特主场92-73大胜扳平比分(总分1-1)。Joventut主场强势(14胜3负)，Baskonia客场表现下滑。生死战双方专注度极高，预计低分僵持局。",
+    "recommendText": "约文图特 +6.5",
+    "recommendText2": "小171.5",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 1,
+    "ended": false,
+    "homeScore": null,
+    "awayScore": null,
+    "hit1": null,
+    "hit2": null,
+    "confidence": 75,
+    "stars": 3
+  },
+  {
+    "id": "2026-06-08-wnba-302",
+    "date": "2026-06-08",
+    "league": "美职女篮",
+    "leagueTag": "wnba",
+    "status": "upcoming",
+    "time": "03:00",
+    "homeTeam": "芝加哥天空",
+    "awayTeam": "多伦多节奏",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "8-wnba302",
+    "odds": [
+      {
+        "type": "让分方向",
+        "value": "多伦多节奏 -1.5"
       },
       {
         "type": "得分预期",
@@ -566,36 +606,39 @@
       }
     ],
     "injuries": [
-      "天空: Rickea Jackson(ACL报销), Vandersloot(未复出), Carrington(脚)",
-      "节奏: Kiki Rice(左脚踝扭伤,归期未定)"
+      "天空: Vandersloot/Carrington/Jackson/Jaquez缺阵"
     ],
-    "lineups": [
-      "赛前确认"
-    ],
-    "analysis": "【首发阵容】赛前确认【伤病情况】天空Jackson赛季报销,Vandersloot/Carrington缺阵;节奏Rice脚踝伤缺阵【数据趋势】节奏ORTG111.6联盟第4,但DRTG112.8联盟最差;天空ORTG100联盟倒数,进攻乏力。模型预期:节奏88.4-天空87.5,总分176.0,分差仅0.9。Pinnacle节奏-1.5,偏差不足2分→skip。大小分偏差2.5<8→skip。近5场调整:节奏防守恶化,天空终结5连败",
-    "recommendText": "skip",
-    "recommendText2": "skip",
-    "skipReason": "让分偏差0.6<2,大小分偏差2.5<8",
-    "recommend": "skip",
-    "order": 1,
-    "ended": false
+    "lineups": {},
+    "analysis": "【首发阵容】等待确认\n【伤病情况】天空4核心缺阵(范德斯洛特/卡林顿/杰克逊赛季报销/贾奎兹)，攻防双差\n【数据趋势】天空近6场1胜5负，场均80.5分失90.7分，4核心缺阵影响严重\n【分析】WNBA总裁杯小组赛。天空4名核心缺阵导致战力大降，近6场仅1胜5负。节奏近5胜5负，进攻火力稳定(场均88.8分)。天空客场羸弱，节奏主场2胜2负。",
+    "recommendText": "天空 +1.5",
+    "recommendText2": "小173.5",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 2,
+    "ended": false,
+    "homeScore": null,
+    "awayScore": null,
+    "hit1": null,
+    "hit2": null,
+    "confidence": 70,
+    "stars": 3
   },
   {
-    "id": "2026-06-08-wnba-302",
+    "id": "2026-06-08-wnba-303",
     "date": "2026-06-08",
-    "league": "WNBA",
-    "leagueTag": "WNBA",
+    "league": "美职女篮",
+    "leagueTag": "wnba",
     "status": "upcoming",
     "time": "07:00",
     "homeTeam": "洛杉矶火花",
     "awayTeam": "波特兰火焰",
     "vsText": "VS",
     "locked": true,
-    "lockId": "8-w302",
+    "lockId": "8-wnba303",
     "odds": [
       {
-        "type": "分析方向",
-        "value": "火花 -7.5"
+        "type": "让分方向",
+        "value": "洛杉矶火花 -7.5"
       },
       {
         "type": "得分预期",
@@ -603,19 +646,22 @@
       }
     ],
     "injuries": [
-      "火花: Kelsey Plum(脚踝伤复出中), Rae Burrell(脚踝)",
-      "火焰: 无重大伤病"
+      "火焰: 萨缪尔森/巴克出战成疑"
     ],
-    "lineups": [
-      "赛前确认"
-    ],
-    "analysis": "【首发阵容】赛前确认【伤病情况】火花Plum脚踝伤刚复出,Burrell脚踝;火焰无重大伤病【数据趋势】火花ORTG109.8不错但DRTG115.1联盟最差,3连负;火焰ORTG105.2/DRTG109.3中游,2连负。模型预期:火花90.0-火焰91.3,总分181.4,火焰略优。Pinnacle火花-7.5,模型认为接近均势→偏差约8.8分,火焰+7.5有极大价值。火花防守漏洞巨大,火焰三分命中率35.4%联盟前列。深盘≥5.5主队输盘率高→支持火焰受让",
+    "lineups": {},
+    "analysis": "【首发阵容】等待确认\n【伤病情况】火焰2人出战成疑(萨缪尔森/巴克)，火花全员健康\n【数据趋势】火花近6场1胜5负，主场防守羸弱(失96分)；火焰客场2胜2负\n【分析】WNBA总裁杯小组赛。火花羑7.5分偏深(历史主场赢盘率仅5%)，火焰客场表现稳定。火花进攻强但防守差，预计高比分对攻局。火焰新军近期2连败但客场有一定竞争力。",
     "recommendText": "火焰 +7.5",
-    "recommendText2": "skip",
-    "skipReason": "大小分偏差4.4<8",
+    "recommendText2": "大177.5",
+    "skipReason": "",
     "recommend": "pass",
-    "order": 2,
-    "ended": false
+    "order": 3,
+    "ended": false,
+    "homeScore": null,
+    "awayScore": null,
+    "hit1": null,
+    "hit2": null,
+    "confidence": 75,
+    "stars": 3
   },
   {
     "id": "2026-06-09-wnba-301",

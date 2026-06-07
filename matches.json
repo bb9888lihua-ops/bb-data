@@ -18,19 +18,28 @@
       },
       {
         "type": "得分预期",
-        "value": "170.1"
+        "value": "181.3"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "火花 -7.5"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "177.5"
       }
     ],
     "injuries": [
-      "火焰：萨缪尔森(跟腱，出战成疑)、巴克(四头肌，出战成疑)"
+      "火焰：巴克(右四头肌，probable)、萨缪尔森(右跟腱，probable)——均预计出战"
     ],
     "lineups": [
-      "赛前30分钟更新"
+      "火焰：Bridget Carleton, Carla Leite, Sarah Ashlee Barker, Emily Engstler, Megan Gustafson",
+      "火花：Erica Wheeler, Kelsey Plum, Ariel Atkins, Nneka Ogwumike, Dearica Hamby"
     ],
-    "analysis": "【伤病情况】火焰萨缪尔森和巴克出战成疑，均为轮换球员【分析】v3.3模型预测火花84.7-火焰85.4，火花仅微弱领先但Pinnacle给火花-7.5深盘，偏差达8.2分远超阈值。大小分方面ORTG预测169.0、PPG预测174.6，两者均指向小分方向，融合预测170.1低于Pinnacle的175.5，偏差5.4分。火花主场1胜5负(胜率17%)为联盟最差主场，而火焰客场2胜2负表现稳健。模型认定火焰+7.5价值显著，小分同样值得看好。",
+    "analysis": "【伤病情况】火焰巴克(probable)和萨缪尔森(probable)均预计出战，阵容完整；火花无伤病报告。v3.1模型赛前最终预测：火花90.0-火焰91.3，总分181.3，分差1.3（火花微弱领先）。Pinnacle给火花-7.5让分，模型预测分差仅1.3，与盘口偏差达8.8分，远超2分阈值。火花主场1胜5负为联盟最差主场之一，近3连败状态低迷；火焰虽2连败但客场2胜2负表现稳健。模型认定火焰+7.5存在显著价值。大小分方面，总分预测181.3与盘口177.5偏差3.8分，未达WNBA 4分阈值，本场仅推荐让分方向。",
     "recommendText": "波特兰火焰 +7.5",
-    "recommendText2": "小 175.5",
-    "skipReason": "",
+    "recommendText2": "",
+    "skipReason": "大小分偏差3.8分<4分阈值",
     "recommend": "pass",
     "order": 1,
     "ended": false

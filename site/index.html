@@ -405,6 +405,7 @@ body{background:#0a0e17;color:#e8eaf0;font-family:-apple-system,BlinkMacSystemFo
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script>
+function formatDateShort(dateStr){if(!dateStr)return '';const parts=dateStr.split('-');if(parts.length!==3)return dateStr;return parseInt(parts[1])+'/'+parseInt(parts[2])}
 // ===== Firebase 配置（必填）=====
 // 在 Firebase 控制台创建项目后，将配置填入下方
 const firebaseConfig = {
@@ -813,7 +814,7 @@ function buildCardHtml(m,unlocked,coins){
  else{badgeClass='badge-pre';badgeText='赛前'}
  let header='<div class="card-header"><span class="league-tag '+tagClass+'">'+(m.league||'')+'</span><span class="badge '+badgeClass+'">'+badgeText+'</span>';
  if(m.locked&&!effectiveEnded)header+='<span class="badge-cost">1🪙</span>';
- header+='<span class="time">'+(m.time||'')+'</span></div>';
+ header+='<span class="time">'+formatDateShort(m.date)+' '+(m.time||'')+'</span></div>';
  // 对阵区域：已结束时显示比分
  const homeScore=effectiveEnded&&m.homeScore!=null?' <span class="match-score">'+m.homeScore+'</span>':'';
  const awayScore=effectiveEnded&&m.awayScore!=null?'<span class="match-score">'+m.awayScore+'</span> ':'';

@@ -1,5 +1,53 @@
 [
   {
+    "id": "2026-06-08-nba-301",
+    "date": "2026-06-08",
+    "league": "NBA",
+    "leagueTag": "NBA",
+    "status": "upcoming",
+    "time": "08:30",
+    "homeTeam": "纽约尼克斯",
+    "awayTeam": "圣安东尼奥马刺",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "8-nba-301",
+    "odds": [
+      {
+        "type": "让分方向",
+        "value": "马刺 +9.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "234.1"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "尼克斯 -2.5"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "216.5"
+      }
+    ],
+    "injuries": [
+      "尼克斯：罗宾逊(右手小指骨折，带护具出赛，限时15-20分钟)",
+      "马刺：无伤病报告，卡斯尔左脚轻微崴脚已恢复"
+    ],
+    "lineups": [
+      "尼克斯预计首发：布伦森/布里奇斯/阿努诺比/唐斯/罗宾逊",
+      "马刺预计首发：福克斯/卡斯尔/约翰逊/巴恩斯/文班亚玛"
+    ],
+    "analysis": "【首发阵容】尼克斯：布伦森/布里奇斯/阿努诺比/唐斯/罗宾逊；马刺：福克斯/卡斯尔/约翰逊/巴恩斯/文班亚玛\n【伤病情况】尼克斯罗宾逊右手小指骨折，戴护具出赛预计15-20分钟，内线轮换轻微削弱；马刺全员健康，卡斯尔左脚崴脚已完全恢复。\n\n【v3.1模型预测】基于BBR官方数据：尼克斯ORTG 119.8，马刺DRTG 110.2，双方Pace均值100.9。融合模型预测尼克斯得分117.1，马刺得分105.8，总分234.1，尼克斯赢11.3分。HCA=+3.0修正后净胜12.0分。\n\n【让分分析】模型预测尼克斯赢12.0分 vs Pinnacle盘口-2.5分，edge达9.5分远超3分阈值。尼克斯主场6胜1负(季后赛)，主场净效率+16.1联盟顶级；马刺客场转换效率骤降(总决赛0.84 PPP vs 常规赛1.15)。推荐尼克斯-2.5，5星信心。\n\n【大小分分析】模型预测总分234.1 vs Pinnacle盘口216.5，偏差17.6分远超5分阈值。双方进攻效率顶级(均119.8)，节奏偏快(100.9 Pace)。推荐大216.5，5星信心。",
+    "recommendText": "纽约尼克斯 -2.5",
+    "recommendText2": "大 216.5",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 1,
+    "ended": false,
+    "confidence": 95,
+    "stars": 5
+  },
+  {
     "id": "2026-06-08-wnba-303",
     "date": "2026-06-08",
     "league": "WNBA",
@@ -42,7 +90,7 @@
     "recommendText2": "小 175.5",
     "skipReason": "",
     "recommend": "pass",
-    "order": 1,
+    "order": 2,
     "ended": false,
     "confidence": 75,
     "stars": 3
@@ -80,7 +128,7 @@
     "recommendText2": "",
     "skipReason": "让分偏差不足(1.2分<3分)，大小分ORTG与PPG方向不一致",
     "recommend": "skip",
-    "order": 2
+    "order": 3
   },
   {
     "id": "2026-06-09-wnba-302",
@@ -115,7 +163,7 @@
     "recommendText2": "",
     "skipReason": "让分偏差不足(0.4分<3分)，大小分ORTG与PPG方向不一致",
     "recommend": "skip",
-    "order": 3
+    "order": 4
   },
   {
     "id": "2026-06-09-wnba-303",
@@ -150,6 +198,6 @@
     "recommendText2": "",
     "skipReason": "",
     "recommend": "pass",
-    "order": 4
+    "order": 5
   }
 ]

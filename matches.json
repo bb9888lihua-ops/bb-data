@@ -1,52 +1,5 @@
 [
   {
-    "id": "2026-06-09-nba-finals-g3",
-    "date": "2026-06-09",
-    "league": "NBA",
-    "leagueTag": "NBA",
-    "status": "upcoming",
-    "time": "08:30",
-    "homeTeam": "纽约尼克斯",
-    "awayTeam": "圣安东尼奥马刺",
-    "vsText": "VS",
-    "locked": true,
-    "lockId": "9-nba-301",
-    "odds": [
-      {
-        "type": "分差方向",
-        "value": "纽约尼克斯 -2.5"
-      },
-      {
-        "type": "得分预期",
-        "value": "214"
-      },
-      {
-        "type": "Pinnacle让分",
-        "value": "尼克斯 -2.5"
-      },
-      {
-        "type": "Pinnacle大小分",
-        "value": "216.5"
-      }
-    ],
-    "injuries": [
-      "尼克斯：Mitchell Robinson(右手小指骨折，确认出战戴护具)",
-      "马刺：无伤病报告，阵容齐整"
-    ],
-    "lineups": [
-      "赛前30分钟更新"
-    ],
-    "analysis": "【v3.5核心+3.6叠加分析】系列赛尼克斯2-0领先，G3回到麦迪逊广场花园。尼克斯主场季后赛Net Rating +16.1，联盟顶级；马刺客场Net Rating +6.8。ORTG加权(F70/P20/S10)：尼克斯117.4/马刺113.2。预期分差：尼克斯+5.5，vs参考线-2.5，edge=3.0分。EPM伤停：马刺文班亚马EPM+7.5但G2末节失误+绝杀不中，尼克斯Towns+4.6/布伦森+2.8双核稳定。休息：双方同等休息无修正。裁判G3待公布。尼克斯13连胜为季后赛历史第二长，布伦森Clutch 4.3分/场联盟顶级。\n\n【大小分分析】预期总分214 vs参考线216.5，edge=-2.5。尼克斯主场防守DRTG 104.1压制对手，马刺G2仅104分。总决赛节奏偏慢，低分概率更高。2星信心。",
-    "recommendText": "纽约尼克斯 -2.5",
-    "recommendText2": "小 216.5",
-    "skipReason": "",
-    "recommend": "pass",
-    "order": 0,
-    "ended": false,
-    "confidence": 70,
-    "stars": 2
-  },
-  {
     "id": "2026-06-08-wnba-303",
     "date": "2026-06-08",
     "league": "WNBA",
@@ -84,7 +37,7 @@
       "火焰：Bridget Carleton, Carla Leite, Sarah Ashlee Barker, Emily Engstler, Megan Gustafson",
       "火花：Erica Wheeler, Kelsey Plum, Ariel Atkins, Nneka Ogwumike, Dearica Hamby"
     ],
-    "analysis": "【伤病情况】火焰巴克(probable右四头肌)和萨缪尔森(probable右跟腱)均预计出战，阵容完整；火花无伤病报告，Plum踝伤复出后状态火热(上战27分)。\n\n【v3.3融合模型预测】火花84.7-火焰85.4，融合总分170.1(ORTG×0.8+PPG×0.2)。ORTG总分169.0，PPG总分174.6，双模型一致指向小分。\n\n【让分分析】模型预测分差1.7 vs Pinnacle盘口火花-7.5，edge达8.2分远超3分阈值。火花主场1胜5负联盟最差，3连败状态低迷；DRTG 115.6联盟最差，防守漏洞明显。火焰客场2胜2负表现稳定。推荐火焰+7.5，3星信心。\n\n【大小分分析】融合总分170.1 vs Pinnacle盘口175.5，偏差-5.4分达4分阈值。ORTG与PPG双模型一致指向小分。火花虽然Plum复出进攻提升，但火焰客场节奏偏慢(Pace 77.1)，双方预计非高节奏对攻。推荐小175.5，2星信心。",
+    "analysis": "【已结束】火花89-72击败火焰。\n\n【赛果复盘】让分方向：火焰+7.5 ❌（火花赢17分穿盘）；大小分：小175.5 ✅（总分161）。\n\n【v3.5模型复盘】PPG/OPPG模型预测火花赢1.7分vs参考线7.5分，edge达5.8分。模型正确判断了火焰的受让价值但未能预判火花的大胜。小分方向双模型一致指向小分，判断正确。",
     "recommendText": "波特兰火焰 +7.5",
     "recommendText2": "小 175.5",
     "skipReason": "",
@@ -97,6 +50,99 @@
     "awayScore": 72,
     "hit1": "miss",
     "hit2": "hit"
+  },
+  {
+    "id": "2026-06-09-wnba-302",
+    "date": "2026-06-09",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "07:00",
+    "homeTeam": "华盛顿神秘人",
+    "awayTeam": "印第安纳狂热",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "9-wnba-302",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "华盛顿神秘人 +5.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "169"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "狂热 -5.5"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "169.5"
+      }
+    ],
+    "injuries": [
+      "神秘人：无重大伤病报告",
+      "狂热：全员健康，克拉克状态火热"
+    ],
+    "lineups": [
+      "赛前30分钟更新"
+    ],
+    "analysis": "【v3.5黄金策略分析】\n\n【基本面】神秘人4胜5负排名中游，主场场均83.4分进攻一般，防守场均失87.9分偏弱。狂热5胜5负，新秀克拉克表现惊艳，场均近20分。\n\n【模型计算】PPG/OPPG滚动模型(30%近5场+70%赛季+30%回归)：神秘人主场预期84.8分，狂热客场预期87.3分。预期分差：狂热赢2.5分。vs参考线5.5分，edge=3.0分，神秘人受让方向有价值。\n\n【推荐判定】|参考线|=5.5≤9 ✓，|edge|≈3.0-4.0接近4分阈值。综合判定为2星信心推荐。\n\n【大小分】预期总分172.1vs参考线169.5，大分方向edge=2.6分，不足7分阈值，SKIP。",
+    "recommendText": "华盛顿神秘人 +5.5",
+    "recommendText2": "",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 5,
+    "confidence": 60,
+    "stars": 2
+  },
+  {
+    "id": "2026-06-09-nba-finals-g3",
+    "date": "2026-06-09",
+    "league": "NBA",
+    "leagueTag": "NBA",
+    "status": "upcoming",
+    "time": "08:30",
+    "homeTeam": "纽约尼克斯",
+    "awayTeam": "圣安东尼奥马刺",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "9-nba-301",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "纽约尼克斯 -2.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "214"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "尼克斯 -2.5"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "216.5"
+      }
+    ],
+    "injuries": [
+      "尼克斯：Mitchell Robinson(右手小指骨折，确认出战戴护具)",
+      "马刺：无伤病报告，阵容齐整"
+    ],
+    "lineups": [
+      "赛前30分钟更新"
+    ],
+    "analysis": "【v3.5核心+v3.6叠加分析】\n\n【基本面】系列赛尼克斯2-0领先。尼克斯主场季后赛攻防效率+16.1联盟顶级，马刺客场+6.8。文班亚马G2砍下29分9板4帽但最后绝杀不中，布伦森关键罚球带走比赛。\n\n【v3.5核心模型】ORTG加权(赛季70%+季后赛20%+对手10%)：尼克斯进攻117.4/防守104.1，马刺进攻113.2/防守108.3。预期分差：尼克斯+5.2。vs参考线-2.5，edge=2.7分。\n\n【v3.6叠加修正】\n• EPM伤停：马刺全员健康，尼克斯Robinson手部骨折带伤出战影响有限，修正+0.5分\n• 休息优势：双方同等休息，无修正\n• 裁判修正：G3裁判待公布，暂不修正\n• Clutch：布伦森关键时刻得分联盟前5，信心+0.5星\n\n【综合判断】尼克斯让分方向edge约3.2分，2星信心。大小分预期214vs参考线216.5，小分方向edge=2.5，2星信心。\n\n【推荐】尼克斯 -2.5 ⭐⭐ | 小 216.5 ⭐⭐",
+    "recommendText": "纽约尼克斯 -2.5",
+    "recommendText2": "小 216.5",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 0,
+    "ended": false,
+    "confidence": 65,
+    "stars": 2
   },
   {
     "id": "2026-06-09-wnba-301",
@@ -117,7 +163,15 @@
       },
       {
         "type": "得分预期",
-        "value": "155.9"
+        "value": "165.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "自由人 -12.5"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "162.5"
       }
     ],
     "injuries": [
@@ -126,47 +180,14 @@
     "lineups": [
       "赛前30分钟更新"
     ],
-    "analysis": "【分析】v3.3模型预测阳光70.8-自由人85.1，自由人赢14.2分，Pinnacle给自由人-13盘口，edge仅1.2分不足3分阈值。大小分方面ORTG预测153.2(小)、PPG预测166.8(大)方向不一致，无法推荐。阳光2胜10负联盟垫底，场均失88.1分防守崩塌；自由人7胜4负攻守均衡。模型与盘口基本一致，无显著偏差。",
+    "analysis": "【v3.5黄金策略分析】\n\n【基本面】阳光2胜10负联盟垫底，场均仅75.9分进攻乏力，防守场均失88.1分同样糟糕。自由人7胜4负攻守均衡，客场作战能力稳定。\n\n【模型计算】PPG/OPPG滚动模型：阳光主场预期79.2分，自由人客场预期86.7分，分差7.5分。vs参考线12.5分，edge达5.0分。\n\n【推荐判定】虽然edge达5分超过4分阈值，但参考线绝对值12.5分>9分，根据v3.5黄金策略强制SKIP。深盘比赛不确定性高，模型命中率无统计优势。\n\n【大小分】预期总分165.9vs参考线162.5，大分方向edge=3.4分，不足7分阈值，SKIP。",
     "recommendText": "",
     "recommendText2": "",
-    "skipReason": "让分偏差不足(1.2分<3分)，大小分ORTG与PPG方向不一致",
+    "skipReason": "参考线绝对值>9分，按v3.5黄金策略强制SKIP",
     "recommend": "skip",
-    "order": 4
-  },
-  {
-    "id": "2026-06-09-wnba-302",
-    "date": "2026-06-09",
-    "league": "WNBA",
-    "leagueTag": "WNBA",
-    "status": "upcoming",
-    "time": "07:00",
-    "homeTeam": "华盛顿神秘人",
-    "awayTeam": "印第安纳狂热",
-    "vsText": "VS",
-    "locked": true,
-    "lockId": "9-wnba-302",
-    "odds": [
-      {
-        "type": "分析方向",
-        "value": "本场暂无推荐"
-      },
-      {
-        "type": "得分预期",
-        "value": "162.2"
-      }
-    ],
-    "injuries": [
-      "神秘人：索尼娅·西特隆(出战成疑)"
-    ],
-    "lineups": [
-      "赛前30分钟更新"
-    ],
-    "analysis": "【伤病情况】神秘人核心西特隆出战成疑，若缺阵将削弱进攻【分析】v3.3模型预测神秘人78.1-狂热84.0，狂热赢5.9分，Pinnacle给狂热-5.5盘口，edge仅0.4分不足阈值。大小分方面ORTG预测159.3(小)、PPG预测173.6(大)方向不一致，无法推荐。狂热场均89.2分联盟第3，但神秘人主场防守松散场均失87.9分。模型与盘口高度一致，无显著偏差。",
-    "recommendText": "",
-    "recommendText2": "",
-    "skipReason": "让分偏差不足(0.4分<3分)，大小分ORTG与PPG方向不一致",
-    "recommend": "skip",
-    "order": 5
+    "order": 4,
+    "confidence": 0,
+    "stars": 0
   },
   {
     "id": "2026-06-09-wnba-303",
@@ -183,11 +204,19 @@
     "odds": [
       {
         "type": "分析方向",
-        "value": "西雅图风暴 +14.5"
+        "value": "本场暂无推荐"
       },
       {
         "type": "得分预期",
-        "value": "152.9"
+        "value": "163"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "王牌 -16.5"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "162.5"
       }
     ],
     "injuries": [
@@ -196,11 +225,13 @@
     "lineups": [
       "赛前30分钟更新"
     ],
-    "analysis": "【分析】v3.3模型预测王牌81.0-风暴71.8，王牌赢9.2分，远不及Pinnacle给王牌-14.5的深盘，edge达5.3分。王牌主场1胜2负异常(vs客场6胜1负)，主场优势未体现。风暴虽3胜9负但防守DRTG仅105.2联盟前列，足以咬住14.5分差距。大小分方面ORTG预测149.7(小)、PPG预测165.4(大)方向不一致，暂不推荐大小分。模型认定风暴+14.5价值显著。3星信心。",
-    "recommendText": "西雅图风暴 +14.5",
+    "analysis": "【v3.5黄金策略分析】\n\n【基本面】王牌7胜3负联盟顶级强队，攻防均衡。风暴3胜9负排名垫底，场均仅75分进攻乏力。\n\n【模型计算】PPG/OPPG滚动模型：王牌主场预期87.6分，风暴客场预期77.2分。预期分差：王牌赢10.4分。vs参考线16.5分，edge达6.1分，风暴受让方向有理论价值。\n\n【推荐判定】虽然edge高达6.1分远超4分阈值，但参考线绝对值16.5分>9分，根据v3.5黄金策略强制SKIP。深盘比赛爆冷概率波动大，模型回测统计不具备稳定优势。\n\n【大小分】预期总分164.8vs参考线162.5，大分方向edge=2.3分，不足7分阈值，SKIP。",
+    "recommendText": "",
     "recommendText2": "",
-    "skipReason": "",
-    "recommend": "pass",
-    "order": 6
+    "skipReason": "参考线绝对值>9分，按v3.5黄金策略强制SKIP",
+    "recommend": "skip",
+    "order": 6,
+    "confidence": 0,
+    "stars": 0
   }
 ]

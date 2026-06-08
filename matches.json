@@ -1,7 +1,7 @@
 [
   {
-    "id": "2026-06-08-nba-301",
-    "date": "2026-06-08",
+    "id": "2026-06-09-nba-finals-g3",
+    "date": "2026-06-09",
     "league": "NBA",
     "leagueTag": "NBA",
     "status": "upcoming",
@@ -10,15 +10,15 @@
     "awayTeam": "圣安东尼奥马刺",
     "vsText": "VS",
     "locked": true,
-    "lockId": "8-nba-301",
+    "lockId": "9-nba-301",
     "odds": [
       {
-        "type": "让分方向",
-        "value": "马刺 +9.5"
+        "type": "分差方向",
+        "value": "纽约尼克斯 -2.5"
       },
       {
         "type": "得分预期",
-        "value": "234.1"
+        "value": "214"
       },
       {
         "type": "Pinnacle让分",
@@ -30,22 +30,21 @@
       }
     ],
     "injuries": [
-      "尼克斯：罗宾逊(右手小指骨折，带护具出赛，限时15-20分钟)",
-      "马刺：无伤病报告，卡斯尔左脚轻微崴脚已恢复"
+      "尼克斯：Mitchell Robinson(右手小指骨折，确认出战戴护具)",
+      "马刺：无伤病报告，阵容齐整"
     ],
     "lineups": [
-      "尼克斯预计首发：布伦森/布里奇斯/阿努诺比/唐斯/罗宾逊",
-      "马刺预计首发：福克斯/卡斯尔/约翰逊/巴恩斯/文班亚玛"
+      "赛前30分钟更新"
     ],
-    "analysis": "【首发阵容】尼克斯：布伦森/布里奇斯/阿努诺比/唐斯/罗宾逊；马刺：福克斯/卡斯尔/约翰逊/巴恩斯/文班亚玛\n【伤病情况】尼克斯罗宾逊右手小指骨折，戴护具出赛预计15-20分钟，内线轮换轻微削弱；马刺全员健康，卡斯尔左脚崴脚已完全恢复。\n\n【v3.1模型预测】基于BBR官方数据：尼克斯ORTG 119.8，马刺DRTG 110.2，双方Pace均值100.9。融合模型预测尼克斯得分117.1，马刺得分105.8，总分234.1，尼克斯赢11.3分。HCA=+3.0修正后净胜12.0分。\n\n【让分分析】模型预测尼克斯赢12.0分 vs Pinnacle盘口-2.5分，edge达9.5分远超3分阈值。尼克斯主场6胜1负(季后赛)，主场净效率+16.1联盟顶级；马刺客场转换效率骤降(总决赛0.84 PPP vs 常规赛1.15)。推荐尼克斯-2.5，5星信心。\n\n【大小分分析】模型预测总分234.1 vs Pinnacle盘口216.5，偏差17.6分远超5分阈值。双方进攻效率顶级(均119.8)，节奏偏快(100.9 Pace)。推荐大216.5，5星信心。",
+    "analysis": "【v3.5核心+3.6叠加分析】系列赛尼克斯2-0领先，G3回到麦迪逊广场花园。尼克斯主场季后赛Net Rating +16.1，联盟顶级；马刺客场Net Rating +6.8。ORTG加权(F70/P20/S10)：尼克斯117.4/马刺113.2。预期分差：尼克斯+5.5，vs参考线-2.5，edge=3.0分。EPM伤停：马刺文班亚马EPM+7.5但G2末节失误+绝杀不中，尼克斯Towns+4.6/布伦森+2.8双核稳定。休息：双方同等休息无修正。裁判G3待公布。尼克斯13连胜为季后赛历史第二长，布伦森Clutch 4.3分/场联盟顶级。\n\n【大小分分析】预期总分214 vs参考线216.5，edge=-2.5。尼克斯主场防守DRTG 104.1压制对手，马刺G2仅104分。总决赛节奏偏慢，低分概率更高。2星信心。",
     "recommendText": "纽约尼克斯 -2.5",
-    "recommendText2": "大 216.5",
+    "recommendText2": "小 216.5",
     "skipReason": "",
     "recommend": "pass",
-    "order": 1,
+    "order": 0,
     "ended": false,
-    "confidence": 95,
-    "stars": 5
+    "confidence": 70,
+    "stars": 2
   },
   {
     "id": "2026-06-08-wnba-303",
@@ -90,15 +89,14 @@
     "recommendText2": "小 175.5",
     "skipReason": "",
     "recommend": "pass",
-    "order": 2,
+    "order": 1,
     "ended": true,
     "confidence": 75,
     "stars": 3,
     "homeScore": 89,
     "awayScore": 72,
-    "hit1": false,
-    "hit2": true,
-    "endedAt": "202606081012"
+    "hit1": "miss",
+    "hit2": "hit"
   },
   {
     "id": "2026-06-09-wnba-301",
@@ -133,7 +131,7 @@
     "recommendText2": "",
     "skipReason": "让分偏差不足(1.2分<3分)，大小分ORTG与PPG方向不一致",
     "recommend": "skip",
-    "order": 3
+    "order": 4
   },
   {
     "id": "2026-06-09-wnba-302",
@@ -168,7 +166,7 @@
     "recommendText2": "",
     "skipReason": "让分偏差不足(0.4分<3分)，大小分ORTG与PPG方向不一致",
     "recommend": "skip",
-    "order": 4
+    "order": 5
   },
   {
     "id": "2026-06-09-wnba-303",
@@ -203,6 +201,6 @@
     "recommendText2": "",
     "skipReason": "",
     "recommend": "pass",
-    "order": 5
+    "order": 6
   }
 ]

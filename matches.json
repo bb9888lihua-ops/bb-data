@@ -56,7 +56,7 @@
     "date": "2026-06-09",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "upcoming",
+    "status": "ended",
     "time": "07:00",
     "homeTeam": "华盛顿神秘人",
     "awayTeam": "印第安纳狂热",
@@ -95,7 +95,10 @@
     "recommend": "skip",
     "order": 5,
     "confidence": 0,
-    "stars": 0
+    "stars": 0,
+    "homeScore": 76,
+    "awayScore": 78,
+    "ended": true
   },
   {
     "id": "2026-06-09-nba-finals-g3",
@@ -149,7 +152,7 @@
     "date": "2026-06-09",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "upcoming",
+    "status": "ended",
     "time": "07:00",
     "homeTeam": "康涅狄格阳光",
     "awayTeam": "纽约自由人",
@@ -188,7 +191,10 @@
     "recommend": "skip",
     "order": 4,
     "confidence": 0,
-    "stars": 0
+    "stars": 0,
+    "homeScore": 80,
+    "awayScore": 89,
+    "ended": true
   },
   {
     "id": "2026-06-09-wnba-303",

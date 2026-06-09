@@ -201,7 +201,7 @@
     "date": "2026-06-09",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "upcoming",
+    "status": "ended",
     "time": "10:00",
     "homeTeam": "拉斯维加斯王牌",
     "awayTeam": "西雅图风暴",
@@ -240,6 +240,10 @@
     "recommend": "pass",
     "order": 6,
     "confidence": 75,
-    "stars": 3
+    "stars": 3,
+    "homeScore": 101,
+    "awayScore": 91,
+    "ended": true,
+    "hit2": "miss"
   }
 ]

@@ -154,5 +154,44 @@
     "skipReason": "",
     "recommend": "pass",
     "order": 4
+  },
+  {
+    "id": "2026-06-12-acb-301",
+    "date": "2026-06-12",
+    "league": "西甲ACB",
+    "leagueTag": "ACB",
+    "status": "pre",
+    "time": "02:00",
+    "homeTeam": "巴塞罗那",
+    "awayTeam": "拉古纳特内里夫",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "12-acb-301",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "巴塞罗那 -5.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "173.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "巴塞罗那 -5.5"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "173.5"
+      }
+    ],
+    "injuries": [],
+    "lineups": [],
+    "analysis": "G1巴塞罗那100-67大胜33分。H2H近10场巴塞罗那8胜2负。拉古纳特内里夫5天4赛体能堪忧。173.5总分偏高，关注大方向。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 0
   }
 ]

@@ -1,257 +1,158 @@
 [
   {
-    "id": "2026-06-08-wnba-303",
-    "date": "2026-06-08",
+    "id": "2026-06-12-wnba-301",
+    "date": "2026-06-12",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "ended",
+    "status": "pre",
     "time": "07:00",
-    "homeTeam": "洛杉矶火花",
-    "awayTeam": "波特兰火焰",
+    "homeTeam": "印第安纳狂热",
+    "awayTeam": "芝加哥天空",
     "vsText": "VS",
-    "locked": true,
-    "lockId": "8-wnba-301",
-    "odds": [
-      {
-        "type": "让分方向",
-        "value": "波特兰火焰 +7.5"
-      },
-      {
-        "type": "得分预期",
-        "value": "170.1"
-      },
-      {
-        "type": "Pinnacle让分",
-        "value": "火花 -7.5"
-      },
-      {
-        "type": "Pinnacle大小分",
-        "value": "175.5"
-      }
-    ],
-    "injuries": [
-      "火焰：巴克(右四头肌，probable)、萨缪尔森(右跟腱，probable)——均预计出战",
-      "火花：无伤病报告"
-    ],
-    "lineups": [
-      "火焰：Bridget Carleton, Carla Leite, Sarah Ashlee Barker, Emily Engstler, Megan Gustafson",
-      "火花：Erica Wheeler, Kelsey Plum, Ariel Atkins, Nneka Ogwumike, Dearica Hamby"
-    ],
-    "analysis": "【已结束】火花89-72击败火焰。\n\n【赛果复盘】让分方向：火焰+7.5 ❌（火花赢17分穿盘）；大小分：小175.5 ✅（总分161）。\n\n【v3.5模型复盘】PPG/OPPG模型预测火花赢1.7分vs参考线7.5分，edge达5.8分。模型正确判断了火焰的受让价值但未能预判火花的大胜。小分方向双模型一致指向小分，判断正确。",
-    "recommendText": "波特兰火焰 +7.5",
-    "recommendText2": "小 175.5",
-    "skipReason": "",
-    "recommend": "pass",
-    "order": 1,
-    "ended": true,
-    "confidence": 75,
-    "stars": 3,
-    "homeScore": 89,
-    "awayScore": 72,
-    "hit1": "miss",
-    "hit2": "hit"
-  },
-  {
-    "id": "2026-06-09-wnba-302",
-    "date": "2026-06-09",
-    "league": "WNBA",
-    "leagueTag": "WNBA",
-    "status": "ended",
-    "time": "07:00",
-    "homeTeam": "华盛顿神秘人",
-    "awayTeam": "印第安纳狂热",
-    "vsText": "VS",
-    "locked": true,
-    "lockId": "9-wnba-302",
+    "locked": false,
+    "lockId": "12-wnba-301",
     "odds": [
       {
         "type": "分差方向",
-        "value": "华盛顿神秘人 +5.5"
+        "value": "狂热 -10.0"
       },
       {
         "type": "得分预期",
-        "value": "169.5"
+        "value": "171.0"
       },
       {
         "type": "Pinnacle让分",
-        "value": "狂热 -5.5"
+        "value": "狂热 -10.0"
       },
       {
         "type": "Pinnacle大小分",
-        "value": "169.5"
+        "value": "171.0"
       }
     ],
-    "injuries": [
-      "神秘人：无重大伤病报告",
-      "狂热：凯特琳·克拉克(背伤，probable大概率出战)、阿里尔·波士顿(小腿伤，questionable出战成疑)"
-    ],
-    "lineups": [
-      "狂热：凯特琳·克拉克/凯尔西·米切尔/阿利亚·波士顿/莱西·赫尔/莫妮克·比林斯",
-      "神秘人：米凯拉·恩妮·奥耶维拉/索尼娅·西特龙/乔治亚·阿莫尔/夏奇拉·奥斯汀/琪琪·伊里亚芬"
-    ],
-    "analysis": "【已结束】狂热78-76险胜神秘人。\n\n【赛果复盘】推荐SKIP无推荐。克拉克砍下19分命中关键三分完成准绝杀，带领狂热客场险胜。\n\n【v3.5模型复盘】模型预测让分edge=0.85分<3分阈值，大小分edge=0.1分<4分阈值，判断准确跳过的决策正确。",
+    "injuries": [],
+    "lineups": [],
+    "analysis": "",
     "recommendText": "",
     "recommendText2": "",
-    "skipReason": "让分edge=0.85分<3分，大小分edge=0.1分<4分，均未达v3.4阈值",
-    "recommend": "skip",
-    "order": 5,
-    "confidence": 0,
-    "stars": 0,
-    "homeScore": 76,
-    "awayScore": 78,
-    "ended": true
-  },
-  {
-    "id": "2026-06-09-nba-finals-g3",
-    "date": "2026-06-09",
-    "league": "NBA",
-    "leagueTag": "NBA",
-    "status": "ended",
-    "time": "08:30",
-    "homeTeam": "纽约尼克斯",
-    "awayTeam": "圣安东尼奥马刺",
-    "vsText": "VS",
-    "locked": true,
-    "lockId": "9-nba-301",
-    "odds": [
-      {
-        "type": "分差方向",
-        "value": "纽约尼克斯 -2.5"
-      },
-      {
-        "type": "得分预期",
-        "value": "214"
-      },
-      {
-        "type": "Pinnacle让分",
-        "value": "尼克斯 -2.5"
-      },
-      {
-        "type": "Pinnacle大小分",
-        "value": "216.5"
-      }
-    ],
-    "injuries": [
-      "尼克斯：Mitchell Robinson(右手小指骨折，确认出战戴护具)",
-      "马刺：无伤病报告，阵容齐整"
-    ],
-    "lineups": [
-      "尼克斯：布伦森/哈特/布里奇斯/阿努诺比/唐斯",
-      "马刺：文班亚马/卡斯尔/索汉/瓦塞尔/凯尔登"
-    ],
-    "analysis": "【已结束】马刺115-111击败尼克斯，大比分追至1-2。\n\n【赛果复盘】让分方向：尼克斯-2.5 ❌（尼克斯主场输4分）；大小分：小216.5 ❌（总分226分）。\n\n【v3.6模型复盘】文班砍下32+8+6率队扳回一城。尼克斯连续2场被逆转，系列赛悬念回归。模型对尼克斯让分和小分方向的判断均未命中，但edge仅2.7-3.2分，属于边缘价值球，失误在可接受范围内。",
-    "recommendText": "纽约尼克斯 -2.5",
-    "recommendText2": "小 216.5",
     "skipReason": "",
     "recommend": "pass",
-    "order": 0,
-    "ended": true,
-    "confidence": 65,
-    "stars": 2,
-    "homeScore": 111,
-    "awayScore": 115,
-    "hit1": "miss",
-    "hit2": "miss"
+    "order": 1
   },
   {
-    "id": "2026-06-09-wnba-301",
-    "date": "2026-06-09",
+    "id": "2026-06-12-wnba-302",
+    "date": "2026-06-12",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "ended",
-    "time": "07:00",
-    "homeTeam": "康涅狄格阳光",
+    "status": "pre",
+    "time": "07:30",
+    "homeTeam": "亚特兰大梦想",
     "awayTeam": "纽约自由人",
     "vsText": "VS",
-    "locked": true,
-    "lockId": "9-wnba-301",
+    "locked": false,
+    "lockId": "12-wnba-302",
     "odds": [
       {
-        "type": "分析方向",
-        "value": "本场暂无推荐"
+        "type": "分差方向",
+        "value": "自由人 -3.5"
       },
       {
         "type": "得分预期",
-        "value": "159.2"
+        "value": "164.0"
       },
       {
         "type": "Pinnacle让分",
-        "value": "自由人 -12.5"
+        "value": "自由人 -3.5"
       },
       {
         "type": "Pinnacle大小分",
-        "value": "162.5"
+        "value": "164.0"
       }
     ],
-    "injuries": [
-      "自由人：Sabrina Ionescu(背伤，OUT，确定缺席)",
-      "阳光：Brittney Griner(肋骨拉伤，OUT，确定缺席)、Kennedy Burke(生病，出战成疑)"
-    ],
-    "lineups": [
-      "阳光：艾莉亚·爱德华兹/奥利维耶·尼尔森·奥杜达/萨尼亚·里弗斯/迪亚蒙德·米勒/莱拉·拉坎",
-      "自由人：布里安娜·斯图尔特/韩旭/马林·约翰内斯/帕琳·阿斯蒂尔/莱奥妮·菲比希"
-    ],
-    "analysis": "【已结束】自由人89-80击败阳光。\n\n【赛果复盘】推荐SKIP无推荐。斯图尔特砍下28+9率队5连胜，阳光多人缺阵无力抵抗。\n\n【v3.5模型复盘】模型让分edge=2.74分<3分阈值，大小分两个模型方向不一致，决策跳过准确。",
+    "injuries": [],
+    "lineups": [],
+    "analysis": "",
     "recommendText": "",
     "recommendText2": "",
-    "skipReason": "v3.4模型：让分edge=2.74分<3分阈值；大小分ORTG/PPG方向不一致且edge=3.3分<4分阈值",
-    "recommend": "skip",
-    "order": 4,
-    "confidence": 0,
-    "stars": 0,
-    "homeScore": 80,
-    "awayScore": 89,
-    "ended": true
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 2
   },
   {
-    "id": "2026-06-09-wnba-303",
-    "date": "2026-06-09",
+    "id": "2026-06-12-wnba-303",
+    "date": "2026-06-12",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "ended",
-    "time": "10:00",
-    "homeTeam": "拉斯维加斯王牌",
-    "awayTeam": "西雅图风暴",
+    "status": "pre",
+    "time": "09:00",
+    "homeTeam": "达拉斯飞翼",
+    "awayTeam": "菲尼克斯水星",
     "vsText": "VS",
-    "locked": true,
-    "lockId": "9-wnba-303",
+    "locked": false,
+    "lockId": "12-wnba-303",
     "odds": [
       {
-        "type": "分析方向",
-        "value": "小分方向"
+        "type": "分差方向",
+        "value": "飞翼 -6.5"
       },
       {
         "type": "得分预期",
-        "value": "157"
+        "value": "169.5"
       },
       {
         "type": "Pinnacle让分",
-        "value": "王牌 -16.5"
+        "value": "飞翼 -6.5"
       },
       {
         "type": "Pinnacle大小分",
-        "value": "162.5"
+        "value": "169.5"
       }
     ],
-    "injuries": [
-      "王牌：Dana Evans(腿伤，赛季报销)，Chennedy Carter(腿伤，缺阵)",
-      "风暴：Ezi Magbegor(脚伤，赛季报销)，Lexie Brown(已离队)"
-    ],
-    "lineups": [
-      "风暴：马隆加/希德曼/蒂亚姆/约翰逊/霍斯顿",
-      "王牌：威尔逊/扬/史密斯/格雷/塔尔波特"
-    ],
-    "analysis": "【已结束】王牌101-91击败风暴。\n\n【赛果复盘】推荐小162.5 ❌（总分192分）。威尔逊砍下34+12+9成为WNBA最快达成6000分的球员。\n\n【v3.5模型复盘】模型预测总分156.9分vs盘口162.5分，edge=5.6分≥4分阈值，但实际比赛总分高达192分，模型对王牌进攻爆发力预估不足。风暴近期大分属性明显，回测样本未能捕捉到这场的高得分场景。",
+    "injuries": [],
+    "lineups": [],
+    "analysis": "",
     "recommendText": "",
-    "recommendText2": "小 162.5",
+    "recommendText2": "",
     "skipReason": "",
     "recommend": "pass",
-    "order": 6,
-    "confidence": 75,
-    "stars": 3,
-    "homeScore": 101,
-    "awayScore": 91,
-    "ended": true,
-    "hit2": "miss"
+    "order": 3
+  },
+  {
+    "id": "2026-06-12-wnba-304",
+    "date": "2026-06-12",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "pre",
+    "time": "10:00",
+    "homeTeam": "波特兰火焰",
+    "awayTeam": "拉斯维加斯王牌",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "12-wnba-304",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "王牌 -9.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "173.0"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "王牌 -9.5"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "173.0"
+      }
+    ],
+    "injuries": [],
+    "lineups": [],
+    "analysis": "",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 4
   }
 ]

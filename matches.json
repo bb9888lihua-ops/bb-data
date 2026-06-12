@@ -1,1 +1,126 @@
-[]
+[
+  {
+    "id": "2026-06-12-acb-301",
+    "date": "2026-06-12",
+    "league": "西篮联",
+    "leagueTag": "ACB",
+    "status": "pre",
+    "time": "02:00",
+    "homeTeam": "巴伦西亚",
+    "awayTeam": "约文图特",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "12-acb-301",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": ""
+      },
+      {
+        "type": "得分预期",
+        "value": ""
+      }
+    ],
+    "injuries": [],
+    "lineups": [],
+    "analysis": "",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 1
+  },
+  {
+    "id": "2026-06-12-bbl-302",
+    "date": "2026-06-12",
+    "league": "德篮联",
+    "leagueTag": "BBL",
+    "status": "pre",
+    "time": "02:30",
+    "homeTeam": "拜仁慕尼黑",
+    "awayTeam": "柏林阿尔巴",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "12-bbl-302",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": ""
+      },
+      {
+        "type": "得分预期",
+        "value": ""
+      }
+    ],
+    "injuries": [],
+    "lineups": [],
+    "analysis": "",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 2
+  },
+  {
+    "id": "2026-06-12-wnba-303",
+    "date": "2026-06-12",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "pre",
+    "time": "07:30",
+    "homeTeam": "华盛顿神秘人",
+    "awayTeam": "多伦多节奏",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "12-wnba-303",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": ""
+      },
+      {
+        "type": "得分预期",
+        "value": ""
+      }
+    ],
+    "injuries": [],
+    "lineups": [],
+    "analysis": "",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 3
+  },
+  {
+    "id": "2026-06-12-wnba-304",
+    "date": "2026-06-12",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "pre",
+    "time": "10:00",
+    "homeTeam": "西雅图风暴",
+    "awayTeam": "金州女武神",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "12-wnba-304",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": ""
+      },
+      {
+        "type": "得分预期",
+        "value": ""
+      }
+    ],
+    "injuries": [],
+    "lineups": [],
+    "analysis": "",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 4
+  }
+]

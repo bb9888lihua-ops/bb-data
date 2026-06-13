@@ -1,24 +1,32 @@
 [
   {
-    "id": "2026-06-12-acb-301",
-    "date": "2026-06-12",
-    "league": "西篮联",
-    "leagueTag": "ACB",
-    "status": "pre",
-    "time": "02:00",
-    "homeTeam": "巴伦西亚",
-    "awayTeam": "约文图特",
+    "id": "2026-06-13-nba-301",
+    "date": "2026-06-13",
+    "league": "NBA",
+    "leagueTag": "NBA",
+    "status": "upcoming",
+    "time": "20:30",
+    "homeTeam": "纽约尼克斯",
+    "awayTeam": "圣安东尼奥马刺",
     "vsText": "VS",
     "locked": false,
-    "lockId": "12-acb-301",
+    "lockId": "13-nba-301",
     "odds": [
       {
         "type": "分差方向",
-        "value": ""
+        "value": "待临场确认"
       },
       {
         "type": "得分预期",
-        "value": ""
+        "value": "待临场确认"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待取"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待取"
       }
     ],
     "injuries": [],
@@ -27,60 +35,44 @@
     "recommendText": "",
     "recommendText2": "",
     "skipReason": "",
-    "recommend": "pass",
-    "order": 1
+    "recommend": "pending",
+    "order": 1,
+    "ended": false,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 0,
+    "awayScore": 0,
+    "hit1": "",
+    "hit2": ""
   },
   {
-    "id": "2026-06-12-bbl-302",
-    "date": "2026-06-12",
-    "league": "德篮联",
-    "leagueTag": "BBL",
-    "status": "pre",
-    "time": "02:30",
-    "homeTeam": "拜仁慕尼黑",
-    "awayTeam": "柏林阿尔巴",
-    "vsText": "VS",
-    "locked": false,
-    "lockId": "12-bbl-302",
-    "odds": [
-      {
-        "type": "分差方向",
-        "value": ""
-      },
-      {
-        "type": "得分预期",
-        "value": ""
-      }
-    ],
-    "injuries": [],
-    "lineups": [],
-    "analysis": "",
-    "recommendText": "",
-    "recommendText2": "",
-    "skipReason": "",
-    "recommend": "pass",
-    "order": 2
-  },
-  {
-    "id": "2026-06-12-wnba-303",
-    "date": "2026-06-12",
+    "id": "2026-06-13-wnba-305",
+    "date": "2026-06-13",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "pre",
-    "time": "07:30",
-    "homeTeam": "华盛顿神秘人",
-    "awayTeam": "多伦多节奏",
+    "status": "upcoming",
+    "time": "20:30",
+    "homeTeam": "波特兰火焰",
+    "awayTeam": "达拉斯飞翼",
     "vsText": "VS",
     "locked": false,
-    "lockId": "12-wnba-303",
+    "lockId": "13-wnba-305",
     "odds": [
       {
         "type": "分差方向",
-        "value": ""
+        "value": "待临场确认"
       },
       {
         "type": "得分预期",
-        "value": ""
+        "value": "待临场确认"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待取"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待取"
       }
     ],
     "injuries": [],
@@ -89,29 +81,44 @@
     "recommendText": "",
     "recommendText2": "",
     "skipReason": "",
-    "recommend": "pass",
-    "order": 3
+    "recommend": "pending",
+    "order": 2,
+    "ended": false,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 0,
+    "awayScore": 0,
+    "hit1": "",
+    "hit2": ""
   },
   {
-    "id": "2026-06-12-wnba-304",
-    "date": "2026-06-12",
+    "id": "2026-06-13-wnba-306",
+    "date": "2026-06-13",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "pre",
-    "time": "10:00",
-    "homeTeam": "西雅图风暴",
-    "awayTeam": "金州女武神",
+    "status": "upcoming",
+    "time": "22:00",
+    "homeTeam": "菲尼克斯水星",
+    "awayTeam": "洛杉矶火花",
     "vsText": "VS",
     "locked": false,
-    "lockId": "12-wnba-304",
+    "lockId": "13-wnba-306",
     "odds": [
       {
         "type": "分差方向",
-        "value": ""
+        "value": "待临场确认"
       },
       {
         "type": "得分预期",
-        "value": ""
+        "value": "待临场确认"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待取"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待取"
       }
     ],
     "injuries": [],
@@ -120,7 +127,14 @@
     "recommendText": "",
     "recommendText2": "",
     "skipReason": "",
-    "recommend": "pass",
-    "order": 4
+    "recommend": "pending",
+    "order": 3,
+    "ended": false,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 0,
+    "awayScore": 0,
+    "hit1": "",
+    "hit2": ""
   }
 ]

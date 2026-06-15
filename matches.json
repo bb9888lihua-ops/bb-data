@@ -1,217 +1,49 @@
 [
   {
-    "id": "2026-06-14-nba-finals-g5",
-    "date": "2026-06-14",
-    "league": "NBA",
-    "leagueTag": "NBA",
-    "status": "ended",
-    "time": "08:30",
-    "homeTeam": "圣安东尼奥马刺",
-    "awayTeam": "纽约尼克斯",
+    "id": "2026-06-16-wnba-001",
+    "date": "2026-06-16",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "08:00",
+    "homeTeam": "拉斯维加斯王牌",
+    "awayTeam": "达拉斯飞马",
     "vsText": "VS",
     "locked": false,
-    "odds": [
-      {
-        "type": "分差方向",
-        "value": "尼克斯 -2.5"
-      },
-      {
-        "type": "得分预期",
-        "value": "216.5"
-      }
-    ],
-    "injuries": [
-      "马刺：全员健康，阵容齐整",
-      "尼克斯：全员健康，阵容齐整"
-    ],
+    "odds": [],
+    "injuries": [],
     "lineups": [],
-    "analysis": "【已结束】马刺90-94尼克斯，尼克斯4-1夺冠。\n\n【赛果复盘】尼克斯客场94-90击败马刺，布伦森狂砍45分。尼克斯时隔53年再度捧起总冠军奖杯。\n\n【总决赛总结】尼克斯4-1绅士横扫马刺，布伦森FMVP。",
-    "recommendText": "纽约尼克斯 -2.5",
-    "recommendText2": "小 216.5",
-    "skipReason": "比赛已结束",
+    "analysis": "",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "",
     "recommend": "pass",
     "order": 0,
-    "ended": true,
+    "ended": false,
     "confidence": 0,
-    "stars": 0,
-    "homeScore": 90,
-    "awayScore": 94,
-    "hit1": "",
-    "hit2": ""
+    "stars": 0
   },
   {
-    "id": "2026-06-14-wnba-001",
-    "date": "2026-06-14",
+    "id": "2026-06-16-wnba-002",
+    "date": "2026-06-16",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "ended",
-    "time": "06:00",
-    "homeTeam": "康涅狄格太阳",
-    "awayTeam": "印第安纳狂热",
+    "status": "upcoming",
+    "time": "10:00",
+    "homeTeam": "洛杉矶火花",
+    "awayTeam": "金州女武神",
     "vsText": "VS",
     "locked": false,
-    "odds": [
-      {
-        "type": "分差方向",
-        "value": "印第安纳狂热 -9.5"
-      },
-      {
-        "type": "得分预期",
-        "value": "171.5"
-      },
-      {
-        "type": "Pinnacle让分",
-        "value": "狂热 -9.5"
-      },
-      {
-        "type": "Pinnacle大小分",
-        "value": "171.5"
-      }
-    ],
-    "injuries": [
-      "狂热：克拉克(背部)出战成疑，坎宁安(肘部)出战成疑",
-      "太阳：范·利特(脚踝)确定缺阵"
-    ],
+    "odds": [],
+    "injuries": [],
     "lineups": [],
-    "analysis": "【比赛已结束】狂热客场挑战太阳。狂热7胜5负，太阳2胜12负。克拉克出战成疑可能影响狂热火力。\n\n【盘口数据】狂热让9.5分，狂热独赢-500，太阳爆冷+375，总分171.5。\n\n【数据分析】狂热场均90.3分vs太阳场均失分89.4分；太阳场均78.1分vs狂热场均失分87.3分。",
-    "recommendText": "印第安纳狂热 -9.5",
-    "recommendText2": "大 171.5",
-    "skipReason": "比赛已结束",
+    "analysis": "",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "",
     "recommend": "pass",
     "order": 1,
-    "ended": true,
-    "confidence": 0,
-    "stars": 0
-  },
-  {
-    "id": "2026-06-14-wnba-002",
-    "date": "2026-06-14",
-    "league": "WNBA",
-    "leagueTag": "WNBA",
-    "status": "ended",
-    "time": "08:00",
-    "homeTeam": "明尼苏达天猫",
-    "awayTeam": "拉斯维加斯王牌",
-    "vsText": "VS",
-    "locked": false,
-    "odds": [
-      {
-        "type": "分差方向",
-        "value": "拉斯维加斯王牌 -2"
-      },
-      {
-        "type": "得分预期",
-        "value": "174.5"
-      },
-      {
-        "type": "Pinnacle让分",
-        "value": "王牌 -2"
-      },
-      {
-        "type": "Pinnacle大小分",
-        "value": "174.5"
-      }
-    ],
-    "injuries": [
-      "天猫：Napheesa Collier缺阵",
-      "王牌：全员健康"
-    ],
-    "lineups": [],
-    "analysis": "【比赛已结束】天猫10胜2负，王牌9胜3负。强强对话。\n\n【盘口数据】天猫+2(赔率-106)，王牌-2(赔率-105)，总分174.4。\n\n【数据分析】天猫场均85.6分，王牌场均88.8分。王牌进攻更犀利。",
-    "recommendText": "拉斯维加斯王牌 -2",
-    "recommendText2": "大 174.5",
-    "skipReason": "比赛已结束",
-    "recommend": "pass",
-    "order": 2,
-    "ended": true,
-    "confidence": 0,
-    "stars": 0
-  },
-  {
-    "id": "2026-06-14-wnba-003",
-    "date": "2026-06-14",
-    "league": "WNBA",
-    "leagueTag": "WNBA",
-    "status": "ended",
-    "time": "08:30",
-    "homeTeam": "达拉斯飞翼",
-    "awayTeam": "波特兰火焰",
-    "vsText": "VS",
-    "locked": false,
-    "odds": [
-      {
-        "type": "分差方向",
-        "value": "达拉斯飞翼 -6"
-      },
-      {
-        "type": "得分预期",
-        "value": "172.5"
-      },
-      {
-        "type": "Pinnacle让分",
-        "value": "飞翼 -6"
-      },
-      {
-        "type": "Pinnacle大小分",
-        "value": "172.5"
-      }
-    ],
-    "injuries": [
-      "飞翼：全员健康",
-      "火焰：全员健康"
-    ],
-    "lineups": [],
-    "analysis": "【比赛已结束】飞翼8胜4负，火焰6胜8负。飞翼实力占优。\n\n【盘口数据】飞翼让6分(赔率-104)，火焰受让6分(赔率-105)，总分172.3。\n\n【数据分析】飞翼场均89.3分，火焰场均83.0分。飞翼攻守兼备。",
-    "recommendText": "达拉斯飞翼 -6",
-    "recommendText2": "大 172.5",
-    "skipReason": "比赛已结束",
-    "recommend": "pass",
-    "order": 3,
-    "ended": true,
-    "confidence": 0,
-    "stars": 0
-  },
-  {
-    "id": "2026-06-14-wnba-004",
-    "date": "2026-06-14",
-    "league": "WNBA",
-    "leagueTag": "WNBA",
-    "status": "ended",
-    "time": "10:00",
-    "homeTeam": "菲尼克斯水星",
-    "awayTeam": "洛杉矶火花",
-    "vsText": "VS",
-    "locked": false,
-    "odds": [
-      {
-        "type": "分差方向",
-        "value": "洛杉矶火花 -1.5"
-      },
-      {
-        "type": "得分预期",
-        "value": "176.5"
-      },
-      {
-        "type": "Pinnacle让分",
-        "value": "火花 -1.5"
-      },
-      {
-        "type": "Pinnacle大小分",
-        "value": "176.5"
-      }
-    ],
-    "injuries": [
-      "水星：萨米·惠特科姆(膝盖)缺阵",
-      "火花：全员健康"
-    ],
-    "lineups": [],
-    "analysis": "【比赛已结束】火花6胜6负，水星4胜10负。火花略占优势。\n\n【盘口数据】火花让1.5分(赔率-110)，水星受让1.5分(赔率-108)，总分176.1。\n\n【数据分析】火花场均87.2分，水星场均88.9分。两队进攻火力接近。",
-    "recommendText": "洛杉矶火花 -1.5",
-    "recommendText2": "大 176.5",
-    "skipReason": "比赛已结束",
-    "recommend": "pass",
-    "order": 4,
-    "ended": true,
+    "ended": false,
     "confidence": 0,
     "stars": 0
   }

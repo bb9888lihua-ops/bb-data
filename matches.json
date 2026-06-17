@@ -1,58 +1,239 @@
 [
   {
-    "id": "2026-06-16-wnba-001",
-    "date": "2026-06-16",
+    "id": "2026-06-17-wnba-301",
+    "date": "2026-06-17",
     "league": "WNBA",
     "leagueTag": "WNBA",
     "status": "ended",
-    "time": "08:00",
-    "homeTeam": "达拉斯飞翼",
-    "awayTeam": "拉斯维加斯王牌",
+    "time": "07:00",
+    "homeTeam": "印第安纳狂热",
+    "awayTeam": "多伦多节奏",
     "vsText": "VS",
     "locked": true,
-    "odds": [],
-    "injuries": [],
-    "lineups": [],
-    "analysis": "【已结束】达拉斯飞翼96-66拉斯维加斯王牌。\n\n【赛果记录】让分方向-2.5：飞翼赢30分；总分176.5：实际177分。\n\n【说明】比赛已结束，无Pinnacle数据，recommend=pass。",
-    "recommendText": "",
-    "recommendText2": "",
-    "skipReason": "比赛已结束，无Pinnacle数据",
-    "recommend": "pass",
-    "order": 0,
-    "ended": true,
-    "confidence": 0,
-    "stars": 0,
-    "homeScore": 96,
-    "awayScore": 66,
-    "hit1": "",
-    "hit2": ""
-  },
-  {
-    "id": "2026-06-16-wnba-002",
-    "date": "2026-06-16",
-    "league": "WNBA",
-    "leagueTag": "WNBA",
-    "status": "ended",
-    "time": "10:00",
-    "homeTeam": "金州女武神",
-    "awayTeam": "洛杉矶火花",
-    "vsText": "VS",
-    "locked": true,
-    "odds": [],
-    "injuries": [],
-    "lineups": [],
-    "analysis": "【已结束】金州女武神78-58洛杉矶火花。\n\n【赛果记录】让分方向4.5：女武神赢20分；总分171.5：实际136分。\n\n【说明】比赛已结束，无Pinnacle数据，recommend=pass。",
-    "recommendText": "",
-    "recommendText2": "",
-    "skipReason": "比赛已结束，无Pinnacle数据",
+    "lockId": "17-wnba-301",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "狂热 -7.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "171.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "狂热：克拉克(背伤probable)、波士顿(小腿questionable)",
+      "节奏：萨巴莉(腿筋缺阵)、赖斯(脚踝缺阵)"
+    ],
+    "lineups": [
+      "狂热：米切尔27分、克拉克21分、波士顿18分",
+      "节奏：朱斯凯特19分"
+    ],
+    "analysis": "【已结束】狂热113-91大胜节奏，22分优势穿盘。\n\n【赛果复盘】让分方向：狂热-7.5 ✅（狂热赢22分穿盘）；大小分：大171.5 ✅（总分204分）。\n\n【v3.5黄金策略】参考线7.5分≤9分，节奏缺内线核心萨巴莉和赖斯，狂热篮板优势明显。模型正确。",
+    "recommendText": "印第安纳狂热 -7.5",
+    "recommendText2": "大 171.5",
+    "skipReason": "",
     "recommend": "pass",
     "order": 1,
     "ended": true,
+    "confidence": 70,
+    "stars": 3,
+    "homeScore": 113,
+    "awayScore": 91,
+    "hit1": "hit",
+    "hit2": "hit"
+  },
+  {
+    "id": "2026-06-18-wnba-401",
+    "date": "2026-06-18",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "07:00",
+    "homeTeam": "康涅狄克太阳",
+    "awayTeam": "华盛顿神秘人",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "18-wnba-401",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "待采集"
+      },
+      {
+        "type": "得分预期",
+        "value": "待采集"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【待临场分析】赛前15分钟重取Pinnacle盘口。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "盘口待采集",
+    "recommend": "pass",
+    "order": 1,
     "confidence": 0,
-    "stars": 0,
-    "homeScore": 78,
-    "awayScore": 58,
-    "hit1": "",
-    "hit2": ""
+    "stars": 0
+  },
+  {
+    "id": "2026-06-18-wnba-402",
+    "date": "2026-06-18",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "08:00",
+    "homeTeam": "芝加哥天空",
+    "awayTeam": "纽约自由人",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "18-wnba-402",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "待采集"
+      },
+      {
+        "type": "得分预期",
+        "value": "待采集"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【待临场分析】赛前15分钟重取Pinnacle盘口。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "盘口待采集",
+    "recommend": "pass",
+    "order": 2,
+    "confidence": 0,
+    "stars": 0
+  },
+  {
+    "id": "2026-06-18-wnba-403",
+    "date": "2026-06-18",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "10:00",
+    "homeTeam": "金州女武神",
+    "awayTeam": "达拉斯飞翼",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "18-wnba-403",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "待采集"
+      },
+      {
+        "type": "得分预期",
+        "value": "待采集"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【待临场分析】赛前15分钟重取Pinnacle盘口。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "盘口待采集",
+    "recommend": "pass",
+    "order": 3,
+    "confidence": 0,
+    "stars": 0
+  },
+  {
+    "id": "2026-06-18-wnba-404",
+    "date": "2026-06-18",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "10:00",
+    "homeTeam": "菲尼克斯水星",
+    "awayTeam": "拉斯维加斯王牌",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "18-wnba-404",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "待采集"
+      },
+      {
+        "type": "得分预期",
+        "value": "待采集"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【待临场分析】赛前15分钟重取Pinnacle盘口。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "盘口待采集",
+    "recommend": "pass",
+    "order": 4,
+    "confidence": 0,
+    "stars": 0
+  },
+  {
+    "id": "2026-06-18-wnba-405",
+    "date": "2026-06-18",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "10:00",
+    "homeTeam": "波特兰火焰",
+    "awayTeam": "西雅图风暴",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "18-wnba-405",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "待采集"
+      },
+      {
+        "type": "得分预期",
+        "value": "待采集"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【待临场分析】赛前15分钟重取Pinnacle盘口。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "盘口待采集",
+    "recommend": "pass",
+    "order": 5,
+    "confidence": 0,
+    "stars": 0
   }
 ]

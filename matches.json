@@ -52,49 +52,6 @@
     "hit2": "hit"
   },
   {
-    "id": "2026-06-18-bbl-301",
-    "date": "2026-06-18",
-    "league": "BBL",
-    "leagueTag": "德篮甲",
-    "status": "ended",
-    "time": "02:30",
-    "homeTeam": "ALBA柏林",
-    "awayTeam": "拜仁慕尼黑",
-    "vsText": "VS",
-    "locked": true,
-    "lockId": "18-bbl-301",
-    "odds": [
-      {
-        "type": "分差方向",
-        "value": "拜仁 -4.5"
-      },
-      {
-        "type": "得分预期",
-        "value": "166.5"
-      }
-    ],
-    "injuries": [
-      "待更新"
-    ],
-    "lineups": [
-      "柏林：凯尔17分、比恩11分",
-      "拜仁：迪米特里耶维奇19分、卢西奇15分"
-    ],
-    "analysis": "【已结束】拜仁客场91-83击败柏林，总决赛G2取胜。\n\n【赛果复盘】让分方向：拜仁-4.5 ✅（拜仁赢8分穿盘）；大小分：大166.5 ✅（总分174分）。\n\n【v3.7统一模型】BBL HCA+3.2，拜仁攻防效率均占优，第四节30-23拉开比分。模型正确。",
-    "recommendText": "拜仁慕尼黑 -4.5",
-    "recommendText2": "大 166.5",
-    "skipReason": "",
-    "recommend": "pass",
-    "order": 1,
-    "ended": true,
-    "confidence": 65,
-    "stars": 3,
-    "homeScore": 83,
-    "awayScore": 91,
-    "hit1": "hit",
-    "hit2": "hit"
-  },
-  {
     "id": "2026-06-18-wnba-401",
     "date": "2026-06-18",
     "league": "WNBA",
@@ -109,33 +66,31 @@
     "odds": [
       {
         "type": "分差方向",
-        "value": "神秘人 -2.5"
+        "value": "待采集"
       },
       {
         "type": "得分预期",
-        "value": "164.5"
+        "value": "待采集"
       }
     ],
     "injuries": [
       "待更新"
     ],
     "lineups": [
-      "神秘人：西特隆26分11板",
-      "太阳：奥耶维拉19分"
+      "太阳：托马斯21分",
+      "神秘人：西特龙26分12板"
     ],
-    "analysis": "【已结束】神秘人客场88-81击败太阳。\n\n【赛果复盘】让分方向：神秘人-2.5 ✅（神秘人赢7分穿盘）；大小分：大164.5 ✅（总分169分）。\n\n【v3.5黄金策略】神秘人罚球命中率97%，篮板33-26占优，第四节顶住反攻。模型正确。",
-    "recommendText": "华盛顿神秘人 -2.5",
-    "recommendText2": "大 164.5",
-    "skipReason": "",
+    "analysis": "【已结束】太阳81-88不敌神秘人，神秘人客场取胜。\n\n【赛果复盘】全场比分81-88，神秘人客场赢7分。西特龙砍下26分12篮板4助攻带队取胜。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "盘口待采集",
     "recommend": "pass",
     "order": 2,
     "ended": true,
-    "confidence": 60,
-    "stars": 3,
+    "confidence": 0,
+    "stars": 0,
     "homeScore": 81,
-    "awayScore": 88,
-    "hit1": "hit",
-    "hit2": "hit"
+    "awayScore": 88
   },
   {
     "id": "2026-06-18-wnba-402",
@@ -152,34 +107,31 @@
     "odds": [
       {
         "type": "分差方向",
-        "value": "自由人 -6.5"
+        "value": "待采集"
       },
       {
         "type": "得分预期",
-        "value": "169.5"
+        "value": "待采集"
       }
     ],
     "injuries": [
-      "天空：里基·杰克逊(十字韧带赛季报销)",
-      "自由人：待更新"
+      "待更新"
     ],
     "lineups": [
-      "自由人：琼斯19分8板、斯图尔特17分6板、萨巴莉17分",
-      "天空：泰勒24分、贾奎兹22分"
+      "天空：悉尼-泰勒24分",
+      "自由人：约内斯库准绝杀10分、斯图尔特17分"
     ],
-    "analysis": "【已结束】自由人客场96-95险胜天空，1分险胜。\n\n【赛果复盘】让分方向：自由人-6.5 ❌（自由人仅赢1分，输盘）；大小分：大169.5 ✅（总分191分）。\n\n【赛况】天空三分命中率52%但罚球少，自由人篮板34-28占优、罚球命中率91%，第四节天空追分无果。",
-    "recommendText": "纽约自由人 -6.5",
-    "recommendText2": "大 169.5",
-    "skipReason": "",
+    "analysis": "【已结束】天空95-96惜败自由人，约内斯库最后10秒准绝杀。\n\n【赛果复盘】全场比分95-96，自由人客场1分险胜。韩旭替补出战11分钟，贡献2分2篮板2助攻3封盖，创WNBA生涯盖帽纪录。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "盘口待采集",
     "recommend": "pass",
     "order": 3,
     "ended": true,
-    "confidence": 55,
-    "stars": 2,
+    "confidence": 0,
+    "stars": 0,
     "homeScore": 95,
-    "awayScore": 96,
-    "hit1": "miss",
-    "hit2": "hit"
+    "awayScore": 96
   },
   {
     "id": "2026-06-18-wnba-403",
@@ -196,32 +148,31 @@
     "odds": [
       {
         "type": "分差方向",
-        "value": "女武神 -3.5"
+        "value": "待采集"
       },
       {
         "type": "得分预期",
-        "value": "162.5"
+        "value": "待采集"
       }
     ],
     "injuries": [
       "待更新"
     ],
     "lineups": [
-      "待更新"
+      "女武神：加比25分3板4助、陈紫柔15分",
+      "飞翼：奥贡鲍尔21分"
     ],
-    "analysis": "【已结束】女武神主场91-80击败飞翼。\n\n【赛果复盘】让分方向：女武神-3.5 ✅（女武神赢11分穿盘）；大小分：大162.5 ✅（总分171分）。",
-    "recommendText": "金州女武神 -3.5",
-    "recommendText2": "大 162.5",
-    "skipReason": "",
+    "analysis": "【已结束】女武神91-80战胜飞翼，主场取胜。\n\n【赛果复盘】全场比分91-80，女武神主场赢11分。第二节飞翼单节仅得7分崩盘，加比砍下25分带队获胜。华裔球员陈紫柔替补得到15分。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "盘口待采集",
     "recommend": "pass",
     "order": 4,
     "ended": true,
-    "confidence": 60,
-    "stars": 3,
+    "confidence": 0,
+    "stars": 0,
     "homeScore": 91,
-    "awayScore": 80,
-    "hit1": "hit",
-    "hit2": "hit"
+    "awayScore": 80
   },
   {
     "id": "2026-06-18-wnba-404",
@@ -238,32 +189,31 @@
     "odds": [
       {
         "type": "分差方向",
-        "value": "王牌 -5.5"
+        "value": "待采集"
       },
       {
         "type": "得分预期",
-        "value": "170.5"
+        "value": "待采集"
       }
     ],
     "injuries": [
       "待更新"
     ],
     "lineups": [
-      "待更新"
+      "水星：库珀26分",
+      "王牌：威尔逊33分10板3助、史密斯21分"
     ],
-    "analysis": "【已结束】王牌客场86-76击败水星。\n\n【赛果复盘】让分方向：王牌-5.5 ✅（王牌赢10分穿盘）；大小分：小170.5 ✅（总分162分）。",
-    "recommendText": "拉斯维加斯王牌 -5.5",
-    "recommendText2": "小 170.5",
-    "skipReason": "",
+    "analysis": "【已结束】水星76-86不敌王牌，威尔逊砍下33+10。\n\n【赛果复盘】全场比分76-86，王牌客场赢10分。阿贾·威尔逊33分10篮板统治内线，格雷送出9次助攻。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "盘口待采集",
     "recommend": "pass",
     "order": 5,
     "ended": true,
-    "confidence": 65,
-    "stars": 3,
+    "confidence": 0,
+    "stars": 0,
     "homeScore": 76,
-    "awayScore": 86,
-    "hit1": "hit",
-    "hit2": "hit"
+    "awayScore": 86
   },
   {
     "id": "2026-06-18-wnba-405",
@@ -280,32 +230,31 @@
     "odds": [
       {
         "type": "分差方向",
-        "value": "火焰 -4.5"
+        "value": "待采集"
       },
       {
         "type": "得分预期",
-        "value": "162.5"
+        "value": "待采集"
       }
     ],
     "injuries": [
-      "风暴：霍斯顿(脚伤缺阵)、梅尔(未知缺阵)"
-    ],
-    "lineups": [
       "待更新"
     ],
-    "analysis": "【已结束】火焰主场94-89击败风暴。\n\n【赛果复盘】让分方向：火焰-4.5 ✅（火焰赢5分穿盘）；大小分：大162.5 ✅（总分183分）。\n\n【v3.5黄金策略】风暴6连败状态低迷，火焰主场优势明显。模型正确。",
-    "recommendText": "波特兰火焰 -4.5",
-    "recommendText2": "大 162.5",
-    "skipReason": "",
+    "lineups": [
+      "火焰：卡尔顿24分",
+      "风暴：洛伊德21分"
+    ],
+    "analysis": "【已结束】火焰94-89战胜风暴，主场取胜。\n\n【赛果复盘】全场比分94-89，火焰主场赢5分。卡尔顿砍下24分4篮板1助攻1抢断带队获胜。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "盘口待采集",
     "recommend": "pass",
     "order": 6,
     "ended": true,
-    "confidence": 62,
-    "stars": 3,
+    "confidence": 0,
+    "stars": 0,
     "homeScore": 94,
-    "awayScore": 89,
-    "hit1": "hit",
-    "hit2": "hit"
+    "awayScore": 89
   },
   {
     "id": "2026-06-18-wnba-406",
@@ -315,53 +264,51 @@
     "status": "ended",
     "time": "10:00",
     "homeTeam": "洛杉矶火花",
-    "awayTeam": "明尼苏达天猫",
+    "awayTeam": "明尼苏达山猫",
     "vsText": "VS",
     "locked": true,
     "lockId": "18-wnba-406",
     "odds": [
       {
         "type": "分差方向",
-        "value": "天猫 -9.5"
+        "value": "待采集"
       },
       {
         "type": "得分预期",
-        "value": "177.5"
+        "value": "待采集"
       }
     ],
     "injuries": [
       "待更新"
     ],
     "lineups": [
-      "天猫：迈尔斯31分",
-      "火花：待更新"
+      "火花：待更新",
+      "山猫：迈尔斯31分"
     ],
-    "analysis": "【已结束】天猫客场99-83大胜火花。\n\n【赛果复盘】让分方向：天猫-9.5 ✅（天猫赢16分穿盘）；大小分：大177.5 ✅（总分182分）。\n\n【赛况】天猫全队投篮命中率56%、三分43%，迈尔斯31分全场最高，第三节拉开分差。",
-    "recommendText": "明尼苏达天猫 -9.5",
-    "recommendText2": "大 177.5",
-    "skipReason": "",
+    "analysis": "【已结束】火花83-99不敌山猫，山猫客场大胜。\n\n【赛果复盘】全场比分83-99，山猫客场赢16分。迈尔斯砍下31分4篮板4助攻带队大胜。山猫继续稳居联盟榜首。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "盘口待采集",
     "recommend": "pass",
     "order": 7,
     "ended": true,
-    "confidence": 58,
-    "stars": 3,
+    "confidence": 0,
+    "stars": 0,
     "homeScore": 83,
-    "awayScore": 99,
-    "hit1": "hit",
-    "hit2": "hit"
+    "awayScore": 99
   },
   {
-    "id": "2026-06-19-acb-501",
+    "id": "2026-06-19-acb-201",
     "date": "2026-06-19",
-    "league": "ACB",
-    "leagueTag": "西篮联",
-    "status": "upcoming",
+    "league": "西篮联",
+    "leagueTag": "ACB",
+    "status": "ended",
     "time": "02:00",
-    "homeTeam": "瓦伦西亚",
+    "homeTeam": "巴伦西亚",
     "awayTeam": "巴塞罗那",
     "vsText": "VS",
     "locked": true,
-    "lockId": "19-acb-501",
+    "lockId": "19-acb-201",
     "odds": [
       {
         "type": "分差方向",
@@ -376,29 +323,82 @@
       "待更新"
     ],
     "lineups": [
-      "待更新"
+      "巴伦西亚：蒙特罗24分7助",
+      "巴塞罗那：克莱本21分"
     ],
-    "analysis": "【赛前分析·ACB总决赛G1】\n\n【v3.7统一模型】ACB HCA校准+6.0，瓦伦西亚常规赛排名第1，主场优势明显。巴萨半决赛3-0淘汰对手，状态同样出色。\n\n【关键因素】\n• 主场优势：瓦伦西亚总决赛主场首战，士气高涨\n• 攻防对比：瓦伦西亚防守效率联赛前3，巴萨进攻端更均衡\n• 系列赛首战：双方试探为主，防守强度高\n\n【赛前参考】让分约瓦伦西亚-4.5，总分约176.5。临场将根据Pinnacle盘口和阵容更新最终推荐。",
+    "analysis": "【已结束】巴伦西亚112-113惜败巴塞罗那，加时鏖战。\n\n【赛果复盘】全场比分112-113（加时），巴萨客场1分险胜。双方打出对攻大战，克莱本21分带队险胜，蒙特罗空砍24分7助攻。",
     "recommendText": "",
     "recommendText2": "",
     "skipReason": "盘口待采集",
     "recommend": "pass",
-    "order": 1,
+    "order": 8,
+    "ended": true,
     "confidence": 0,
-    "stars": 0
+    "stars": 0,
+    "homeScore": 112,
+    "awayScore": 113
   },
   {
-    "id": "2026-06-19-wnba-502",
+    "id": "2026-06-19-wnba-501",
     "date": "2026-06-19",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "upcoming",
+    "status": "ended",
     "time": "07:30",
     "homeTeam": "印第安纳狂热",
     "awayTeam": "亚特兰大梦想",
     "vsText": "VS",
     "locked": true,
-    "lockId": "19-wnba-502",
+    "lockId": "19-wnba-501",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "狂热 -1.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "172.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "lineups": [
+      "狂热：米切尔22分",
+      "梦想：里斯21分11板"
+    ],
+    "analysis": "【已结束】狂热101-108不敌梦想，梦想客场赢球赢指。\n\n【赛果复盘】让分方向：狂热-1.5 ❌（狂热输7分，未能赢盘）；大小分：大172.5 ✅（总分209分）。\n\n里斯砍下21分11篮板1助攻1抢断1盖帽的全面数据，带领梦想客场取胜。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "盘口待采集",
+    "recommend": "pass",
+    "order": 9,
+    "ended": true,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 101,
+    "awayScore": 108
+  },
+  {
+    "id": "2026-06-20-bbl-201",
+    "date": "2026-06-20",
+    "league": "德篮联",
+    "leagueTag": "BBL",
+    "status": "upcoming",
+    "time": "02:30",
+    "homeTeam": "柏林阿尔巴",
+    "awayTeam": "拜仁慕尼黑",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "20-bbl-201",
     "odds": [
       {
         "type": "分差方向",
@@ -407,21 +407,164 @@
       {
         "type": "得分预期",
         "value": "待采集"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
       }
     ],
     "injuries": [
-      "狂热：波士顿(小腿出战成疑)",
-      "梦想：布里奥娜·琼斯(缺阵)"
+      "待更新"
     ],
     "lineups": [
       "待更新"
     ],
-    "analysis": "【赛前分析·WNBA常规赛】\n\n【v3.5黄金策略】狂热主场作战，HCA+2.0（5-6月）。狂热场均91.6分/失86.7分，梦想场均87.1分/失80.7分。\n\n【关键因素】\n• 狂热4连胜，状态正佳；梦想上轮击败节奏，1连胜\n• 狂热主场6胜2负，梦想客场5胜2负\n• 两队上次交锋：梦想83-71胜狂热（6月5日）\n\n【赛前参考】让分约狂热-3.5，总分约172.5。临场将根据Pinnacle盘口和阵容更新最终推荐。",
+    "analysis": "【德篮甲季后赛】柏林阿尔巴主场迎战拜仁慕尼黑。\n\n【赛前看点】上一场拜仁客场91-83击败阿尔巴，系列赛占得先机。本场阿尔巴主场作战，能否扳回一城值得关注。\n\n【待临场分析】赛前15分钟重取Pinnacle盘口。",
     "recommendText": "",
     "recommendText2": "",
     "skipReason": "盘口待采集",
     "recommend": "pass",
-    "order": 2,
+    "order": 10,
+    "confidence": 0,
+    "stars": 0
+  },
+  {
+    "id": "2026-06-20-wnba-601",
+    "date": "2026-06-20",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "07:30",
+    "homeTeam": "纽约自由人",
+    "awayTeam": "华盛顿神秘人",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "20-wnba-601",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "待采集"
+      },
+      {
+        "type": "得分预期",
+        "value": "待采集"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【WNBA常规赛】纽约自由人主场迎战华盛顿神秘人。\n\n【赛前看点】自由人上场约内斯库准绝杀险胜天空，士气正盛；神秘人上轮击败太阳，状态回暖。双方实力差距明显，自由人主场优势值得信赖。\n\n【待临场分析】赛前15分钟重取Pinnacle盘口。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "盘口待采集",
+    "recommend": "pass",
+    "order": 11,
+    "confidence": 0,
+    "stars": 0
+  },
+  {
+    "id": "2026-06-20-wnba-602",
+    "date": "2026-06-20",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "07:30",
+    "homeTeam": "康涅狄克太阳",
+    "awayTeam": "多伦多节奏",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "20-wnba-602",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "待采集"
+      },
+      {
+        "type": "得分预期",
+        "value": "待采集"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【WNBA常规赛】康涅狄克太阳主场迎战多伦多节奏。\n\n【赛前看点】太阳上场主场不敌神秘人，需要反弹；节奏本赛季表现起伏较大。太阳主场作战实力占优。\n\n【待临场分析】赛前15分钟重取Pinnacle盘口。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "盘口待采集",
+    "recommend": "pass",
+    "order": 12,
+    "confidence": 0,
+    "stars": 0
+  },
+  {
+    "id": "2026-06-20-wnba-603",
+    "date": "2026-06-20",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "10:00",
+    "homeTeam": "金州女武神",
+    "awayTeam": "明尼苏达山猫",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "20-wnba-603",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "待采集"
+      },
+      {
+        "type": "得分预期",
+        "value": "待采集"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "山猫：科利尔(脚踝缺阵)、尤哈兹(脚伤缺阵)、切霍娃(膝盖缺阵)",
+      "女武神：鲁珀特(脑震荡缺阵)"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【WNBA常规赛】金州女武神主场迎战明尼苏达山猫。\n\n【赛前看点】山猫目前战绩联盟第一，上场大胜火花状态火热；女武神主场战绩出色，上轮击败飞翼。山猫内线伤病较多，科利尔等主力缺阵，女武神主场有望制造麻烦。\n\n【v3.5黄金策略参考】山猫攻防效率联盟顶级，但伤病影响内线轮换；女武神防守强硬，主场优势明显。需结合临场盘口判断。\n\n【待临场分析】赛前15分钟重取Pinnacle盘口。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "盘口待采集",
+    "recommend": "pass",
+    "order": 13,
     "confidence": 0,
     "stars": 0
   }

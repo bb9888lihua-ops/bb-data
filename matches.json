@@ -1238,5 +1238,346 @@
     "awayScore": 87,
     "hit1": "hit",
     "hit2": "hit"
+  },
+  {
+    "id": "2026-06-25-acb-301",
+    "date": "2026-06-25",
+    "league": "ACB",
+    "leagueTag": "西篮联",
+    "status": "ended",
+    "time": "02:00",
+    "homeTeam": "巴塞罗那",
+    "awayTeam": "巴伦西亚",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "25-acb-301",
+    "odds": [
+      {
+        "type": "让分方向",
+        "value": "巴萨 -1.5"
+      },
+      {
+        "type": "总分参考",
+        "value": "176.5"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【已结束】巴萨主场84-108不敌巴伦西亚，爆出大冷门。主队让1.5分输盘，总分192分大分。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "早盘未推荐",
+    "recommend": "pass",
+    "order": 1,
+    "ended": true,
+    "homeScore": 84,
+    "awayScore": 108,
+    "hit1": "",
+    "hit2": ""
+  },
+  {
+    "id": "2026-06-25-wnba-302",
+    "date": "2026-06-25",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "ended",
+    "time": "07:00",
+    "homeTeam": "印第安纳狂热",
+    "awayTeam": "菲尼克斯水星",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "25-wnba-302",
+    "odds": [
+      {
+        "type": "让分方向",
+        "value": "狂热 -7.5"
+      },
+      {
+        "type": "总分参考",
+        "value": "175.5"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【已结束】狂热主场109-111不敌水星，爆出冷门。主队让7.5分输盘，总分220分大分。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "早盘未推荐",
+    "recommend": "pass",
+    "order": 2,
+    "ended": true,
+    "homeScore": 109,
+    "awayScore": 111,
+    "hit1": "",
+    "hit2": ""
+  },
+  {
+    "id": "2026-06-25-wnba-303",
+    "date": "2026-06-25",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "ended",
+    "time": "07:00",
+    "homeTeam": "华盛顿神秘人",
+    "awayTeam": "明尼苏达山猫",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "25-wnba-303",
+    "odds": [
+      {
+        "type": "让分方向",
+        "value": "神秘人 +8.5"
+      },
+      {
+        "type": "总分参考",
+        "value": "168.5"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【已结束】神秘人主场76-78不敌山猫，主队受让8.5分赢盘，总分154分小分。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "早盘未推荐",
+    "recommend": "pass",
+    "order": 3,
+    "ended": true,
+    "homeScore": 76,
+    "awayScore": 78,
+    "hit1": "",
+    "hit2": ""
+  },
+  {
+    "id": "2026-06-25-wnba-304",
+    "date": "2026-06-25",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "ended",
+    "time": "08:00",
+    "homeTeam": "芝加哥天空",
+    "awayTeam": "波特兰火焰",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "25-wnba-304",
+    "odds": [
+      {
+        "type": "让分方向",
+        "value": "天空 -3.5"
+      },
+      {
+        "type": "总分参考",
+        "value": "170.5"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【已结束】天空主场101-78大胜火焰，主队让3.5分赢盘，总分179分大分。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "早盘未推荐",
+    "recommend": "pass",
+    "order": 4,
+    "ended": true,
+    "homeScore": 101,
+    "awayScore": 78,
+    "hit1": "",
+    "hit2": ""
+  },
+  {
+    "id": "2026-06-25-wnba-305",
+    "date": "2026-06-25",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "ended",
+    "time": "10:00",
+    "homeTeam": "金州女武神",
+    "awayTeam": "亚特兰大梦想",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "25-wnba-305",
+    "odds": [
+      {
+        "type": "让分方向",
+        "value": "女武神 +1.5"
+      },
+      {
+        "type": "总分参考",
+        "value": "165.5"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【已结束】女武神主场77-66战胜梦想，主队受让1.5分赢盘，总分143分小分。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "早盘未推荐",
+    "recommend": "pass",
+    "order": 5,
+    "ended": true,
+    "homeScore": 77,
+    "awayScore": 66,
+    "hit1": "",
+    "hit2": ""
+  },
+  {
+    "id": "2026-06-26-wnba-401",
+    "date": "2026-06-26",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "07:00",
+    "homeTeam": "多伦多节奏",
+    "awayTeam": "洛杉矶火花",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "26-wnba-401",
+    "odds": [
+      {
+        "type": "让分方向",
+        "value": "节奏 -2.5"
+      },
+      {
+        "type": "总分参考",
+        "value": "178.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "火花：卡梅伦·布林克(脚踝缺阵)、凯尔西·普拉姆(小腿缺阵)",
+      "节奏：布里特妮·赛克斯(脚伤缺阵)、奇奇·赖斯(脚踝缺阵)"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【v3.6模型分析】洛杉矶火花 vs 多伦多节奏\n\n📊 基础数据：\n- 主队（多伦多节奏）：赛季场均89.4分 / 失91.8分\n- 客队（洛杉矶火花）：赛季场均88.4分 / 失91.3分\n- 近6场主队：得91.2 / 失99.0\n- 近6场客队：得87.8 / 失88.5\n\n🔄 贝叶斯动态更新：\n- 主队进攻后验：90.3，防守后验：95.4\n- 客队进攻后验：88.1，防守后验：89.9\n\n⚕️ 伤病影响：\n- 主队伤病影响：-3.5分\n- 客队伤病影响：-6.0分\n\n😴 休息差：主队-1.0天休息优势\n\n📈 模型预测：\n- 预测分差：-0.8（客队赢）\n- 预测总分：177.5\n- 让分Edge：1.7分\n- 总分Edge：1.0分\n\n⭐ 推荐等级：0星\n- 让分：无推荐\n- 大小分：无推荐\n",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 6,
+    "ended": false,
+    "confidence": 56.659999999999954,
+    "stars": 0
+  },
+  {
+    "id": "2026-06-26-wnba-402",
+    "date": "2026-06-26",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "10:00",
+    "homeTeam": "西雅图风暴",
+    "awayTeam": "纽约自由人",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "26-wnba-402",
+    "odds": [
+      {
+        "type": "让分方向",
+        "value": "自由人 -7.5"
+      },
+      {
+        "type": "总分参考",
+        "value": "170.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "自由人：萨托·萨巴莉(头部出战成疑)",
+      "风暴：乔丹·霍斯顿(脚伤缺阵)、泰娜·梅尔(缺阵)、伊兹·马格贝戈(脚伤缺阵)"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【v3.6模型分析】纽约自由人 vs 西雅图风暴\n\n📊 基础数据：\n- 主队（西雅图风暴）：赛季场均78.8分 / 失85.9分\n- 客队（纽约自由人）：赛季场均88.9分 / 失83.1分\n- 近6场主队：得86.3 / 失94.0\n- 近6场客队：得92.2 / 失84.8\n\n🔄 贝叶斯动态更新：\n- 主队进攻后验：82.5，防守后验：90.0\n- 客队进攻后验：90.6，防守后验：83.9\n\n⚕️ 伤病影响：\n- 主队伤病影响：-4.0分\n- 客队伤病影响：-1.5分\n\n😴 休息差：主队+1.0天休息优势\n\n📈 模型预测：\n- 预测分差：-6.6（客队赢）\n- 预测总分：172.3\n- 让分Edge：14.1分\n- 总分Edge：1.8分\n\n⭐ 推荐等级：2星\n- 让分：纽约自由人 -7.5\n- 大小分：无推荐\n",
+    "recommendText": "纽约自由人 -7.5",
+    "recommendText2": "",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 7,
+    "ended": false,
+    "confidence": 85,
+    "stars": 2
+  },
+  {
+    "id": "2026-06-26-wnba-403",
+    "date": "2026-06-26",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "10:00",
+    "homeTeam": "拉斯维加斯王牌",
+    "awayTeam": "达拉斯飞翼",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "26-wnba-403",
+    "odds": [
+      {
+        "type": "让分方向",
+        "value": "王牌 -3.5"
+      },
+      {
+        "type": "总分参考",
+        "value": "175.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "飞翼：阿兰娜·史密斯(脸伤缺阵)、阿丽莎·克拉克(腿伤出战成疑)、奥德赛·西姆斯(脚踝缺阵)",
+      "王牌：达娜·埃文斯(腿伤缺阵)、贾妮娅·巴克尔(腿伤缺阵)、詹尼迪·卡特(生病缺阵)"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【v3.6模型分析】达拉斯飞翼 vs 拉斯维加斯王牌\n\n📊 基础数据：\n- 主队（拉斯维加斯王牌）：赛季场均89.2分 / 失85.8分\n- 客队（达拉斯飞翼）：赛季场均88.0分 / 失84.5分\n- 近6场主队：得87.5 / 失86.3\n- 近6场客队：得91.5 / 失85.5\n\n🔄 贝叶斯动态更新：\n- 主队进攻后验：88.4，防守后验：86.0\n- 客队进攻后验：89.8，防守后验：85.0\n\n⚕️ 伤病影响：\n- 主队伤病影响：-3.5分\n- 客队伤病影响：-4.0分\n\n😴 休息差：主队-1.0天休息优势\n\n📈 模型预测：\n- 预测分差：-1.1（客队赢）\n- 预测总分：171.1\n- 让分Edge：2.4分\n- 总分Edge：4.4分\n\n⭐ 推荐等级：0星\n- 让分：无推荐\n- 大小分：无推荐\n\n⚔️ 交锋记录：飞翼本赛季对王牌2连胜（场均赢19分），心理优势明显。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 8,
+    "ended": false,
+    "confidence": 63.75875000000002,
+    "stars": 0
   }
 ]

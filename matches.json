@@ -1741,5 +1741,265 @@
     "awayScore": 75,
     "hit1": "",
     "hit2": ""
+  },
+  {
+    "id": "2026-06-29-wnba-301",
+    "date": "2026-06-29",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "02:00",
+    "homeTeam": "明尼苏达天猫",
+    "awayTeam": "达拉斯飞翼",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "29-wnba-301",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "待采集"
+      },
+      {
+        "type": "得分预期",
+        "value": "待采集"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "analysis": "【天猫(14-4) vs 飞翼(11-7)】\n【排名】天猫联盟第1(77.8%)，飞翼第6(61.1%)\n【关键数据】天猫主场8-1/客场6-3，得分90.8失分79.4净胜+11.4联盟最强；飞翼主场6-2/客场5-5，得分89.1失分85.7\n【伤病】天猫：科利尔缺阵；飞翼：无重要伤停\n【休息】天猫休息1天；飞翼休息1天\n【v3.6分析】天猫防守效率联盟第1(97.4)，主场8胜1负极为强势。飞翼近期进攻状态不错但防守一般。\n【初步判断】天猫-8.5分参考线合理，主队方向。\n⚠️需临场Pinnacle盘口确认。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 1,
+    "ended": false,
+    "confidence": 65,
+    "stars": 3
+  },
+  {
+    "id": "2026-06-29-wnba-302",
+    "date": "2026-06-29",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "03:00",
+    "homeTeam": "波特兰火焰",
+    "awayTeam": "华盛顿神秘人",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "29-wnba-302",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "待采集"
+      },
+      {
+        "type": "得分预期",
+        "value": "待采集"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "analysis": "【火焰(7-13) vs 神秘人(8-11)】\n【排名】火焰联盟第12(35%)，神秘人第10(42.1%)\n【关键数据】火焰主场3-6/客场4-7，得分82.6失分90.6；神秘人主场6-5/客场2-6，得分80.5失分84.1\n【伤病】两队无重要伤停\n【v3.6分析】两队战绩相近，火焰进攻更差但神秘人客场表现糟糕。参考线预计火焰-1.5左右。\n⚠️需临场Pinnacle盘口确认。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 2,
+    "ended": false,
+    "confidence": 0,
+    "stars": 0
+  },
+  {
+    "id": "2026-06-29-wnba-303",
+    "date": "2026-06-29",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "04:00",
+    "homeTeam": "芝加哥天空",
+    "awayTeam": "拉斯维加斯王牌",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "29-wnba-303",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "待采集"
+      },
+      {
+        "type": "得分预期",
+        "value": "待采集"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "analysis": "【天空(4-15) vs 王牌(13-5)】\n【排名】天空联盟倒数第2(21.1%)，王牌第2(72.2%)\n【关键数据】天空得分82.2失分87.8；王牌得分90.2联盟第1，失分85.7\n【伤病】天空：卡多索出战高效；王牌：全主力\n【v3.6分析】王牌进攻火力联盟最强(90+场均)，天空防守效率联盟倒数。王牌客场5胜1负极为强势。\n【初步判断】王牌客场大胜概率高，预计参考线王牌-10分以上。\n⚠️需临场Pinnacle盘口确认。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 3,
+    "ended": false,
+    "confidence": 60,
+    "stars": 3
+  },
+  {
+    "id": "2026-06-29-wnba-304",
+    "date": "2026-06-29",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "07:00",
+    "homeTeam": "纽约自由人",
+    "awayTeam": "金州女武神",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "29-wnba-304",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "待采集"
+      },
+      {
+        "type": "得分预期",
+        "value": "待采集"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "analysis": "【自由人(12-7) vs 女武神(12-7)】\n【排名】两队并列第5(63.2%)\n【关键数据】自由人得分88.9失分83.9；女武神得分83.1失分78.4防守更强\n【伤病】女武神：无重要伤停\n【v3.6分析】强强对话，自由人进攻更强但女武神防守出色。两队近期状态都不错，预计是一场胶着比赛。\n⚠️需临场Pinnacle盘口确认。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 4,
+    "ended": false,
+    "confidence": 0,
+    "stars": 0
+  },
+  {
+    "id": "2026-06-28-wnba-301",
+    "date": "2026-06-28",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "ended",
+    "time": "02:00",
+    "homeTeam": "多伦多节奏",
+    "awayTeam": "凤凰城水银",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "28-wnba-301",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "节奏 +6.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "177.5"
+      }
+    ],
+    "injuries": [
+      "节奏：赛克斯缺阵、赖斯缺阵"
+    ],
+    "lineups": [],
+    "analysis": "【已结束】水银89-80击败节奏，客队9分优势获胜。\n【赛果复盘】让分方向：节奏+6.5 ✅（节奏主场受让6.5分，实际输9分）；大小分：大177.5 ❌（总分169分）。",
+    "recommendText": "多伦多节奏 +6.5",
+    "recommendText2": "大 177.5",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 1,
+    "ended": true,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 80,
+    "awayScore": 89,
+    "hit1": "hit",
+    "hit2": "miss"
+  },
+  {
+    "id": "2026-06-28-wnba-302",
+    "date": "2026-06-28",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "ended",
+    "time": "08:00",
+    "homeTeam": "印第安纳狂热",
+    "awayTeam": "洛杉矶火花",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "28-wnba-302",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "狂热 -6.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "181"
+      }
+    ],
+    "injuries": [
+      "狂热：克拉克缺阵"
+    ],
+    "lineups": [],
+    "analysis": "【已结束】狂热111-87大胜火花，24分优势穿盘。\n【赛果复盘】让分方向：狂热-6.5 ✅（狂热赢24分穿盘）；大小分：大181 ✅（总分198分）。",
+    "recommendText": "印第安纳狂热 -6.5",
+    "recommendText2": "大 181",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 2,
+    "ended": true,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 111,
+    "awayScore": 87,
+    "hit1": "hit",
+    "hit2": "hit"
+  },
+  {
+    "id": "2026-06-28-wnba-303",
+    "date": "2026-06-28",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "ended",
+    "time": "09:00",
+    "homeTeam": "西雅图风暴",
+    "awayTeam": "亚特兰大梦想",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "28-wnba-303",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "梦想 -8"
+      },
+      {
+        "type": "得分预期",
+        "value": "168"
+      }
+    ],
+    "injuries": [
+      "风暴：霍斯顿缺阵、马格贝戈尔缺阵"
+    ],
+    "lineups": [],
+    "analysis": "【已结束】风暴105-90大胜梦想，15分优势穿盘。\n【赛果复盘】让分方向：梦想-8 ❌（梦想受让8分，实际输15分）；大小分：大168 ❌（总分195分）。\n【冷门判定】风暴缺核心但梦想防守崩盘，冷门打出。",
+    "recommendText": "亚特兰大梦想 -8",
+    "recommendText2": "大 168",
+    "skipReason": "",
+    "recommend": "pass",
+    "order": 3,
+    "ended": true,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 105,
+    "awayScore": 90,
+    "hit1": "miss",
+    "hit2": "miss"
   }
 ]

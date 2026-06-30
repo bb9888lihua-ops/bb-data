@@ -1747,7 +1747,7 @@
     "date": "2026-06-29",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "upcoming",
+    "status": "ended",
     "time": "02:00",
     "homeTeam": "明尼苏达天猫",
     "awayTeam": "达拉斯飞翼",
@@ -1757,32 +1757,46 @@
     "odds": [
       {
         "type": "分差方向",
-        "value": "待采集"
+        "value": "天猫 -2.5"
       },
       {
         "type": "得分预期",
-        "value": "待采集"
+        "value": "177.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
       }
     ],
     "injuries": [
       "待更新"
     ],
-    "analysis": "【天猫(14-4) vs 飞翼(11-7)】\n【排名】天猫联盟第1(77.8%)，飞翼第6(61.1%)\n【关键数据】天猫主场8-1/客场6-3，得分90.8失分79.4净胜+11.4联盟最强；飞翼主场6-2/客场5-5，得分89.1失分85.7\n【伤病】天猫：科利尔缺阵；飞翼：无重要伤停\n【休息】天猫休息1天；飞翼休息1天\n【v3.6分析】天猫防守效率联盟第1(97.4)，主场8胜1负极为强势。飞翼近期进攻状态不错但防守一般。\n【初步判断】天猫-8.5分参考线合理，主队方向。\n⚠️需临场Pinnacle盘口确认。",
+    "analysis": "【已结束】明尼苏达天猫客场85-77击败达拉斯飞翼，天猫内线核心娜塔莎·霍华德砍下21分14篮板大号两双带队取胜。飞翼方面布克斯得到25分但未能救主。\n\n【赛果复盘】\n- 分差方向：客胜（天猫赢8分）\n- 总分：162分（小分）",
     "recommendText": "",
     "recommendText2": "",
-    "skipReason": "",
+    "skipReason": "早盘未推荐",
     "recommend": "pass",
     "order": 1,
-    "ended": false,
-    "confidence": 65,
-    "stars": 3
+    "ended": true,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 85,
+    "awayScore": 77,
+    "lineups": [
+      "天猫：霍华德21分14板",
+      "飞翼：布克斯25分"
+    ]
   },
   {
     "id": "2026-06-29-wnba-302",
     "date": "2026-06-29",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "upcoming",
+    "status": "ended",
     "time": "03:00",
     "homeTeam": "波特兰火焰",
     "awayTeam": "华盛顿神秘人",
@@ -1792,32 +1806,46 @@
     "odds": [
       {
         "type": "分差方向",
-        "value": "待采集"
+        "value": "神秘人 -7.5"
       },
       {
         "type": "得分预期",
-        "value": "待采集"
+        "value": "166.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
       }
     ],
     "injuries": [
       "待更新"
     ],
-    "analysis": "【火焰(7-13) vs 神秘人(8-11)】\n【排名】火焰联盟第12(35%)，神秘人第10(42.1%)\n【关键数据】火焰主场3-6/客场4-7，得分82.6失分90.6；神秘人主场6-5/客场2-6，得分80.5失分84.1\n【伤病】两队无重要伤停\n【v3.6分析】两队战绩相近，火焰进攻更差但神秘人客场表现糟糕。参考线预计火焰-1.5左右。\n⚠️需临场Pinnacle盘口确认。",
+    "analysis": "【已结束】华盛顿神秘人历经四加时以124-123险胜波特兰火焰，这是WNBA历史上第二场四加时比赛。双方各有三人得分20+，新秀西特伦和莱特同砍32分上演精彩对飙。\n\n【赛果复盘】\n- 分差方向：神秘人客场1分险胜\n- 总分：247分（大分）\n- 比赛时长：4个加时，成为WNBA历史第二长比赛",
     "recommendText": "",
     "recommendText2": "",
-    "skipReason": "",
+    "skipReason": "早盘未推荐",
     "recommend": "pass",
     "order": 2,
-    "ended": false,
+    "ended": true,
     "confidence": 0,
-    "stars": 0
+    "stars": 0,
+    "homeScore": 123,
+    "awayScore": 124,
+    "lineups": [
+      "神秘人：西特伦32分6板4助、奥耶维拉30分5板5助、伊里阿芬27分11板6助",
+      "火焰：莱特32分6板9助、巴克25分6板3助、古斯塔夫森20分5板4助"
+    ]
   },
   {
     "id": "2026-06-29-wnba-303",
     "date": "2026-06-29",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "upcoming",
+    "status": "ended",
     "time": "04:00",
     "homeTeam": "芝加哥天空",
     "awayTeam": "拉斯维加斯王牌",
@@ -1827,32 +1855,47 @@
     "odds": [
       {
         "type": "分差方向",
-        "value": "待采集"
+        "value": "王牌 -6.5"
       },
       {
         "type": "得分预期",
-        "value": "待采集"
+        "value": "180.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
       }
     ],
     "injuries": [
-      "待更新"
+      "天空：卡林顿缺阵、杰克逊缺阵",
+      "王牌：埃文斯缺阵、巴克尔缺阵、卡特缺阵"
     ],
-    "analysis": "【天空(4-15) vs 王牌(13-5)】\n【排名】天空联盟倒数第2(21.1%)，王牌第2(72.2%)\n【关键数据】天空得分82.2失分87.8；王牌得分90.2联盟第1，失分85.7\n【伤病】天空：卡多索出战高效；王牌：全主力\n【v3.6分析】王牌进攻火力联盟最强(90+场均)，天空防守效率联盟倒数。王牌客场5胜1负极为强势。\n【初步判断】王牌客场大胜概率高，预计参考线王牌-10分以上。\n⚠️需临场Pinnacle盘口确认。",
+    "analysis": "【已结束】拉斯维加斯王牌107-99客场击败芝加哥天空，威尔逊砍下30分15篮板统治内线，杰基·杨贡献28分8助攻。天空方面卡多佐和斯蒂文斯各得24分但难阻失利。\n\n【赛果复盘】\n- 分差方向：王牌-6.5 ✅（赢8分穿盘）\n- 总分：大180.5 ✅（206分）",
     "recommendText": "",
     "recommendText2": "",
-    "skipReason": "",
+    "skipReason": "早盘未推荐",
     "recommend": "pass",
     "order": 3,
-    "ended": false,
-    "confidence": 60,
-    "stars": 3
+    "ended": true,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 99,
+    "awayScore": 107,
+    "lineups": [
+      "王牌：威尔逊30分15板、扬28分5板8助、格雷18分6板8助",
+      "天空：斯蒂文斯24分6板3助、卡多佐24分8板2助"
+    ]
   },
   {
     "id": "2026-06-29-wnba-304",
     "date": "2026-06-29",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "upcoming",
+    "status": "ended",
     "time": "07:00",
     "homeTeam": "纽约自由人",
     "awayTeam": "金州女武神",
@@ -1862,25 +1905,39 @@
     "odds": [
       {
         "type": "分差方向",
-        "value": "待采集"
+        "value": "女武神 +1.5"
       },
       {
         "type": "得分预期",
-        "value": "待采集"
+        "value": "163.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
       }
     ],
     "injuries": [
       "待更新"
     ],
-    "analysis": "【自由人(12-7) vs 女武神(12-7)】\n【排名】两队并列第5(63.2%)\n【关键数据】自由人得分88.9失分83.9；女武神得分83.1失分78.4防守更强\n【伤病】女武神：无重要伤停\n【v3.6分析】强强对话，自由人进攻更强但女武神防守出色。两队近期状态都不错，预计是一场胶着比赛。\n⚠️需临场Pinnacle盘口确认。",
+    "analysis": "【已结束】金州女武神76-67主场击败纽约自由人，取得关键卡位战胜利。自由人核心琼斯得到21分但球队整体低迷，韩旭替补出战9分钟贡献4分。\n\n【赛果复盘】\n- 分差方向：女武神客场赢9分\n- 总分：143分（小分）",
     "recommendText": "",
     "recommendText2": "",
-    "skipReason": "",
+    "skipReason": "早盘未推荐",
     "recommend": "pass",
     "order": 4,
-    "ended": false,
+    "ended": true,
     "confidence": 0,
-    "stars": 0
+    "stars": 0,
+    "homeScore": 67,
+    "awayScore": 76,
+    "lineups": [
+      "自由人：韩旭4分（替补9分钟）",
+      "女武神：陈紫柔8分2助"
+    ]
   },
   {
     "id": "2026-06-28-wnba-301",
@@ -2001,5 +2058,52 @@
     "awayScore": 90,
     "hit1": "miss",
     "hit2": "miss"
+  },
+  {
+    "id": "2026-07-01-wnba-301",
+    "date": "2026-07-01",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "upcoming",
+    "time": "07:00",
+    "homeTeam": "纽约自由人",
+    "awayTeam": "拉斯维加斯王牌",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "01-wnba-301",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "自由人 -2.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "174.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "自由人：萨巴莉(脑震荡缺阵)",
+      "王牌：威尔逊(腿伤出战成疑)、埃文斯(腿伤缺阵)、巴克尔(腿伤缺阵)"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "【WNBA常规赛/总裁杯决赛】纽约自由人主场迎战拉斯维加斯王牌。\n\n【排名】自由人第5(12胜8负)，王牌第2(14胜5负)\n【关键数据】\n- 自由人：主场6胜4负，场均得分87.8，失分83.5\n- 王牌：客场9胜2负，场均得分90.7，失分86.4\n【伤病】\n- 自由人：萨巴莉脑震荡缺阵\n- 王牌：威尔逊腿伤出战成疑，埃文斯、巴克尔缺阵\n【近期交锋】6月24日自由人客场87-76击败王牌\n\n【早盘分析】\n自由人主场作战，上一场客场输给女武神结束连胜，回到主场战意回升。王牌客场战绩出色，但威尔逊出战成疑影响巨大。双方内线对抗是关键，斯图尔特vs威尔逊的MVP级别对决。总分方面，上次交手仅163分，双方防守强度高，小分趋势明显。\n\n【待临场确认】\n1. 威尔逊最终出战状态\n2. Pinnacle临场盘口变化\n3. 双方首发阵容确认",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "赛前30分钟更新",
+    "recommend": "pass",
+    "order": 1,
+    "ended": false,
+    "confidence": 0,
+    "stars": 0
   }
 ]

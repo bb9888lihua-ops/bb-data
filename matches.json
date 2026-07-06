@@ -2475,12 +2475,12 @@
     "date": "2026-07-06",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "pre",
+    "status": "ended",
     "time": "03:00",
     "homeTeam": "多伦多节奏",
     "awayTeam": "达拉斯飞翼",
     "vsText": "VS",
-    "locked": false,
+    "locked": true,
     "lockId": "06-wnba-301",
     "odds": [
       {
@@ -2507,27 +2507,29 @@
     "lineups": [
       "赛前30分钟确认"
     ],
-    "analysis": "【早盘分析】v3.6模型初步判断\n\n【球队近况】\n- 飞翼（客）：12胜8负第5，近6场3胜3负，场均88.7分失93.3分\n- 节奏（主）：9胜10负第9，近6场2胜4负，场均93.5分失98.7分\n- 飞翼客场近6场2胜4负，场均86.8分失94.5分\n- 节奏主场5胜4负\n\n【v3.6模型初判】\n1. 7月HCA=+2.8（节奏主场）\n2. 伤病量化：节奏缺2-3人（赛克斯+赖斯主力缺阵），飞翼全员健康 → 飞翼+2~3分\n3. 防守风格匹配：节奏防守效率偏低（场均失91.9分），飞翼进攻效率一般\n4. 休息优势：双方均有2天以上休息，无明显体能差\n5. 多伦多节奏大球率71.4%联盟最高，飞翼主场小球率70%\n\n【大小分初判】\n- 节奏进攻火力强+防守差 → 大球倾向\n- 但飞翼客场进攻一般\n- 需临场确认Pinnacle盘口后发布最终推荐\n\n【说明】早盘未获取Pinnacle盘口，按铁律暂不推荐。临场赛前15分钟更新。",
+    "analysis": "【已结束】节奏76-89不敌飞翼，飞翼客场赢13分。\n\n【赛果】全场比分76-89，飞翼客场大胜。\n\n【早盘未推荐】因未获取Pinnacle盘口，按铁律未出推荐。\n\n【复盘】节奏主场缺赛克斯、赖斯两大主力，飞翼客场发挥出色拿下13分大胜。",
     "recommendText": "",
     "recommendText2": "",
     "skipReason": "赛前30分钟更新",
     "recommend": "skip",
     "order": 32,
-    "ended": false,
+    "ended": true,
     "confidence": 0,
-    "stars": 0
+    "stars": 0,
+    "homeScore": 76,
+    "awayScore": 89
   },
   {
     "id": "2026-07-06-wnba-302",
     "date": "2026-07-06",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "pre",
+    "status": "ended",
     "time": "07:00",
     "homeTeam": "拉斯维加斯王牌",
     "awayTeam": "印第安纳狂热",
     "vsText": "VS",
-    "locked": false,
+    "locked": true,
     "lockId": "06-wnba-302",
     "odds": [
       {
@@ -2554,12 +2556,155 @@
     "lineups": [
       "赛前30分钟确认"
     ],
-    "analysis": "【早盘分析】v3.6模型初步判断\n\n【球队近况】\n- 王牌（主）：15胜5负第1，近6场4胜2负，场均92.8分失87.7分\n- 狂热（客）：11胜8负第6，近6场3胜3负，场均102.7分失97.8分\n- 王牌主场6胜3负，场均94.3分失87分\n- 狂热客场3胜4负，场均84.3分失89.5分\n- H2H：上赛季王牌3胜1负狂热\n\n【v3.6模型初判】\n1. 7月HCA=+2.8（王牌主场）\n2. 伤病量化：王牌缺3人（威尔逊MVP核心+埃文斯+巴克尔），狂热缺2人（克拉克状元+皮索特）\n   - 威尔逊缺阵对王牌影响巨大（场均20+分+篮板核心），约-5~7分\n   - 克拉克缺阵对狂热进攻影响大，约-3~4分\n3. 防守风格匹配：王牌防守效率第2，狂热进攻火力强\n4. 王牌近3连胜，状态正佳；狂热近1连胜\n5. 休息优势：双方均有2天休息，基本对等\n\n【大小分初判】\n- 王牌防守强 + 双方都缺核心进攻球员 → 小分倾向\n- 但王牌主场进攻效率高\n- 需临场确认Pinnacle盘口后发布最终推荐\n\n【说明】早盘未获取Pinnacle盘口，按铁律暂不推荐。临场赛前15分钟更新。",
+    "analysis": "【已结束】王牌68-84不敌狂热，狂热客场赢16分。\n\n【赛果】全场比分68-84，狂热客场大胜。王牌缺威尔逊、埃文斯、巴克尔三大主力，实力大损。\n\n【早盘未推荐】因未获取Pinnacle盘口，按铁律未出推荐。\n\n【复盘】王牌缺MVP威尔逊+2员大将，进攻端仅得68分。狂热虽缺克拉克但团队配合出色，客场16分大胜。",
     "recommendText": "",
     "recommendText2": "",
     "skipReason": "赛前30分钟更新",
     "recommend": "skip",
     "order": 33,
+    "ended": true,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 68,
+    "awayScore": 84
+  },
+  {
+    "id": "2026-07-07-wnba-301",
+    "date": "2026-07-07",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "pre",
+    "time": "07:30",
+    "homeTeam": "华盛顿神秘人",
+    "awayTeam": "金州女武神",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "07-wnba-301",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "待更新"
+      },
+      {
+        "type": "得分预期",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "神秘人：暂无重大伤病报告",
+      "女武神：鲁珀特(脑震荡缺阵)"
+    ],
+    "lineups": [
+      "赛前30分钟确认"
+    ],
+    "analysis": "【早盘待更新】v3.6模型初步判断\n\n【球队近况】\n- 神秘人（主）：8胜13负第5，场均82.8分失85.7分\n- 女武神（客）：约11胜10负，场均83分失78.1分\n- 女武神防守效率联盟顶级（场均失78.1分）\n- 神秘人主场进攻效率偏低\n\n【v3.6模型初判】\n1. 7月HCA=+2.8（神秘人主场）\n2. 女武神防守强+神秘人进攻弱 → 小分倾向\n3. 需临场确认Pinnacle盘口后发布最终推荐\n\n【说明】竞彩待开售，Pinnacle盘口暂未开出，按铁律暂不推荐。临场赛前15分钟更新。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "无Pinnacle盘口(竞彩待开售)",
+    "recommend": "skip",
+    "order": 34,
+    "ended": false,
+    "confidence": 0,
+    "stars": 0
+  },
+  {
+    "id": "2026-07-07-wnba-302",
+    "date": "2026-07-07",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "pre",
+    "time": "08:00",
+    "homeTeam": "明尼苏达天猫",
+    "awayTeam": "康涅狄格太阳",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "07-wnba-302",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "待更新"
+      },
+      {
+        "type": "得分预期",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "天猫：暂无重大伤病报告",
+      "太阳：暂无重大伤病报告"
+    ],
+    "lineups": [
+      "赛前30分钟确认"
+    ],
+    "analysis": "【早盘待更新】v3.6模型初步判断\n\n【球队近况】\n- 天猫（主）：约14胜6负第2，场均90.2分失80.3分\n- 太阳（客）：约8胜14负第15，场均79.5分\n- 天猫攻防效率均为联盟顶级\n- 天猫主场强势，让分盘路78.3%联盟最佳\n\n【v3.6模型初判】\n1. 7月HCA=+2.8（天猫主场）\n2. 天猫整体实力远超太阳\n3. 天猫让分盘路表现极佳(78.3%)，关注深度盘口价值\n4. 太阳进攻效率联盟最低（场均79.5分）→ 小分倾向\n5. 需临场确认Pinnacle盘口后发布最终推荐\n\n【说明】竞彩待开售，Pinnacle盘口暂未开出，按铁律暂不推荐。临场赛前15分钟更新。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "无Pinnacle盘口(竞彩待开售)",
+    "recommend": "skip",
+    "order": 35,
+    "ended": false,
+    "confidence": 0,
+    "stars": 0
+  },
+  {
+    "id": "2026-07-07-wnba-303",
+    "date": "2026-07-07",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "pre",
+    "time": "10:00",
+    "homeTeam": "洛杉矶火花",
+    "awayTeam": "西雅图风暴",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "07-wnba-303",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "待更新"
+      },
+      {
+        "type": "得分预期",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "火花：布林克(脚踝OUT)、普拉姆(小腿OUT)",
+      "风暴：梅尔(缺阵)"
+    ],
+    "lineups": [
+      "赛前30分钟确认"
+    ],
+    "analysis": "【早盘待更新】v3.6模型初步判断\n\n【球队近况】\n- 火花（主）：8胜10负第10，场均88.8分失94.3分\n- 风暴（客）：5胜17负第14，场均80分失86分\n- 火花缺布林克+普拉姆两大核心，实力大损\n- 风暴客场0胜6负极差\n\n【v3.6模型初判】\n1. 7月HCA=+2.8（火花主场）\n2. 双方都缺核心球员，火花缺布林克+普拉姆影响更大\n3. 风暴客场极差(0胜6负)→但火花也缺主力\n4. 火花让分盘路65%需避免→ 关注下盘价值\n5. 两队进攻效率均偏低→ 小分倾向\n6. 需临场确认Pinnacle盘口后发布最终推荐\n\n【说明】竞彩待开售，Pinnacle盘口暂未开出，按铁律暂不推荐。临场赛前15分钟更新。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "无Pinnacle盘口(竞彩待开售)",
+    "recommend": "skip",
+    "order": 36,
     "ended": false,
     "confidence": 0,
     "stars": 0

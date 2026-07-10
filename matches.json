@@ -3130,5 +3130,161 @@
     "awayScore": 0,
     "hit1": "",
     "hit2": ""
+  },
+  {
+    "id": "2026-07-11-wnba-301",
+    "date": "2026-07-11",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "pre",
+    "time": "07:30",
+    "homeTeam": "康涅狄克太阳",
+    "awayTeam": "金州女武神",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "11-wnba-301",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "女武神 -7.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "155.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "等待首发确认...",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "等待首发确认",
+    "recommend": "skip",
+    "order": 1,
+    "ended": false,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 0,
+    "awayScore": 0,
+    "hit1": "",
+    "hit2": "",
+    "confirmAt": 1783725600000,
+    "lineupConfirmed": false
+  },
+  {
+    "id": "2026-07-11-wnba-302",
+    "date": "2026-07-11",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "pre",
+    "time": "07:30",
+    "homeTeam": "多伦多节奏",
+    "awayTeam": "达拉斯飞马",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "11-wnba-302",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "飞马 -6.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "179.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "等待首发确认...",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "等待首发确认",
+    "recommend": "skip",
+    "order": 2,
+    "ended": false,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 0,
+    "awayScore": 0,
+    "hit1": "",
+    "hit2": "",
+    "confirmAt": 1783725600000,
+    "lineupConfirmed": false
+  },
+  {
+    "id": "2026-07-11-wnba-303",
+    "date": "2026-07-11",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "pre",
+    "time": "10:00",
+    "homeTeam": "洛杉矶火花",
+    "awayTeam": "芝加哥天空",
+    "vsText": "VS",
+    "locked": true,
+    "lockId": "11-wnba-303",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "火花 -1.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "179.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "待更新"
+    ],
+    "lineups": [
+      "待更新"
+    ],
+    "analysis": "等待首发确认...",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "等待首发确认",
+    "recommend": "skip",
+    "order": 3,
+    "ended": false,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 0,
+    "awayScore": 0,
+    "hit1": "",
+    "hit2": "",
+    "confirmAt": 1783734600000,
+    "lineupConfirmed": false
   }
 ]

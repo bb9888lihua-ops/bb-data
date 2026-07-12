@@ -3301,12 +3301,12 @@
     "date": "2026-07-12",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "pre",
+    "status": "ended",
     "time": "01:00",
     "homeTeam": "明尼苏达天猫",
     "awayTeam": "纽约自由人",
     "vsText": "VS",
-    "locked": false,
+    "locked": true,
     "lockId": "12-wnba-301",
     "odds": [
       {
@@ -3333,17 +3333,17 @@
     "lineups": [
       "待赛前更新"
     ],
-    "analysis": "【v3.7模型分析】明尼苏达天猫(16-6)主场迎战纽约自由人(13-9)。\n\n【基础数据】\n- 天猫：PPG 90.0 / OPPG 80.7（联盟第二防守）\n- 自由：PPG 87.8 / OPPG 83.8\n- 7月HCA：+2.8\n\n【模型计算】\n- 理论让分：天猫-5.5（含HCA）\n- 伤病调整：迈尔斯缺阵(-7分进攻)→ 让分收窄至天猫-2.0\n- 理论总分：171.2\n- 市场参考线：天猫-1.5 / 172.5\n\n【Edge评估】\n- 让分Edge：0.5分（远小于4.0阈值）→ 不达标\n- 大小分Edge：1.3分（远小于7.0阈值）→ 不达标\n\n【关键因素】\n- 天猫新秀迈尔斯(18.5分)缺阵影响巨大，进攻端重挫\n- 自由菲比希缺阵，外线防守下降\n- 双方7月3日交手自由主场99-86胜\n- 天猫近6场3胜3负状态下滑\n\n【早盘结论】双方均有核心缺阵，模型edge不足，PASS待临场验证。",
+    "analysis": "【v3.7模型分析】明尼苏达天猫(16-6)主场迎战纽约自由人(13-9)。\n\n【基础数据】\n- 天猫：PPG 90.0 / OPPG 80.7（联盟第二防守）\n- 自由：PPG 87.8 / OPPG 83.8\n- 7月HCA：+2.8\n\n【模型计算】\n- 理论让分：天猫-5.5（含HCA）\n- 伤病调整：迈尔斯缺阵(-7分进攻)→ 让分收窄至天猫-2.0\n- 理论总分：171.2\n- 市场参考线：天猫-1.5 / 172.5\n\n【Edge评估】\n- 让分Edge：0.5分（远小于4.0阈值）→ 不达标\n- 大小分Edge：1.3分（远小于7.0阈值）→ 不达标\n\n【关键因素】\n- 天猫新秀迈尔斯(18.5分)缺阵影响巨大，进攻端重挫\n- 自由菲比希缺阵，外线防守下降\n- 双方7月3日交手自由主场99-86胜\n- 天猫近6场3胜3负状态下滑\n\n【早盘结论】双方均有核心缺阵，模型edge不足，PASS待临场验证。\n\n【赛果复盘】最终比分 85:90（纽约自由人 vs 明尼苏达天猫），总分175分。 本场早盘跳过，无推荐。",
     "recommendText": "",
     "recommendText2": "",
     "skipReason": "早盘赛程已上线，临场出推荐",
     "recommend": "skip",
     "order": 4,
-    "ended": false,
+    "ended": true,
     "confidence": 0,
     "stars": 0,
-    "homeScore": 0,
-    "awayScore": 0,
+    "homeScore": 90,
+    "awayScore": 85,
     "hit1": "",
     "hit2": ""
   },
@@ -3352,12 +3352,12 @@
     "date": "2026-07-12",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "pre",
+    "status": "ended",
     "time": "04:00",
     "homeTeam": "亚特兰大梦想",
     "awayTeam": "波特兰火焰",
     "vsText": "VS",
-    "locked": false,
+    "locked": true,
     "lockId": "12-wnba-302",
     "odds": [
       {
@@ -3384,17 +3384,17 @@
     "lineups": [
       "待赛前更新"
     ],
-    "analysis": "【v3.7模型分析】亚特兰大梦想(13-9)主场迎战波特兰火焰(9-13)。\n\n【基础数据】\n- 梦想：PPG 87.5 / OPPG 83.6（联盟第四防守）\n- 火焰：PPG 84.1 / OPPG 91.2（联盟倒数防守）\n- 7月HCA：+2.8\n\n【模型计算】\n- 理论让分：梦想-8.3（含HCA）\n- 若里斯缺阵：梦想-5.8\n- 理论总分：173.2\n- 市场参考线：梦想-12.5 / 172.5\n\n【Edge评估】\n- 深盘过滤：参考线12.5分 > 9.0分阈值 → 深盘跳过\n- 大小分Edge：0.7分（远小于7.0阈值）→ 不达标\n\n【关键因素】\n- 梦想刚结束5连败，上轮89-78击败风暴止跌\n- 里斯(15分+11.7板)出战成疑，若缺阵内线攻防两端大减\n- 火焰客场3胜7负，失误和犯规联盟倒数\n- 5月29日交手梦想客场86-66大胜20分\n\n【早盘结论】深盘12.5触发过滤，PASS待临场确认里斯状态+Pinnacle盘口。",
+    "analysis": "【v3.7模型分析】亚特兰大梦想(13-9)主场迎战波特兰火焰(9-13)。\n\n【基础数据】\n- 梦想：PPG 87.5 / OPPG 83.6（联盟第四防守）\n- 火焰：PPG 84.1 / OPPG 91.2（联盟倒数防守）\n- 7月HCA：+2.8\n\n【模型计算】\n- 理论让分：梦想-8.3（含HCA）\n- 若里斯缺阵：梦想-5.8\n- 理论总分：173.2\n- 市场参考线：梦想-12.5 / 172.5\n\n【Edge评估】\n- 深盘过滤：参考线12.5分 > 9.0分阈值 → 深盘跳过\n- 大小分Edge：0.7分（远小于7.0阈值）→ 不达标\n\n【关键因素】\n- 梦想刚结束5连败，上轮89-78击败风暴止跌\n- 里斯(15分+11.7板)出战成疑，若缺阵内线攻防两端大减\n- 火焰客场3胜7负，失误和犯规联盟倒数\n- 5月29日交手梦想客场86-66大胜20分\n\n【早盘结论】深盘12.5触发过滤，PASS待临场确认里斯状态+Pinnacle盘口。\n\n【赛果复盘】最终比分 102:92（波特兰火焰 vs 亚特兰大梦想），总分194分。 本场早盘跳过，无推荐。",
     "recommendText": "",
     "recommendText2": "",
     "skipReason": "深盘早盘跳过",
     "recommend": "skip",
     "order": 5,
-    "ended": false,
+    "ended": true,
     "confidence": 0,
     "stars": 0,
-    "homeScore": 0,
-    "awayScore": 0,
+    "homeScore": 92,
+    "awayScore": 102,
     "hit1": "",
     "hit2": ""
   },
@@ -3403,12 +3403,12 @@
     "date": "2026-07-12",
     "league": "WNBA",
     "leagueTag": "WNBA",
-    "status": "pre",
+    "status": "ended",
     "time": "06:00",
     "homeTeam": "拉斯维加斯王牌",
     "awayTeam": "菲尼克斯水星",
     "vsText": "VS",
-    "locked": false,
+    "locked": true,
     "lockId": "12-wnba-303",
     "odds": [
       {
@@ -3435,12 +3435,216 @@
     "lineups": [
       "待赛前更新"
     ],
-    "analysis": "【v3.7模型分析】拉斯维加斯王牌(16-6)主场迎战菲尼克斯水星(8-15)。\n\n【基础数据】\n- 王牌：PPG 89.9 / OPPG 86.1\n- 水星：PPG 83.7 / OPPG 85.7\n- 7月HCA：+2.8\n\n【模型计算】\n- 理论让分：王牌-5.7（含HCA）\n- 理论总分：172.7\n- 市场参考线：王牌-10.5 / 173.5\n\n【Edge评估】\n- 深盘过滤：参考线10.5分 > 9.0分阈值 → 深盘跳过\n- 大小分Edge：0.8分（远小于7.0阈值）→ 不达标\n\n【关键因素】\n- 威尔逊复出首战32分10板，状态拉满\n- 王牌进攻联盟顶级，主场复仇战意强\n- 水星整体实力有限，客场3胜9负\n- 赛季揭幕战水星客场99-66大胜王牌33分（彼时王牌磨合不足）\n\n【早盘结论】深盘10.5触发过滤，模型预测仅让5.7分存在反向价值但深盘先PASS。",
+    "analysis": "【v3.7模型分析】拉斯维加斯王牌(16-6)主场迎战菲尼克斯水星(8-15)。\n\n【基础数据】\n- 王牌：PPG 89.9 / OPPG 86.1\n- 水星：PPG 83.7 / OPPG 85.7\n- 7月HCA：+2.8\n\n【模型计算】\n- 理论让分：王牌-5.7（含HCA）\n- 理论总分：172.7\n- 市场参考线：王牌-10.5 / 173.5\n\n【Edge评估】\n- 深盘过滤：参考线10.5分 > 9.0分阈值 → 深盘跳过\n- 大小分Edge：0.8分（远小于7.0阈值）→ 不达标\n\n【关键因素】\n- 威尔逊复出首战32分10板，状态拉满\n- 王牌进攻联盟顶级，主场复仇战意强\n- 水星整体实力有限，客场3胜9负\n- 赛季揭幕战水星客场99-66大胜王牌33分（彼时王牌磨合不足）\n\n【早盘结论】深盘10.5触发过滤，模型预测仅让5.7分存在反向价值但深盘先PASS。\n\n【赛果复盘】最终比分 58:106（菲尼克斯水星 vs 拉斯维加斯王牌），总分164分。 本场早盘跳过，无推荐。",
     "recommendText": "",
     "recommendText2": "",
     "skipReason": "深盘早盘跳过",
     "recommend": "skip",
     "order": 6,
+    "ended": true,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 106,
+    "awayScore": 58,
+    "hit1": "",
+    "hit2": ""
+  },
+  {
+    "id": "2026-07-13-wnba-301",
+    "date": "2026-07-13",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "pre",
+    "time": "03:00",
+    "homeTeam": "华盛顿神秘人",
+    "awayTeam": "西雅图风暴",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "13-wnba-301",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "神秘人 -4.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "158.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "神秘人：阿特金斯(膝盖缺阵)、赛克斯(脚踝出战成疑)",
+      "风暴：洛伊德(休战)、马格贝戈(膝盖缺阵)"
+    ],
+    "lineups": [
+      "待赛前更新"
+    ],
+    "analysis": "【v3.7模型分析】华盛顿神秘人主场迎战西雅图风暴。\n\n【基础数据】\n- 神秘人：PPG 82.5 / OPPG 80.3\n- 风暴：PPG 79.8 / OPPG 81.2\n- 7月HCA：+2.8\n\n【模型计算】\n- 理论让分：神秘人-5.0（含HCA）\n- 理论总分：163.2\n- 市场参考线：神秘人-4.5 / 158.5\n\n【Edge评估】\n- 让分Edge：0.5分（小于4.0阈值）→ 不达标\n- 大小分Edge：4.7分（小于7.0阈值）→ 不达标\n\n【关键因素】\n- 神秘人主场防守稳固，风暴客场进攻乏力\n- 双方节奏偏慢，总分预期偏低\n- 神秘人阿特金斯缺阵影响进攻组织\n\n【早盘结论】双方Edge不足，PASS待临场Pinnacle盘口验证。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "早盘赛程已上线，临场出推荐",
+    "recommend": "skip",
+    "order": 7,
+    "ended": false,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 0,
+    "awayScore": 0,
+    "hit1": "",
+    "hit2": ""
+  },
+  {
+    "id": "2026-07-13-wnba-302",
+    "date": "2026-07-13",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "pre",
+    "time": "03:00",
+    "homeTeam": "多伦多节奏",
+    "awayTeam": "纽约自由",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "13-wnba-302",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "节奏 +6.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "177.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "节奏：赛克斯(脚踝缺阵)、赖斯(膝盖缺阵)、法格本勒(出战成疑)",
+      "自由：萨巴莉(个人原因缺阵)、菲比希(左脚缺阵)"
+    ],
+    "lineups": [
+      "待赛前更新"
+    ],
+    "analysis": "【v3.7模型分析】多伦多节奏主场迎战纽约自由。\n\n【基础数据】\n- 节奏：PPG 80.2 / OPPG 84.6\n- 自由：PPG 87.8 / OPPG 83.8\n- 7月HCA：+2.8\n\n【模型计算】\n- 理论让分：自由-7.2（含HCA修正）\n- 理论总分：172.5\n- 市场参考线：自由-6.5 / 177.5\n\n【Edge评估】\n- 让分Edge：0.7分（小于4.0阈值）→ 不达标\n- 大小分Edge：5.0分（小于7.0阈值）→ 不达标\n\n【关键因素】\n- 自由纸面实力占优，但连续客场体能存疑\n- 节奏后场伤病严重，赛克斯+赖斯缺阵\n- 自由萨巴莉缺阵，内线深度下降\n\n【早盘结论】深盘场次，模型Edge不足，PASS待临场验证。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "深盘早盘跳过",
+    "recommend": "skip",
+    "order": 8,
+    "ended": false,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 0,
+    "awayScore": 0,
+    "hit1": "",
+    "hit2": ""
+  },
+  {
+    "id": "2026-07-13-wnba-303",
+    "date": "2026-07-13",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "pre",
+    "time": "07:00",
+    "homeTeam": "达拉斯飞翼",
+    "awayTeam": "芝加哥天空",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "13-wnba-303",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "飞翼 -8.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "177.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "飞翼：比克斯(膝盖缺阵)",
+      "天空：卡灵顿(膝盖缺阵)、史蒂文斯(脚踝出战成疑)"
+    ],
+    "lineups": [
+      "待赛前更新"
+    ],
+    "analysis": "【v3.7模型分析】达拉斯飞翼主场迎战芝加哥天空。\n\n【基础数据】\n- 飞翼：PPG 88.3 / OPPG 83.5\n- 天空：PPG 80.5 / OPPG 85.2\n- 7月HCA：+2.8\n\n【模型计算】\n- 理论让分：飞翼-7.5（含HCA）\n- 理论总分：170.8\n- 市场参考线：飞翼-8.5 / 177.5\n\n【Edge评估】\n- 让分Edge：1.0分（小于4.0阈值）→ 不达标\n- 大小分Edge：6.7分（小于7.0阈值）→ 不达标\n\n【关键因素】\n- 飞翼主场进攻火力强，天空防守漏洞多\n- 天空新阵容磨合不佳，失误率高\n- 飞翼比克斯缺阵影响不大\n\n【早盘结论】深盘场次，模型Edge不足，PASS待临场验证。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "深盘早盘跳过",
+    "recommend": "skip",
+    "order": 9,
+    "ended": false,
+    "confidence": 0,
+    "stars": 0,
+    "homeScore": 0,
+    "awayScore": 0,
+    "hit1": "",
+    "hit2": ""
+  },
+  {
+    "id": "2026-07-13-wnba-304",
+    "date": "2026-07-13",
+    "league": "WNBA",
+    "leagueTag": "WNBA",
+    "status": "pre",
+    "time": "09:00",
+    "homeTeam": "拉斯维加斯王牌",
+    "awayTeam": "印第安纳狂热",
+    "vsText": "VS",
+    "locked": false,
+    "lockId": "13-wnba-304",
+    "odds": [
+      {
+        "type": "分差方向",
+        "value": "王牌 -4.5"
+      },
+      {
+        "type": "得分预期",
+        "value": "182.5"
+      },
+      {
+        "type": "Pinnacle让分",
+        "value": "待更新"
+      },
+      {
+        "type": "Pinnacle大小分",
+        "value": "待更新"
+      }
+    ],
+    "injuries": [
+      "王牌：格雷(膝盖出战成疑)、杨(手腕出战成疑)",
+      "狂热：波士顿(小腿缺阵)、米切尔(脚踝出战成疑)"
+    ],
+    "lineups": [
+      "待赛前更新"
+    ],
+    "analysis": "【v3.7模型分析】拉斯维加斯王牌主场迎战印第安纳狂热。\n\n【基础数据】\n- 王牌：PPG 92.1 / OPPG 83.4\n- 狂热：PPG 88.5 / OPPG 86.7\n- 7月HCA：+2.8\n\n【模型计算】\n- 理论让分：王牌-5.5（含HCA）\n- 理论总分：177.2\n- 市场参考线：王牌-4.5 / 182.5\n\n【Edge评估】\n- 让分Edge：1.0分（小于4.0阈值）→ 不达标\n- 大小分Edge：5.3分（小于7.0阈值）→ 不达标\n\n【关键因素】\n- 双方上一次交手狂热客场84-68大胜，王牌复仇战意强\n- 王牌主场进攻火力凶猛，狂热防守端压力大\n- 焦点战：阿贾·威尔逊 vs 凯特琳·克拉克\n\n【早盘结论】焦点战，模型Edge不足，PASS待临场Pinnacle盘口验证。",
+    "recommendText": "",
+    "recommendText2": "",
+    "skipReason": "深盘早盘跳过",
+    "recommend": "skip",
+    "order": 10,
     "ended": false,
     "confidence": 0,
     "stars": 0,
